@@ -147,7 +147,7 @@ const InfoPage = forwardRef((_, ref) => (
       </h2>
       <p className="mt-2 text-sm text-neutral-700">
         Welcome to{" "}
-        <span className="font-semibold">Bar 1573 Restaurant</span>, where
+        <span className="font-semibold">Fifteenseventythree</span>, where
         seasonal produce meets cozy vibes. Our kitchen crafts familiar classics
         with a modern twist. Thank you for dining with us!
       </p>
@@ -156,19 +156,19 @@ const InfoPage = forwardRef((_, ref) => (
         <div className="rounded-2xl border bg-white/60 p-4">
           <p className="text-sm font-semibold">Location</p>
           <p className="text-sm text-neutral-600">
-            11 Narborough Rd Leicester LE3 0LE
+            The Old Grammar School, 41 Free school Lane, Highcross, Leicester, LE1 4FY
           </p>
         </div>
         <div className="rounded-2xl border bg-white/60 p-4">
           <p className="text-sm font-semibold">Contact</p>
           <p className="text-sm text-neutral-600">
-            +44 7737 098045 • alinokam2002@yahoo.fr
+            0116 251 6879 • info@fifteenseventythree.com
           </p>
         </div>
       </div>
 
       <div className="mt-auto text-[11px] text-neutral-500">
-        © {new Date().getFullYear()} Alino. All rights reserved.
+        © {new Date().getFullYear()} Fifteenseventythree. All rights reserved.
       </div>
     </div>
   </Page>
@@ -196,7 +196,7 @@ export default function MenuFlipbook() {
     arr.push(
       <CoverPage
         key="cover"
-        restaurant="Alino African Restaurant"
+        restaurant="Fifteenseventythree Restaurant"
         tagline="Modern comfort food & coastal cocktails"
       />
     );
