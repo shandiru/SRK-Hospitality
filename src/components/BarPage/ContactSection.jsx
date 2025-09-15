@@ -48,7 +48,7 @@ export default function ContactSection() {
           {/* Image */}
           <div className="mt-8">
             <img
-              src="/contact-drinks.png"
+              src="/cotails.png"
               alt="Cocktails"
               className="rounded-xl shadow-md"
             />

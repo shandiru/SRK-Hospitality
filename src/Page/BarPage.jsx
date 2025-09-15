@@ -6,6 +6,7 @@ import MenuFlipbook from "../components/BarPage/MenuFlipbook";
 import Gallery from "../components/BarPage/Gallery";
 import GiftCardSection from "../components/BarPage/GiftCardSection";
 import ContactSection from "../components/BarPage/ContactSection";
+import MapSection from "../components/BarPage/MapSection";
 export default function BAR() {
   return (
     <div>
@@ -22,12 +23,13 @@ export default function BAR() {
       </section>
    
 
-<section>
-    <GiftCardSection />
-</section>
+
       
          <section>
         <ContactSection />
+      </section>
+      <section>
+        <MapSection />
       </section>
    
     </div>

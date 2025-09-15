@@ -7,10 +7,15 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const images = [
-  '/images/beer1.jpg',
-  '/images/beer2.jpg',
-  '/images/beer3.jpg',
-  '/images/beer4.jpg'
+  '/bar1.jpeg',
+  '/bar2.jpeg',
+  '/bar3.jpeg',
+  '/bar4.jpeg',
+  'bar5.jpeg',
+  'bar6.jpeg',
+  'bar7.jpeg',
+  'bar8.jpeg',
+  'bar9.jpeg'
 ];
 
 export default function Gallery() {
