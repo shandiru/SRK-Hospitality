@@ -147,7 +147,7 @@ const InfoPage = forwardRef((_, ref) => (
       </h2>
       <p className="mt-2 text-sm text-neutral-700">
         Welcome to{" "}
-        <span className="font-semibold">Alino African Restaurant</span>, where
+        <span className="font-semibold">Bar 1573 Restaurant</span>, where
         seasonal produce meets cozy vibes. Our kitchen crafts familiar classics
         with a modern twist. Thank you for dining with us!
       </p>
