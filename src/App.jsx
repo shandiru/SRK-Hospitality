@@ -6,6 +6,7 @@ import Home from "./Page/Home.jsx";
 import SiteFooter from "./components/Footer.jsx";
 import Venu from "./Page/VenuesPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import BAR from "./Page/BarPage.jsx";
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -15,6 +16,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
            <Route path="/venues" element={<Venu />} />
+            <Route path="/1573bar" element={<BAR />} />
 
          
         </Routes>

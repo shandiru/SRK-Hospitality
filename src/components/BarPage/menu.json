@@ -1,0 +1,63 @@
+[
+  {
+    "id": "starters",
+    "title": "Starters",
+    "subtitle": "Small bites to begin your meal",
+    "items": [
+      {
+        "name": "Garlic Bread",
+        "description": "Crispy and golden bread infused with garlic butter.",
+        "price": "$5.50",
+        "badge": "Popular",
+        "image": "https://via.placeholder.com/80x80"
+      },
+      {
+        "name": "Soup of the Day",
+        "description": "Ask your server about today’s freshly prepared soup.",
+        "price": "$6.95"
+      },
+      {
+        "name": "Stuffed Mushrooms",
+        "description": "Mushrooms filled with cream cheese and herbs.",
+        "price": "$7.25",
+        "image": "https://via.placeholder.com/80x80"
+      }
+    ]
+  },
+  {
+    "id": "mains",
+    "title": "Main Courses",
+    "subtitle": "Hearty and satisfying dishes",
+    "items": [
+      {
+        "name": "Grilled Chicken",
+        "description": "Marinated chicken breast served with seasonal vegetables.",
+        "price": "$14.95",
+        "badge": "Chef's Choice"
+      },
+      {
+        "name": "Vegetarian Lasagna",
+        "description": "Layers of pasta with vegetables and cheese.",
+        "price": "$13.50"
+      }
+    ]
+  },
+  {
+    "id": "desserts",
+    "title": "Desserts",
+    "subtitle": "Sweet treats to finish your meal",
+    "items": [
+      {
+        "name": "Chocolate Lava Cake",
+        "description": "Warm chocolate cake with a gooey center.",
+        "price": "$6.95",
+        "badge": "Best Seller"
+      },
+      {
+        "name": "Classic Tiramisu",
+        "description": "Coffee-soaked layers of mascarpone and sponge.",
+        "price": "$6.50"
+      }
+    ]
+  }
+]
