@@ -1,7 +1,7 @@
 import React from "react";
 
 // Sections from components/HomePage
-import AboutSection from "../components/BarPage/AboutSection.JSX";
+import AboutSection from "../components/BarPage/AboutSection";
 import MenuFlipbook from "../components/BarPage/MenuFlipbook";
 import Gallery from "../components/BarPage/Gallery";
 import GiftCardSection from "../components/BarPage/GiftCardSection";
