@@ -8,9 +8,9 @@ export default function MapSection() {
 
         <div className="w-full h-[450px] overflow-hidden rounded-xl shadow-md border border-gray-200">
           <iframe
-            src="https://maps.google.com/maps?q=1573%20Freeschool%20Ln%2C%20Leicester%20LE1%204NN%2C%20United%20Kingdom&t=m&z=15&output=embed&iwloc=near"
-            title="1573 Freeschool Ln, Leicester LE1 4NN, United Kingdom"
-            aria-label="1573 Freeschool Ln, Leicester LE1 4NN, United Kingdom"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9602.926093507715!2d-1.112944!3d52.6201967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877613149c74739%3A0x7276091ba8ad492!2sBarceloneta%20Spanish%20and%20Mediterranean%20tapas%20Restaurant%20and%20Bar!5e0!3m2!1sen!2slk!4v1694948037911!5m2!1sen!2slk"
+            title="Barceloneta Spanish and Mediterranean Tapas Restaurant and Bar"
+            aria-label="Barceloneta Spanish and Mediterranean Tapas Restaurant and Bar"
             loading="lazy"
             className="w-full h-full border-0"
             allowFullScreen
