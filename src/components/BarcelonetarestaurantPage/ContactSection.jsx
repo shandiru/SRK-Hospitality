@@ -1,4 +1,4 @@
-import { FiMapPin, FiPhone, FiSend, FiClock } from 'react-icons/fi';
+import { FiMapPin, FiPhone, FiSend, FiClock, FiFacebook, FiInstagram } from 'react-icons/fi';
 
 export default function ContactSection() {
   return (
@@ -61,6 +61,26 @@ export default function ContactSection() {
                   info@barcelonetarestaurant.co.uk
                 </p>
               </div>
+            </div>
+
+            {/* Social Media */}
+            <div className="flex gap-4 pt-4">
+              <a
+                href="https://www.instagram.com/barceloneta_restaurant/?igsh=Y29saG95cW9wOGE3&utm_source=qr#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 text-orange-500 hover:bg-orange-200 transition"
+              >
+                <FiInstagram size={20} />
+              </a>
+              <a
+                href="https://web.facebook.com/BarcelonetaOueensRd?_rdc=1&_rdr#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 text-orange-500 hover:bg-orange-200 transition"
+              >
+                <FiFacebook size={20} />
+              </a>
             </div>
           </div>
 

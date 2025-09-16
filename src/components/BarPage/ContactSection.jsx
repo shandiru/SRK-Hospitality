@@ -1,4 +1,4 @@
-import { FiMapPin, FiPhone, FiSend } from 'react-icons/fi';
+import { FiMapPin, FiPhone, FiSend, FiFacebook, FiInstagram } from 'react-icons/fi';
 
 export default function ContactSection() {
   return (
@@ -17,7 +17,8 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold text-gray-800">Visit us</h4>
                 <p className="text-gray-600">
-                  The Old Grammar School, 41 Free school Lane, Highcross, Leicester, LE1 4FY
+                  The Old Grammar School, 41 Free School Lane,<br />
+                  Highcross, Leicester, LE1 4FY
                 </p>
               </div>
             </div>
@@ -40,8 +41,30 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold text-gray-800">Mail us</h4>
-                <p className="text-orange-600 font-medium">info@fifteenseventythree.com</p>
+                <p className="text-orange-600 font-medium">
+                  info@fifteenseventythree.com
+                </p>
               </div>
+            </div>
+
+            {/* Social Media */}
+            <div className="flex gap-4 pt-4">
+              <a
+                href="https://www.instagram.com/fifteenseventythree/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 text-orange-500 hover:bg-orange-200 transition"
+              >
+                <FiInstagram size={20} />
+              </a>
+              <a
+                href="https://web.facebook.com/1573GrillRestaurant?_rdc=1&_rdr#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 text-orange-500 hover:bg-orange-200 transition"
+              >
+                <FiFacebook size={20} />
+              </a>
             </div>
           </div>
 

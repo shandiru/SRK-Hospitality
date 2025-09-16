@@ -66,14 +66,7 @@ const CoverPage = forwardRef(({ restaurant, tagline }, ref) => (
       >
         {tagline}
       </motion.p>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-8 rounded-2xl border bg-white/70 px-4 py-2 text-sm"
-      >
-        Open today • 11:00 – 22:30
-      </motion.div>
+      
     </div>
     <div className="absolute bottom-4 right-4 text-xs text-neutral-500">
       Swipe / drag to flip ➔
@@ -188,11 +181,12 @@ export default function MenuFlipbook() {
     const arr = [];
     const map = {};
     arr.push(
-      <CoverPage
-        key="cover"
-        restaurant="Fifteenseventythree Restaurant"
-        tagline="Modern comfort food & coastal cocktails"
-      />
+     <CoverPage
+  key="cover"
+  restaurant="Barceloneta Restaurant"
+  tagline="Authentic Spanish Tapas & Mediterranean Flavours"
+/>
+
     );
 
     let currentIndex = 1;
