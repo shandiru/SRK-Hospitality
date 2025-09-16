@@ -100,13 +100,13 @@ export default function ContactSection() {
           </div>
 
           {/* Image */}
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <img
               src="/d1.png"
              
               className="rounded-xl shadow-md"
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Right Column - Form */}

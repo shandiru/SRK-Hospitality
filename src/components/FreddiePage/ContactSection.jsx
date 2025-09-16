@@ -22,8 +22,17 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold text-gray-800">Opening Hours</h4>
                 <p className="text-gray-600">
-                  <span className="font-semibold text-orange-600">Pickup & Delivery</span><br />
-                  Monday to Sunday: 5:00 PM – 10:45 PM
+                  <span className="font-semibold text-orange-600">Pickup</span><br />
+                  Mon, Tue, Thu: 5:30 PM - 10:50 PM<br />
+                  Fri, Sat: 5:30 PM - 1:00 AM<br />
+                  Sun: 5:30 PM - 10:50 PM<br />
+                  Wed: <span className="text-red-500">Closed</span><br />
+                  <br />
+                  <span className="font-semibold text-orange-600">Delivery</span><br />
+                  Mon, Tue, Thu: 5:30 PM - 10:50 PM<br />
+                  Fri, Sat: 5:30 PM - 1:00 AM<br />
+                  Sun: 5:30 PM - 10:50 PM<br />
+                  Wed: <span className="text-red-500">Closed</span>
                 </p>
               </div>
             </div>
@@ -36,8 +45,15 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold text-gray-800">Visit Us</h4>
                 <p className="text-gray-600">
-                  45 Market Place, Long Eaton,<br />
-                  Nottinghamshire, NG10 1JL
+                  <a
+                    href="https://www.google.co.uk/maps/place/45+Market+Pl,+Long+Eaton,+Nottingham+NG10+1JL,+UK/@52.8983326,-1.2713499,17z"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    45A Market Place, Long Eaton,<br />
+                    Nottingham, NG10 1JL
+                  </a>
                 </p>
               </div>
             </div>
@@ -49,7 +65,11 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold text-gray-800">Call Us</h4>
-                <p className="text-gray-600">0115 946 8222</p>
+                <p className="text-gray-600">
+                  <a href="tel:01158714164" className="text-blue-600 hover:underline">
+                    0115 871 4164
+                  </a>
+                </p>
               </div>
             </div>
 
@@ -68,13 +88,13 @@ export default function ContactSection() {
           </div>
 
           {/* Image */}
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <img
-              src="/d1.png"
+              src="/f1.jpg"
               alt="Al Naseeb Restaurant"
               className="rounded-xl shadow-md"
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Right Column - Form */}
