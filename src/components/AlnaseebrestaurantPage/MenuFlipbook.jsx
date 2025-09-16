@@ -184,7 +184,7 @@ export default function MenuFlipbook() {
     arr.push(
       <CoverPage
         key="cover"
-        restaurant="Bar Dos Hermanos"
+        restaurant="Al Naseeb"
         tagline="Cuban-American Tapas, Cocktails & Good Times"
       />
     );
