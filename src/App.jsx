@@ -10,6 +10,7 @@ import BAR from "./Page/BarPage.jsx";
 import BARCELONE from "./Page/BarcelonetarestaurantPage.jsx";
 import BARDOS from "./Page/BardoshermanosPage.jsx";
 import Alnaseeb from "./Page/AlnaseebrestaurantPage.jsx";
+import Freddie from "./Page/FreddiePage.jsx";
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -23,6 +24,7 @@ export default function App() {
              <Route path="/barceloneta" element={<BARCELONE />} />
               <Route path="/dos-hermanos" element={<BARDOS />} />
                 <Route path="/al-naseeb" element={<Alnaseeb />} />
+                 <Route path="/freddies" element={<Freddie />} />
 
 
 
