@@ -1189,6 +1189,110 @@
   ]
 }
 
+,
+{
+  "id": "festive_tapas_banquet",
+  "title": "Festive Tapas Banquet",
+  "subtitle": "Please choose any 6 of the following dishes for everyone to enjoy",
+  "items": [
+    {
+      "name": "Patatas Bravas (V/VE/GF)",
+      "description": "Roasted new potatoes with a spicy garlic & tomato and garlic mayonnaise topping."
+    },
+    {
+      "name": "Ensalada Mixta (V/VE/GF)",
+      "description": "Mixed salad made from seasonal produce."
+    },
+    {
+      "name": "Garbanzos Con Espinacas (V/VE/GF)",
+      "description": "A traditional dish of chickpea & spinach cooked with garlic, cumin and smoked paprika."
+    },
+    {
+      "name": "Champiñones Al Ajillo (V/VE/GF)",
+      "description": "Pan fried garlic mushrooms."
+    },
+    {
+      "name": "Coliflor Tostada Con Hollandaise Trufada Y Polvo De Café (V/GF)",
+      "description": "Toasted cauliflower with truffle Hollandaise sauce & coffee powder."
+    },
+    {
+      "name": "Paella De Marisco (GF) (£5 supplement charge per guest)",
+      "description": "Cooked with Bomba rice, saffron with mussels, prawns, squids cooked and served in a skillet."
+    },
+    {
+      "name": "Garbanzos Con Pollo",
+      "description": "Chicken & chickpeas cooked with onions & peppers."
+    },
+    {
+      "name": "Albondigas De Queso De Cabra Fritas (V)",
+      "description": "Freshly made goat cheese balls served with honey dressing."
+    },
+    {
+      "name": "Queso Mahón (V/GF)",
+      "description": "Cow milk cheese from Island of Minorca."
+    },
+    {
+      "name": "Solomillo Iberico Con Salsa Al Pedro Ximénez",
+      "description": "Pork tenderloin with Pedro Ximénez sherry sauce."
+    },
+    {
+      "name": "Chanquetes",
+      "description": "Deep fried and breaded white bait."
+    },
+    {
+      "name": "Pincho De Aceituna, Tomate Y Queso (V/VE/GF)",
+      "description": "Olive, tomato and cheese skewers."
+    },
+    {
+      "name": "Chorizo Al Vino (GF)",
+      "description": "Chorizo and pimento in red wine."
+    },
+    {
+      "name": "Habas El Estilo Ronda (V)",
+      "description": "Broad beans sautéed with onions, bacon, paprika and garlic."
+    },
+    {
+      "name": "Tortilla Española (GF)",
+      "description": "Classic Spanish potato and onion omelette."
+    },
+    {
+      "name": "Calamares Fritos",
+      "description": "Deep fried fresh squid."
+    },
+    {
+      "name": "Croquetas De Berenjenas (V)",
+      "description": "Aubergine and wild mushroom croquette."
+    },
+    {
+      "name": "Paella De Verduras (V/VE) (£5 supplement charge per guest)",
+      "description": "Cooked with Bomba rice, saffron, onions, peppers, mushrooms, courgette, aubergine and tomato, cooked and served in a skillet."
+    },
+    {
+      "name": "Pollo Al Ajillo (GF)",
+      "description": "Strips of chicken breast, chargrilled with roasted garlic and olive oil."
+    },
+    {
+      "name": "Champiñones Rellenos Con Espinacas Y Queso Azul (V/VE)",
+      "description": "Mushrooms stuffed with spinach, topped with Spanish blue cheese and gratinéed."
+    },
+    {
+      "name": "Macarrone Con Tomate (V/VE)",
+      "description": "Pasta in tomato sauce and olives."
+    },
+    {
+      "name": "Gambas Al Ajillo (GF)",
+      "description": "Shelled prawns cooked with fresh garlic and chillies."
+    },
+    {
+      "name": "Pollo Al Chilindrón",
+      "description": "Chicken and ham in tomato, chilli and garlic sauce."
+    },
+    {
+      "name": "Notes",
+      "description": "To confirm your table, a non-refundable deposit of £5 per head is required within 2 weeks of making the booking, moving to 1 week after 9th November, but always at least five days in advance of the booking. Once your booking is confirmed, please let us know your menu choices at least 48 hours in advance of the event. A discretionary service charge of 10% will be added to your bill. 10% off pre-ordered bottles of wine. £2 off pre-ordered jugs of Sangria."
+    }
+  ]
+}
 
 
 
