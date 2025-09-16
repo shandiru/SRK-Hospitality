@@ -1,31 +1,21 @@
+'use client'
+
 import React, { forwardRef, useMemo, useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import { motion } from "framer-motion";
 import sectionsSeed from "./menu.json";
 
 // ---------- Utility ----------
-const chunkArray = (arr, size) => {
-  const chunks = [];
-  for (let i = 0; i < arr.length; i += size) {
-    chunks.push(arr.slice(i, i + size));
-  }
-  return chunks;
-};
-
 const paginateByHeight = (items, maxHeight = 550) => {
   const pages = [];
   let currentPage = [];
   let currentHeight = 0;
 
   items.forEach((item) => {
-    // detect small screen
-    const isSmallScreen = window.innerWidth < 640; // Tailwind "sm" breakpoint
+    const isSmallScreen = typeof window !== "undefined" && window.innerWidth < 640;
     const baseHeight = isSmallScreen ? 200 : 100;
-
-    // Estimate height based on description length
     const estimatedHeight =
-      baseHeight +
-      (item.description ? Math.min(item.description.length / 4, 100) : 0);
+      baseHeight + (item.description ? Math.min(item.description.length / 4, 100) : 0);
 
     if (currentHeight + estimatedHeight > maxHeight && currentPage.length > 0) {
       pages.push(currentPage);
@@ -37,10 +27,7 @@ const paginateByHeight = (items, maxHeight = 550) => {
     }
   });
 
-  if (currentPage.length > 0) {
-    pages.push(currentPage);
-  }
-
+  if (currentPage.length > 0) pages.push(currentPage);
   return pages;
 };
 
@@ -99,9 +86,7 @@ const SectionPage = forwardRef(({ title, subtitle, items }, ref) => (
   <Page ref={ref}>
     <div className="flex h-full flex-col">
       <div className="mb-4">
-        <h2 className="text-2xl font-bold tracking-tight text-[#68a879]">
-          {title}
-        </h2>
+        <h2 className="text-2xl font-bold tracking-tight text-[#68a879]">{title}</h2>
         {subtitle && <p className="text-sm text-neutral-500">{subtitle}</p>}
       </div>
       <div className="grid grid-cols-1 gap-4 pb-5">
@@ -142,14 +127,11 @@ SectionPage.displayName = "SectionPage";
 const InfoPage = forwardRef((_, ref) => (
   <Page ref={ref}>
     <div className="flex h-full flex-col">
-      <h2 className="text-2xl font-bold tracking-tight text-[#68a879]">
-        About Us
-      </h2>
+      <h2 className="text-2xl font-bold tracking-tight text-[#68a879]">About Us</h2>
       <p className="mt-2 text-sm text-neutral-700">
-        Welcome to{" "}
-        <span className="font-semibold">Fifteenseventythree</span>, where
-        seasonal produce meets cozy vibes. Our kitchen crafts familiar classics
-        with a modern twist. Thank you for dining with us!
+        Welcome to <span className="font-semibold">Fifteenseventythree</span>, where seasonal
+        produce meets cozy vibes. Our kitchen crafts familiar classics with a modern twist. Thank you
+        for dining with us!
       </p>
 
       <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -161,9 +143,7 @@ const InfoPage = forwardRef((_, ref) => (
         </div>
         <div className="rounded-2xl border bg-white/60 p-4">
           <p className="text-sm font-semibold">Contact</p>
-          <p className="text-sm text-neutral-600">
-            0116 251 6879 • info@fifteenseventythree.com
-          </p>
+          <p className="text-sm text-neutral-600">0116 251 6879 • info@fifteenseventythree.com</p>
         </div>
       </div>
 
@@ -188,11 +168,13 @@ BackCoverPage.displayName = "BackCoverPage";
 export default function MenuFlipbook() {
   const flipRef = useRef(null);
   const [page, setPage] = useState(0);
-  const itemsPerPage = 3; // max items per page
 
-  const pages = useMemo(() => {
+  // keep mapping of section -> start page index
+  const { pages, sectionPageMap } = useMemo(() => {
     const arr = [];
+    const map = {};
 
+    // cover page
     arr.push(
       <CoverPage
         key="cover"
@@ -201,25 +183,29 @@ export default function MenuFlipbook() {
       />
     );
 
+    let currentIndex = 1; // first section starts at index 1
     sectionsSeed.forEach((section) => {
-      const chunks = paginateByHeight(section.items, 500); // tune maxHeight
+      map[section.id] = currentIndex;
+      const chunks = paginateByHeight(section.items, 700);
       chunks.forEach((chunk, idx) => {
         arr.push(
           <SectionPage
             key={`${section.id}-${idx}`}
-            title={
-              section.title + (chunks.length > 1 ? ` (Page ${idx + 1})` : "")
-            }
+            title={section.title + (chunks.length > 1 ? ` (Page ${idx + 1})` : "")}
             subtitle={section.subtitle}
             items={chunk}
           />
         );
+        currentIndex++;
       });
     });
 
     arr.push(<InfoPage key="info" />);
+    currentIndex++;
     arr.push(<BackCoverPage key="back" />);
-    return arr;
+    currentIndex++;
+
+    return { pages: arr, sectionPageMap: map };
   }, []);
 
   const total = pages.length;
@@ -229,31 +215,23 @@ export default function MenuFlipbook() {
   const goTo = (p) => flipRef.current?.pageFlip()?.flip(p);
 
   return (
-    <div className="mx-auto max-w-6xl px-3 py-6 sm:py-10">
+    <div className="mx-auto max-w-7xl px-3 py-6 sm:py-10">
       {/* Header / Controls */}
       <div className="mb-4 flex flex-col items-center justify-between gap-3 sm:mb-6 sm:flex-row">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight text-[#68a879]">
-            Restaurant Menu
-          </h1>
-        </div>
-
+        <h1 className="text-2xl font-bold tracking-tight text-[#68a879]">Restaurant Menu</h1>
         <div className="flex items-center gap-2">
           <button
             onClick={goPrev}
-            aria-label="Previous page"
-            className="rounded-2xl border px-3 py-2 text-sm shadow-sm transition hover:bg-neutral-50 active:scale-[0.98]"
+            className="rounded-2xl border px-3 py-2 text-sm shadow-sm hover:bg-neutral-50"
           >
             ◀ Prev
           </button>
-          <span className="select-none text-sm tabular-nums">
-            {String(page + 1).padStart(2, "0")} /{" "}
-            {String(total).padStart(2, "0")}
+          <span className="text-sm tabular-nums select-none">
+            {String(page + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
           </span>
           <button
             onClick={goNext}
-            aria-label="Next page"
-            className="rounded-2xl border px-3 py-2 text-sm shadow-sm transition hover:bg-neutral-50 active:scale-[0.98]"
+            className="rounded-2xl border px-3 py-2 text-sm shadow-sm hover:bg-neutral-50"
           >
             Next ▶
           </button>
@@ -261,25 +239,22 @@ export default function MenuFlipbook() {
       </div>
 
       {/* Book */}
-      <div className="mx-auto flex w-full max-w-5xl justify-center">
+      <div className="mx-auto flex w-full max-w-6xl justify-center">
         <HTMLFlipBook
-          width={520}
-          height={700}
-          minWidth={300}
-          maxWidth={650}
-          maxHeight={900}
+          width={700}
+          height={900}
+          minWidth={320}
+          maxWidth={900}
+          maxHeight={1200}
           size="stretch"
-          drawShadow={true}
-          flippingTime={700}
+          flippingTime={800}
           usePortrait={true}
-          startPage={0}
-          autoSize={true}
-          maxShadowOpacity={0.4}
           showCover={true}
+          drawShadow={true}
+          autoSize={true}
           mobileScrollSupport={true}
           onFlip={(e) => setPage(e.data)}
           ref={flipRef}
-          className="[perspective:1800px]"
         >
           {pages.map((node, idx) => (
             <div key={idx} className="h-full w-full">
@@ -291,15 +266,15 @@ export default function MenuFlipbook() {
 
       {/* Quick Navigator */}
       <div className="mx-auto mt-6 grid max-w-5xl grid-cols-2 gap-2 sm:grid-cols-4">
-        {sectionsSeed.map((s, i) => {
-          const target = i + 1; // first page of section after cover
+        {sectionsSeed.map((s) => {
+          const target = sectionPageMap[s.id];
           const active = page === target;
           return (
             <button
               key={s.id}
               onClick={() => goTo(target)}
               className={
-                "rounded-2xl border px-3 py-2 text-sm shadow-sm transition hover:bg-neutral-50 " +
+                "rounded-2xl border px-3 py-2 text-sm shadow-sm hover:bg-neutral-50 " +
                 (active ? "border-amber-400 ring-2 ring-amber-200" : "")
               }
             >
