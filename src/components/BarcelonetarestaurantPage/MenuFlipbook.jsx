@@ -66,7 +66,6 @@ const CoverPage = forwardRef(({ restaurant, tagline }, ref) => (
       >
         {tagline}
       </motion.p>
-      
     </div>
     <div className="absolute bottom-4 right-4 text-xs text-neutral-500">
       Swipe / drag to flip ➔
@@ -79,8 +78,8 @@ const SectionPage = forwardRef(({ title, subtitle, items }, ref) => (
   <Page ref={ref}>
     <div className="flex h-full flex-col">
       <div className="mb-3">
-        <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#68a879]">{title}</h2>
-        {subtitle && <p className="text-sm text-neutral-500">{subtitle}</p>}
+        <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#68a879] backdrop-blur ">{title}</h2>
+        {subtitle && <p className="text-sm text-black backdrop-blur">{subtitle}</p>}
       </div>
       <div className="grid grid-cols-1 gap-3 pb-5">
         {items.map((item) => (
@@ -122,25 +121,29 @@ const InfoPage = forwardRef((_, ref) => (
     <div className="flex h-full flex-col">
       <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#68a879]">About Us</h2>
       <p className="mt-2 text-sm text-neutral-700">
-        Welcome to <span className="font-semibold">Fifteenseventythree</span>, where seasonal
-        produce meets cozy vibes. Our kitchen crafts familiar classics with a modern twist.
+        Welcome to <span className="font-semibold">Barceloneta</span>, where vibrant Mediterranean
+        flavours meet a warm and lively atmosphere. Join us for authentic Spanish tapas, seasonal
+        dishes, and a curated selection of wines and cocktails.
       </p>
 
       <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
         <div className="rounded-2xl border bg-white/60 p-4">
           <p className="text-sm font-semibold">Location</p>
-          <p className="text-sm text-neutral-600">
-            The Old Grammar School, 41 Free school Lane, Highcross, Leicester, LE1 4FY
+          <p className="text-sm text-neutral-600 leading-relaxed">
+            54 Queen’s Rd, Clarendon Park<br />
+            Leicester, LE2 1TU.
           </p>
         </div>
         <div className="rounded-2xl border bg-white/60 p-4">
           <p className="text-sm font-semibold">Contact</p>
-          <p className="text-sm text-neutral-600">0116 251 6879 • info@fifteenseventythree.com</p>
+          <p className="text-sm text-neutral-600">0116 270 8408</p>
+          <p className="text-sm text-neutral-600">+44 7405 317594</p>
+          <p className="text-sm text-neutral-600">info@barcelonetarestaurant.co.uk</p>
         </div>
       </div>
 
       <div className="mt-auto text-[11px] text-neutral-500">
-        © {new Date().getFullYear()} Fifteenseventythree. All rights reserved.
+        © {new Date().getFullYear()} Barceloneta. All rights reserved.
       </div>
     </div>
   </Page>
@@ -150,7 +153,7 @@ InfoPage.displayName = "InfoPage";
 const BackCoverPage = forwardRef((_, ref) => (
   <Page ref={ref} className="bg-gradient-to-tr from-neutral-100 to-neutral-50">
     <div className="flex h-full items-center justify-center">
-      <p className="text-sm text-neutral-600">See you again soon 👋</p>
+      <p className="text-neutral-600">See you again soon 👋</p>
     </div>
   </Page>
 ));
@@ -162,7 +165,6 @@ export default function MenuFlipbook() {
   const [page, setPage] = useState(0);
   const [bookSize, setBookSize] = useState({ width: 700, height: 900 });
 
-  // Responsive width/height
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
@@ -181,12 +183,11 @@ export default function MenuFlipbook() {
     const arr = [];
     const map = {};
     arr.push(
-     <CoverPage
-  key="cover"
-  restaurant="Barceloneta Restaurant"
-  tagline="Authentic Spanish Tapas & Mediterranean Flavours"
-/>
-
+      <CoverPage
+        key="cover"
+        restaurant="Barceloneta"
+        tagline="Authentic Mediterranean Tapas & Cocktails"
+      />
     );
 
     let currentIndex = 1;
@@ -260,15 +261,17 @@ export default function MenuFlipbook() {
       <div className="mx-auto mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2">
         {sectionsSeed.map((s) => {
           const target = sectionPageMap[s.id];
-          const active = page === target;
+          const isActive =
+            page === target || page === target - 1 || page === target + 1;
+
           return (
             <button
               key={s.id}
               onClick={() => goTo(target)}
-              className={
-                "rounded-2xl border px-3 py-2 text-sm shadow-sm hover:bg-neutral-50 " +
-                (active ? "border-amber-400 ring-2 ring-amber-200" : "")
-              }
+              className={`
+                rounded-2xl border px-3 py-2 text-sm shadow-sm hover:bg-neutral-50 
+                ${isActive ? "border-amber-400 ring-2 ring-amber-200" : "border-neutral-300"}
+              `}
             >
               {s.title}
             </button>
