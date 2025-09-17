@@ -22,13 +22,13 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold text-gray-800">Opening Hours</h4>
                 <p className="text-gray-600">
-                  <span className="font-semibold text-orange-600">Lunch</span><br />
-                  Monday to Friday: 11:30am – 2:30pm<br /><br />
-                  <span className="font-semibold text-orange-600">Dinner</span><br />
-                  Sunday to Thursday: 5:00pm – 10:00pm<br />
-                  Friday to Saturday: 5:00pm – 11:00pm<br /><br />
-                  <span className="font-semibold text-orange-600">Bar</span><br />
-                  Open 7 Days A Week — Everyone Welcome
+                  <span className="font-semibold text-orange-600">Monday</span>: Rest day<br />
+                  <span className="font-semibold text-orange-600">Tuesday</span>: Rest day<br />
+                  <span className="font-semibold text-orange-600">Wednesday</span>: 18:00 – 22:30<br />
+                  <span className="font-semibold text-orange-600">Thursday</span>: 18:00 – 22:30<br />
+                  <span className="font-semibold text-orange-600">Friday</span>: 18:00 – 22:30<br />
+                  <span className="font-semibold text-orange-600">Saturday</span>: 18:00 – 22:30<br />
+                  <span className="font-semibold text-orange-600">Sunday</span>: 18:00 – 22:30
                 </p>
               </div>
             </div>
@@ -42,14 +42,13 @@ export default function ContactSection() {
                 <h4 className="font-bold text-gray-800">Visit Us</h4>
                 <p className="text-gray-600">
                   <a
-                    href="https://www.google.com/maps/place/Aspects,+7+Mill+Hill,+Enderby,+Leicester,+LE19+4AL"
+                    href="https://www.google.com/maps/place/FUSIC+-+Restaurant,+Takeaway+%26+Deliveries+117+Frisby+Rd+Leicester+LE5+0DQ+United+Kingdom"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline"
                   >
-                    Aspects,<br />
-                    7 Mill Hill, Enderby,<br />
-                    Leicester, LE19 4AL
+                    117 Frisby Road<br />
+                    Leicester, LE5 0DQ
                   </a>
                 </p>
               </div>
@@ -63,8 +62,8 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold text-gray-800">Call Us</h4>
                 <p className="text-gray-600">
-                  <a href="tel:01162863307" className="text-blue-600 hover:underline">
-                    0116 286 3307
+                  <a href="tel:+441164291971" className="text-blue-600 hover:underline">
+                    +44 116 429 1971
                   </a>
                 </p>
               </div>
@@ -78,7 +77,7 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold text-gray-800">Mail Us</h4>
                 <p className="text-orange-600 font-medium">
-                  info@aspectsenderby.co.uk
+                  limitedfusic@gmail.com
                 </p>
               </div>
             </div>
