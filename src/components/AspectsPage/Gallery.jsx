@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 
 const images = [
   '/a1.jpg',
-  '/a2.jpg',
+  '/a2.png',
   '/a3.jpg',
   '/a4.jpg',
   '/a5.jpg',
