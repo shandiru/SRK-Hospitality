@@ -1,0 +1,621 @@
+[
+  {
+  "id": "party_box_special",
+  "title": "Party Box Special",
+  "items": [
+    {
+      "name": "Small Party Box",
+      "price": "15.99",
+      "description": "Half waffle, 2x warm cookie doughs, Chocolate fudge cake, Crepe, 2x scoops gelato. Add strawberries and banana for extra charge"
+    },
+    {
+      "name": "Have It All Party Box",
+      "price": "19.99",
+      "description": "Half waffle, 2x warm cookie doughs, Crepe, Churros, 1x Doughnut, Chocolate fudge cake, 2x scoops gelato. Add strawberries and banana for extra charge"
+    }
+  ]
+}
+,
+{
+  "id": "mocktails",
+  "title": "Mocktails",
+  "items": [
+    {
+      "name": "Strawberry Mocktail",
+      "price": "4.85",
+      "description": ""
+    },
+    {
+      "name": "Lemon and Lime Mocktail",
+      "price": "4.85",
+      "description": ""
+    }
+  ]
+}
+,
+{
+  "id": "doughnuts",
+  "title": "Doughnuts",
+  "items": [
+    {
+      "name": "Milk Chocolate Doughnut",
+      "price": "1.80",
+      "description": ""
+    },
+    {
+      "name": "White Chocolate Doughnut",
+      "price": "1.80",
+      "description": ""
+    },
+    {
+      "name": "Lotus Biscoff Doughnut",
+      "price": "1.80",
+      "description": ""
+    },
+    {
+      "name": "Oreo Doughnut",
+      "price": "1.80",
+      "description": ""
+    },
+    {
+      "name": "Ferrero Doughnut",
+      "price": "1.80",
+      "description": ""
+    },
+    {
+      "name": "Strawberry Doughnut",
+      "price": "2.20",
+      "description": ""
+    },
+    {
+      "name": "Kinder Doughnut",
+      "price": "1.99",
+      "description": ""
+    },
+    {
+      "name": "Terrys Doughnut",
+      "price": "1.99",
+      "description": ""
+    },
+    {
+      "name": "Jammie Dodger Doughnut",
+      "price": "1.99",
+      "description": ""
+    },
+    {
+      "name": "Brownie Doughnut",
+      "price": "1.75",
+      "description": ""
+    },
+    {
+      "name": "Classic Doughnut",
+      "price": "1.75",
+      "description": ""
+    },
+    {
+      "name": "Doughnuts Boxes",
+      "price": "from 4.75",
+      "description": ""
+    }
+  ]
+},
+{
+  "id": "waffles",
+  "title": "Waffles",
+  "items": [
+    {
+      "name": "Golden Waffle",
+      "price": "5.75",
+      "description": "Fresh Belgian waffle served with golden syrup"
+    },
+    {
+      "name": "White Chocolate Waffle",
+      "price": "5.95",
+      "description": "Fresh Belgian waffle served drizzled in white chocolate"
+    },
+    {
+      "name": "Milk Chocolate Waffle",
+      "price": "5.95",
+      "description": "Fresh Belgian waffle served with drizzled in milk chocolate"
+    },
+    {
+      "name": "Nutella Waffle",
+      "price": "5.95",
+      "description": "Fresh Belgian waffle served with Nutella"
+    },
+    {
+      "name": "Banana Breeze Waffle",
+      "price": "5.95",
+      "description": "Fresh Belgian waffle served with milk chocolate sauce & bananas"
+    },
+    {
+      "name": "Strawberry Sensation Waffles",
+      "price": "6.95",
+      "description": "Fresh Belgian waffle served with fresh strawberries drizzled in milk chocolate sauce"
+    },
+    {
+      "name": "Lotus Waffle",
+      "price": "5.95",
+      "description": "Fresh Belgian waffle served with Lotus Biscoff crumbs and Biscoff sauce"
+    },
+    {
+      "name": "Ferrero Fantasy Waffle",
+      "price": "8.95",
+      "description": "Fresh Belgian waffle served with crushed Ferrero Rocher, hazelnuts & drizzled in milk chocolate sauce"
+    },
+    {
+      "name": "King Oreo Waffle",
+      "price": "5.95",
+      "description": "Fresh Belgian waffle served with crushed Oreos & drizzled in milk & white chocolate sauce"
+    },
+    {
+      "name": "The Freddies Special",
+      "price": "8.95",
+      "description": "Fresh Belgian waffle served with fresh strawberries, bananas, Ferrero Rocher pieces and drizzled in milk chocolate sauce"
+    },
+    {
+      "name": "Kinder Bueno Waffle",
+      "price": "6.95",
+      "description": "Fresh Belgian waffle served with crushed Kinder Bueno pieces and drizzled in milk chocolate & white chocolate sauce"
+    },
+    {
+      "name": "Raspberry Waffle",
+      "price": "6.95",
+      "description": "Fresh Belgian waffle served with fresh raspberries drizzled in raspberry sauce"
+    },
+    {
+      "name": "Jungle Waffle",
+      "price": "9.95",
+      "description": "Indulgent tower. Jungle Waffle - Belgian waffle topped with Ferrero Rocher, Oreo, Kinder Bueno, raspberries, bananas & strawberries"
+    }
+  ]
+}
+,
+{
+  "id": "cookie_dough",
+  "title": "Cookie Dough",
+  "items": [
+    {
+      "name": "Classic Milk Chocolate Cookie Dough",
+      "price": "5.60",
+      "description": "Milk chocolate cookie dough drizzled with milk chocolate sauce"
+    },
+    {
+      "name": "Classic White Chocolate Cookie Dough",
+      "price": "5.60",
+      "description": "White chocolate cookie dough drizzled with milk chocolate sauce"
+    },
+    {
+      "name": "King Kinder Cookie Dough",
+      "price": "6.75",
+      "description": "Milk chocolate cookie dough served with Kinder Bueno pieces baked in, drizzled with milk chocolate"
+    },
+    {
+      "name": "Lotus Biscoff Cookie Dough",
+      "price": "6.75",
+      "description": "Milk chocolate cookie dough covered with Lotus Biscoff, drizzled with Biscoff sauce"
+    },
+    {
+      "name": "Smarties Cookie Dough",
+      "price": "6.75",
+      "description": "Milk chocolate cookie dough with Smarties baked in, drizzled with milk chocolate sauce"
+    },
+    {
+      "name": "Oreo Overload Cookie Dough",
+      "price": "6.75",
+      "description": "Milk chocolate cookie dough with crushed Oreo pieces baked in, drizzled with milk chocolate sauce"
+    },
+    {
+      "name": "Terry's Chocolate Orange Cookie Dough",
+      "price": "6.50",
+      "description": "Milk chocolate cookie dough with crushed Terry’s chocolate orange baked in, drizzled with milk chocolate sauce"
+    },
+    {
+      "name": "Strawberry Sensation Cookie Dough",
+      "price": "6.75",
+      "description": "Classic milk chocolate cookie dough served with fresh strawberries & drizzled with milk chocolate sauce"
+    },
+    {
+      "name": "Ferrero Roche Cookie Dough",
+      "price": "6.85",
+      "description": "Milk chocolate cookie dough with crushed Ferrero pieces baked in drizzled with milk chocolate sauce"
+    },
+    {
+      "name": "Raspberry Cookie Dough",
+      "price": "6.85",
+      "description": "White chocolate cookie dough topped with fresh raspberries & raspberry sauce"
+    },
+    {
+      "name": "Banoffee Cookie Dough",
+      "price": "6.85",
+      "description": "White chocolate cookie dough served with banana drizzled with toffee sauce"
+    }
+  ]
+}
+,
+{
+  "id": "traditional_puddings",
+  "title": "Traditional Puddings",
+  "items": [
+    {
+      "name": "Cornflake Tart",
+      "price": "3.99",
+      "description": "Served with a single scoop of vanilla gelato or custard"
+    },
+    {
+      "name": "Sticky Toffee Pudding",
+      "price": "4.50",
+      "description": "Served with a single scoop of vanilla gelato or custard"
+    },
+    {
+      "name": "Hot Brownie",
+      "price": "4.50",
+      "description": "Served with a single scoop of vanilla gelato or custard"
+    },
+    {
+      "name": "Chocolate Custard",
+      "price": "4.50",
+      "description": ""
+    },
+    {
+      "name": "Lotus Biscoff Brownie",
+      "price": "4.95",
+      "description": ""
+    },
+    {
+      "name": "Oreo Brownie",
+      "price": "4.95",
+      "description": ""
+    },
+    {
+      "name": "Strawberry Brownie",
+      "price": "4.95",
+      "description": ""
+    }
+  ]
+}
+,
+{
+  "id": "cakes",
+  "title": "Cakes",
+  "items": [
+    {
+      "name": "Red Velvet",
+      "price": "4.75",
+      "description": "Served with a single scoop of vanilla gelato or custard"
+    },
+    {
+      "name": "Victoria Sponge",
+      "price": "4.75",
+      "description": "Served with a single scoop of vanilla gelato or custard"
+    },
+    {
+      "name": "Classic Chocolate Fudge Cake",
+      "price": "4.75",
+      "description": "Served with a single scoop of vanilla gelato or custard"
+    },
+    {
+      "name": "Rainbow Cake",
+      "price": "4.75",
+      "description": "Served with a single scoop of vanilla gelato or custard"
+    },
+    {
+      "name": "Chocolate Fudge Cake",
+      "price": "4.75",
+      "description": "Served with a single scoop of vanilla gelato or custard"
+    },
+    {
+      "name": "Terrys Chocolate Orange Gateaux",
+      "price": "3.99",
+      "description": ""
+    }
+  ]
+}
+,
+{
+  "id": "sundaes",
+  "title": "Sundaes",
+  "items": [
+    {
+      "name": "Strawberry Sundae",
+      "price": "6.75",
+      "description": "Vanilla & strawberry gelato, drizzled with strawberry, topped with fresh strawberries, whipped cream & served with a crunchy wafer"
+    },
+    {
+      "name": "Strawberry Shortcake Sundae",
+      "price": "6.75",
+      "description": "Vanilla & strawberry gelato, served with crushed biscuit, strawberry sauce, topped with fresh strawberries"
+    },
+    {
+      "name": "Fudge Brownie Sundae",
+      "price": "6.75",
+      "description": "Chocolate & vanilla gelato, drizzled in a chocolate fudge sauce, served with brownie pieces, whipped cream & chocolate chips"
+    },
+    {
+      "name": "Oreo Sundae",
+      "price": "6.75",
+      "description": "Oreo gelato, drizzled with a fudge sauce, served with crushed Oreos, whipped cream & topped with a crunchy wafer"
+    },
+    {
+      "name": "Banana Split",
+      "price": "6.50",
+      "description": "Banana with strawberry, vanilla and chocolate gelatos topped with strawberry and chocolate sauces"
+    }
+  ]
+}
+,
+{
+  "id": "luxury_cheesecake",
+  "title": "Luxury Cheesecake",
+  "items": [
+    {
+      "name": "Oreo Cheesecake",
+      "price": "4.50",
+      "description": ""
+    },
+    {
+      "name": "Terry's Chocolate Orange Cheesecake",
+      "price": "4.50",
+      "description": ""
+    },
+    {
+      "name": "Ferrero Rocher Cheesecake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Strawberry Cheesecake",
+      "price": "4.75",
+      "description": ""
+    }
+  ]
+}
+,
+{
+  "id": "churros",
+  "title": "Churros",
+  "items": [
+    {
+      "name": "Classic Churros",
+      "price": "4.85",
+      "description": "Light, crispy churros coated in sugar"
+    },
+    {
+      "name": "Milk Chocolate Churro",
+      "price": "5.60",
+      "description": "Light, crispy churros drizzled in milk chocolate sauce"
+    },
+    {
+      "name": "White Chocolate Churro",
+      "price": "5.60",
+      "description": "Light, crispy churros drizzled in white chocolate sauce"
+    },
+    {
+      "name": "Oreo Churro",
+      "price": "5.95",
+      "description": "Light, crispy churros covered by crushed Oreo crumbs & drizzled in milk chocolate sauce"
+    },
+    {
+      "name": "Lotus Churro",
+      "price": "5.95",
+      "description": "Light, crispy churros covered by crushed Biscoff crumbs & drizzled in Biscoff sauce"
+    },
+    {
+      "name": "Churros Blast",
+      "price": "6.95",
+      "description": "Oreo & Lotus mixed"
+    }
+  ]
+}
+,
+{
+  "id": "crepes",
+  "title": "Crepes",
+  "items": [
+    {
+      "name": "Classic Crepe",
+      "price": "4.95",
+      "description": "Fresh crepe served with golden syrup"
+    },
+    {
+      "name": "Nutella Crepe",
+      "price": "5.85",
+      "description": "Fresh crepe drizzled in Nutella"
+    },
+    {
+      "name": "Strawberry Delight Crepe",
+      "price": "6.00",
+      "description": "Fresh crepe served with fresh strawberries & drizzled in milk chocolate sauce"
+    },
+    {
+      "name": "Banana Mania Crepe",
+      "price": "5.95",
+      "description": "Fresh crepe served with fresh banana & drizzled in milk chocolate sauce"
+    },
+    {
+      "name": "Double Trouble Crepe",
+      "price": "6.95",
+      "description": "Fresh crepe served with fresh strawberries & bananas, drizzled in a milk chocolate sauce"
+    },
+    {
+      "name": "Fanatic Crepe",
+      "price": "6.95",
+      "description": "Fresh crepe served with Oreo crumbs and drizzled in a Lotus Biscoff & milk chocolate sauce"
+    }
+  ]
+}
+,
+{
+  "id": "gelato_scoops",
+  "title": "Gelato Scoops",
+  "items": [
+    {
+      "name": "1x Gelato Scoop",
+      "price": "1.90",
+      "description": ""
+    },
+    {
+      "name": "2x Gelato Scoops",
+      "price": "3.50",
+      "description": ""
+    },
+    {
+      "name": "3x Gelato Scoops",
+      "price": "4.50",
+      "description": ""
+    }
+  ]
+}
+,
+{
+  "id": "milkshakes",
+  "title": "Milkshakes",
+  "items": [
+    {
+      "name": "Ferrero Rocher Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Snickers Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Dairy Milk Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Toffee Crisp Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Reese’s Peanut Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Jammie Dodgers Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Chocolate Brownie Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Cherry Bakewell Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Milkyway Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Terry’s Chocolate Orange Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Kinder Bueno Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Crunchie Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Malteser Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Flake Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Maltesers Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Oreo Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Lotus Biscoff Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Aero Mint Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Daim Bar Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Milky Bar Milkshake",
+      "price": "4.75",
+      "description": ""
+    },
+    {
+      "name": "Make A Milkshake Of Your Own",
+      "price": "5.25",
+      "description": ""
+    }
+  ]
+}
+,
+{
+  "id": "premium_milkshakes",
+  "title": "Premium Milkshakes",
+  "items": [
+    {
+      "name": "Million Dollar",
+      "price": "6.28",
+      "description": "Ferrero roche, strawberries, chocolate sauce, whipped cream"
+    },
+    {
+      "name": "Go Bananas",
+      "price": "6.25",
+      "description": "Banana, kinder bueno, whipped cream"
+    },
+    {
+      "name": "Knight Rider",
+      "price": "6.25",
+      "description": "Skittles, whipped cream, raspberry sauce, mini marshmallows"
+    },
+    {
+      "name": "The Big Bang",
+      "price": "6.25",
+      "description": "Jammie Dodgers, Strawberry Sauce, whipped cream, Jammie dodger top"
+    },
+    {
+      "name": "Dirty Devil",
+      "price": "6.25",
+      "description": "Banana, nutella, whipped cream"
+    },
+    {
+      "name": "Billionaire",
+      "price": "6.25",
+      "description": "Ferrero roche, banana, whipped cream, nuts"
+    }
+  ]
+}
+
+
+
+]
