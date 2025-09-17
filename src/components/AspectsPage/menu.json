@@ -905,6 +905,216 @@
       { "name": "Mineral water", "price": "", "description": "Still or Sparkling" }
     ]
   }
+,
+{
+  "id": "tandoori_specialities",
+  "title": "Tandoori Specialities",
+  "subtitle": "All tandoori dishes are served with naan bread, mixed salad and a small sauce dip — 20% Discount (on collection only)",
+  "items": [
+    {
+      "name": "Tandoori Chicken",
+      "description": "Two chicken breast marinated in tandoori spices skewered and baked in a charcoal oven",
+      "price": "£13.95"
+    },
+    {
+      "name": "Chicken Tikka",
+      "description": "Traditional chicken tikka chargrilled to a golden finish",
+      "price": "£13.95"
+    },
+    {
+      "name": "Chicken Shashlik",
+      "description": "Fillets with onions, peppers and tomatoes baked in a clay oven",
+      "price": "£14.95"
+    },
+    {
+      "name": "Minted Lamb Tikka",
+      "description": "Succulent fillets, marinated with mint and served with mint yogurt",
+      "price": "£16.95"
+    },
+    {
+      "name": "Lamb Chops",
+      "description": "Chefs speciality marinated deliciously in a wonderful blend of spices",
+      "price": "£16.95"
+    },
+    {
+      "name": "Salmon Tikka",
+      "description": "Mouth watering fillet of salmon delicately spiced",
+      "price": "£16.95"
+    },
+    {
+      "name": "Tandoori King Prawn",
+      "description": "Shelled king prawns cooked in a traditional tandoori style",
+      "price": "£17.50"
+    },
+    {
+      "name": "Tandoori Combination Platter",
+      "description": "Chicken tikka, tandoori chicken, lamb tikka and tandoori prawns",
+      "price": "£17.95"
+    }
+  ]
+}
+,
+{
+  "id": "naan_bread_rice_sundries",
+  "title": "Naan Bread, Rice & Sundries",
+  "items": [
+    {
+      "name": "Chappatti",
+      "description": "",
+      "price": "£3.00"
+    },
+    {
+      "name": "Tandoori Roti",
+      "description": "",
+      "price": "£3.50"
+    },
+    {
+      "name": "Plain Naan",
+      "description": "",
+      "price": "£3.50"
+    },
+    {
+      "name": "Paratha",
+      "description": "",
+      "price": "£3.50"
+    },
+    {
+      "name": "Minted Paratha",
+      "description": "",
+      "price": "£4.00"
+    },
+    {
+      "name": "Butter Naan",
+      "description": "",
+      "price": "£4.00"
+    },
+    {
+      "name": "Garlic Naan",
+      "description": "",
+      "price": "£4.00"
+    },
+    {
+      "name": "Garlic and Coriander Naan",
+      "description": "",
+      "price": "£4.00"
+    },
+    {
+      "name": "Cheese and Chilli Naan",
+      "description": "",
+      "price": "£4.00"
+    },
+    {
+      "name": "Chilli and Coriander Naan",
+      "description": "",
+      "price": "£4.00"
+    },
+    {
+      "name": "Keema Naan",
+      "description": "",
+      "price": "£4.50"
+    },
+    {
+      "name": "Peshawari Naan",
+      "description": "",
+      "price": "£4.50"
+    },
+    {
+      "name": "Stuffed Kulcha",
+      "description": "Kulcha stuffed with Cheese or Potato",
+      "price": "£4.50"
+    },
+    {
+      "name": "Boiled Rice",
+      "description": "",
+      "price": "£3.00"
+    },
+    {
+      "name": "Pilau Rice",
+      "description": "",
+      "price": "£3.95"
+    },
+    {
+      "name": "Mushroom Rice",
+      "description": "",
+      "price": "£3.95"
+    },
+    {
+      "name": "Vegetable Rice",
+      "description": "",
+      "price": "£3.95"
+    },
+    {
+      "name": "Egg Fried Rice",
+      "description": "",
+      "price": "£3.95"
+    },
+    {
+      "name": "Lemon Rice",
+      "description": "",
+      "price": "£3.95"
+    },
+    {
+      "name": "Jeera Rice",
+      "description": "",
+      "price": "£3.95"
+    },
+    {
+      "name": "Keema Rice",
+      "description": "",
+      "price": "£4.50"
+    },
+    {
+      "name": "Special Rice",
+      "description": "",
+      "price": "£4.50"
+    },
+    {
+      "name": "Saag Rice",
+      "description": "",
+      "price": "£4.50"
+    },
+    {
+      "name": "Pickle Tray",
+      "description": "",
+      "price": "£0.75"
+    },
+    {
+      "name": "Poppadum plain or spicy",
+      "description": "",
+      "price": "£0.95"
+    },
+    {
+      "name": "Yogurt",
+      "description": "",
+      "price": "£2.50"
+    },
+    {
+      "name": "Chips",
+      "description": "",
+      "price": "£2.50"
+    },
+    {
+      "name": "Green Salad",
+      "description": "",
+      "price": "£3.50"
+    },
+    {
+      "name": "Raita",
+      "description": "",
+      "price": "£3.50"
+    },
+    {
+      "name": "Curry Sauce",
+      "description": "",
+      "price": "£5.50"
+    },
+    {
+      "name": "Masala or Korma Sauce",
+      "description": "",
+      "price": "£7.50"
+    }
+  ]
+}
 
 
 ]
