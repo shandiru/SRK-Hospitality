@@ -6,7 +6,7 @@ import { MdFreeBreakfast } from 'react-icons/md';
 export default function WhatWeOffer() {
   const services = [
     {
-      icon: <MdFreeBreakfast className="text-gray-700" />,
+      icon: <MdFreeBreakfast className="text-[#DDB64E]" />,
       badge: 'Breakfast',
       image: '/images/breakfast.jpg',
       title: 'Start Your Day Right',
@@ -14,7 +14,7 @@ export default function WhatWeOffer() {
         'Begin with a hearty breakfast in Nottingham, featuring fresh ingredients and expertly crafted dishes.',
     },
     {
-      icon: <FaUtensils className="text-gray-700" />,
+      icon: <FaUtensils className="text-[#DDB64E]" />,
       badge: 'Fine Dining',
       image: '/images/steak.jpg',
       title: 'Premium Steaks',
@@ -22,7 +22,7 @@ export default function WhatWeOffer() {
         'Savour a perfectly cooked steak in Leicester, prepared by our skilled chefs using the finest cuts.',
     },
     {
-      icon: <FaMusic className="text-gray-700" />,
+      icon: <FaMusic className="text-[#DDB64E]" />,
       badge: 'Nightlife',
       image: '/images/nightlife.jpg',
       title: 'Dance the Night Away',
@@ -30,7 +30,7 @@ export default function WhatWeOffer() {
         'Experience our vibrant nightclubs with top DJs, premium drinks, and an electric atmosphere.',
     },
     {
-      icon: <FaAward className="text-gray-700" />,
+      icon: <FaAward className="text-[#DDB64E]" />,
       badge: 'Award-Winning',
       image: '/images/indian-cuisine.jpg',
       title: 'Exotic Indian Cuisine',
@@ -42,7 +42,7 @@ export default function WhatWeOffer() {
   return (
     <section className="bg-gray-50 py-20 px-4">
       <div className="max-w-7xl mx-auto text-center">
-        <span className="inline-block bg-green-100 text-green-800 text-sm font-medium px-4 py-1 rounded-full mb-4">
+        <span className="inline-block bg-[#DDB64E]/20 text-[#DDB64E] text-sm font-medium px-4 py-1 rounded-full mb-4">
           What We Offer
         </span>
         <h2 className="text-4xl font-extrabold text-gray-900 mb-2">
@@ -64,7 +64,7 @@ export default function WhatWeOffer() {
                   alt={service.title}
                   className="w-full h-40 object-cover"
                 />
-                <span className="absolute top-2 left-2 bg-white text-gray-800 text-xs font-medium px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
+                <span className="absolute top-2 left-2 bg-white text-[#DDB64E] text-xs font-medium px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
                   {service.icon} {service.badge}
                 </span>
               </div>
@@ -82,8 +82,8 @@ export default function WhatWeOffer() {
 
         <div className="mt-12">
           <a
-            href="/venues"
-            className="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-800 transition duration-300 inline-block"
+            href="http://localhost:5173/venues"
+            className="bg-[#DDB64E] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#caa63e] transition duration-300 inline-block"
           >
             View All Venues
           </a>

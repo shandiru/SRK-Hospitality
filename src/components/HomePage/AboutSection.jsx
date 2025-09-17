@@ -2,14 +2,14 @@
 
 export default function AboutSection() {
   return (
-    <section className="bg-gradient-to-br from-white to-gray-100 pt-24 pb-20 px-4 md:px-12 lg:px-20">
+    <section className="bg-gradient-to-br from-white to-[#FFFCF5] pt-24 pb-20 px-4 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
 
         {/* Left: Image */}
         <div className="w-full lg:w-1/2 flex justify-center">
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 max-w-[600px] w-full bg-white">
+          <div className="rounded-xl overflow-hidden shadow-2xl border border-[#DDB64E]/30 max-w-[600px] w-full bg-white">
             <img
-              src="/srk.png" // ⬅️ Replace with your actual image path
+              src="/srk.png" 
               alt="SRK Venues Exterior"
               className="w-full h-auto object-cover"
             />
@@ -18,7 +18,7 @@ export default function AboutSection() {
 
         {/* Right: Text Content */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#222] underline underline-offset-8 decoration-[#cc4894] mb-8">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#222] underline underline-offset-8 decoration-[#DDB64E] mb-8">
             About Us
           </h2>
           <div className="text-gray-700 text-[17px] md:text-[18px] leading-relaxed space-y-6">
@@ -33,7 +33,7 @@ export default function AboutSection() {
               each individual joined together within our company.
             </p>
 
-            <h3 className="text-2xl font-bold text-[#cc4894] mt-8">Our Values</h3>
+            <h3 className="text-2xl font-bold text-[#DDB64E] mt-8">Our Values</h3>
 
             <p>
               <strong>Great Service:</strong> We guarantee an enjoyable time, with the best possible service. 

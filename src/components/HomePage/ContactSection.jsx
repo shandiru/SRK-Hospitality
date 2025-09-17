@@ -7,11 +7,11 @@ export default function ContactSection() {
 
         {/* Heading */}
         <div className="flex items-center justify-center mb-10">
-          <div className="flex-grow border-t border-gray-300"></div>
-          <h2 className="px-4 text-3xl md:text-4xl font-semibold text-[#1c1542]">
+          <div className="flex-grow border-t border-[#DDB64E]/50"></div>
+          <h2 className="px-4 text-3xl md:text-4xl font-semibold text-[#DDB64E]">
             Contact Us
           </h2>
-          <div className="flex-grow border-t border-gray-300"></div>
+          <div className="flex-grow border-t border-[#DDB64E]/50"></div>
         </div>
 
         {/* Content */}
@@ -31,7 +31,7 @@ export default function ContactSection() {
         {/* Button */}
         <a
           href="mailto:info@srkhospitality.co.uk"
-          className="inline-block bg-[#1c1542] text-white font-semibold px-8 py-3 rounded-full shadow-md hover:bg-[#2a1f60] transition duration-300"
+          className="inline-block bg-[#DDB64E] text-white font-semibold px-8 py-3 rounded-full shadow-md hover:bg-[#caa63e] transition duration-300"
         >
           DROP US A LINE!
         </a>
