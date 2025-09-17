@@ -15,6 +15,10 @@ const venues = [
   { name: "Aspects", desc: "Indian restaurant", img: "/aspects.png", slug: "aspects" },
   { name: "Basement", desc: "Nightclub", img: "/basement.png", slug: "basement" },
   { name: "Subway Wigston", desc: "Fast Food", img: "/subway.png", slug: "subway-wigston" },
+  { name: "Subway Braunstone Gate", desc: "Fast Food", img: "/Subway Braunstone Gate.png", slug: "subway-branustone" },
+  { name: "Toluca", desc: "Mexican Bar & Grill", img: "/Toluca.png", slug: "toluca" },
+  { name: "FUSIC", desc: " BBQ Specia", img: "/Toluca.png", slug: "fusic" },
+
 ];
 
 export default function VenuesGrid() {
