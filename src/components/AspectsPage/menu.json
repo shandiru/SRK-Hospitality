@@ -1115,6 +1115,206 @@
     }
   ]
 }
+,
+{
+  "id": "event_catering_platinum_menu",
+  "title": "Set Platinum Menu",
+  "subtitle": "£29.95 per person (minimum 10 guests)",
+  "items": [
+    {
+      "name": "Pre Starter",
+      "description": "Poppadoms served with a trio of homemade chutneys.",
+      "price": "Included"
+    },
+    {
+      "name": "Garlic Cheese Chicken Tikka",
+      "description": "Marinated chicken fillets blazed in the tandoor.",
+      "price": "Included (Starter)"
+    },
+    {
+      "name": "Minted Lamb Tikka",
+      "description": "Marinated lamb fillets with herbs and spices and roasted in the clay oven.",
+      "price": "Included (Starter)"
+    },
+    {
+      "name": "Chilli Paneer",
+      "description": "Deep-fried marinated paneer cubes cooked with red chillies, onions, capsicum and tomato chilli sauce.",
+      "price": "Included (Starter)"
+    },
+    {
+      "name": "Authentic Indian Lamb Curry",
+      "description": "Diced leg of lamb enhanced through Indian flavours.",
+      "price": "Included (Main Course)"
+    },
+    {
+      "name": "Kadai Chicken",
+      "description": "Chicken fillets in a smooth tandoori masala sauce with ground cashew nuts.",
+      "price": "Included (Main Course)"
+    },
+    {
+      "name": "Paneer or Mix Veg Bhuna",
+      "description": "Rustic Punjabi dish with a thick sauce, flavoured with ginger, tomato and a generous helping of coriander.",
+      "price": "Included (Main Course)"
+    },
+    {
+      "name": "Dal Makhani",
+      "description": "12 hrs of marinated dal, prepared with a combination of rajma and urad dal in tomato and cream base sauce.",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Pilau Rice",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Assorted Naan Baskets",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Cucumber Raita",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Indian Salad",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Pistachio Kulfi or Ice Cream",
+      "description": "",
+      "price": "Included (Dessert)"
+    }
+  ]
+}
+,
+{
+  "id": "event_catering_gold_menu",
+  "title": "Set Gold Menu",
+  "subtitle": "£24.95 per person (minimum 10 guests)",
+  "items": [
+    {
+      "name": "Pre Starter",
+      "description": "Poppadoms served with a trio of homemade chutneys.",
+      "price": "Included"
+    },
+    {
+      "name": "Chicken Tikka",
+      "description": "Marinated chicken fillets blazed in the tandoor.",
+      "price": "Included (Starter)"
+    },
+    {
+      "name": "Amritsar Fish",
+      "description": "Fish coated with a crisp carom flavoured batter.",
+      "price": "Included (Starter)"
+    },
+    {
+      "name": "Onion Bhaji",
+      "description": "Brunoised onions in a crisp chickpea batter, perfectly shaped.",
+      "price": "Included (Starter)"
+    },
+    {
+      "name": "Chicken Tawa",
+      "description": "Tomato and garlic features in this popular Indian dish.",
+      "price": "Included (Main Course)"
+    },
+    {
+      "name": "Fish Curry",
+      "description": "Tossed in a rich thick sauce with cream and spices.",
+      "price": "Included (Main Course)"
+    },
+    {
+      "name": "Muttar Paneer",
+      "description": "Indian cottage cheese (Paneer) and garden peas flavoured with ginger, garlic, onions and Indian spices.",
+      "price": "Included (Main Course)"
+    },
+    {
+      "name": "Tadka Dal",
+      "description": "Dal tadka is a Punjabi yellow dal cooked with onion, tomato and flavoured with traditional spices. 'The most eaten dish in India'.",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Pilau Rice",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Assorted Naan Baskets",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Cucumber Raita",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Indian Salad",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    }
+  ]
+}
+,
+{
+  "id": "event_catering_silver_menu",
+  "title": "Set Silver Menu",
+  "subtitle": "£20.95 per person (minimum 10 guests)",
+  "items": [
+    {
+      "name": "Pre Starter",
+      "description": "Poppadoms served with a trio of homemade chutneys.",
+      "price": "Included"
+    },
+    {
+      "name": "Chicken Tikka",
+      "description": "Marinated chicken fillets blazed in the tandoor oven.",
+      "price": "Included (Starter)"
+    },
+    {
+      "name": "Onion Bhaji",
+      "description": "Brunoised of onions in a spicy crisp batter, perfectly shaped.",
+      "price": "Included (Starter)"
+    },
+    {
+      "name": "Chicken Jalfrezi",
+      "description": "Tender chicken fillets in smooth butter sauce, lightly spiced with a creamy texture.",
+      "price": "Included (Main Course)"
+    },
+    {
+      "name": "Paneer Karahi",
+      "description": "Indian cottage cheese (paneer) tossed in rich thick sauce with peppers, onions, garlic and cumin. Finished with ginger and cayenne chilli.",
+      "price": "Included (Main Course)"
+    },
+    {
+      "name": "Tadka Dal",
+      "description": "Dal tadka is a Punjabi yellow dal cooked with onion, tomato and flavoured with traditional spices. 'The most eaten dish in India'.",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Pilau Rice",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Assorted Naan Baskets",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Cucumber Raita",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    },
+    {
+      "name": "Indian Salad",
+      "description": "",
+      "price": "Included (Accompaniment)"
+    }
+  ]
+}
+
 
 
 ]
