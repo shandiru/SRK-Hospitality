@@ -8,9 +8,9 @@ export default function MapSection() {
 
         <div className="w-full h-[450px] overflow-hidden rounded-xl shadow-md border border-gray-200">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2401.892120596287!2d-1.2713499!3d52.8983326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879e8e8699b90dd%3A0x134390e8c257bdbf!2s45%20Market%20Place%2C%20Long%20Eaton%2C%20Nottingham%20NG10%201JL%2C%20UK!5e0!3m2!1sen!2suk!4v1694952000000!5m2!1sen!2suk"
-            title="45 Market Place, Long Eaton, Nottingham NG10 1JL, UK"
-            aria-label="45 Market Place, Long Eaton, Nottingham NG10 1JL, UK"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2432.428246942207!2d-1.2144060236171327!3d52.59273597208446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48775dc1002096e5%3A0xb1372fa4ff209cff!2s7%20Mill%20Hill%2C%20Enderby%2C%20Leicester%20LE19%204AL%2C%20United%20Kingdom!5e0!3m2!1sen!2suk!4v1726313610000!5m2!1sen!2suk"
+            title="Aspects Restaurant, 7 Mill Hill, Enderby, Leicester LE19 4AL, UK"
+            aria-label="Aspects Restaurant, 7 Mill Hill, Enderby, Leicester LE19 4AL, UK"
             loading="lazy"
             className="w-full h-full border-0"
             allowFullScreen
