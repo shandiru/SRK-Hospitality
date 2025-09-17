@@ -6,16 +6,21 @@ import { motion } from "framer-motion";
 import sectionsSeed from "./menu.json";
 
 // ---------- Utility ----------
-const paginateByHeight = (items, maxHeight = 550) => {
+const paginateByHeight = (items, maxHeight = 100) => {  // Increased maxHeight
+  if (!Array.isArray(items)) {
+    console.error("Items is not an array or is undefined:", items);
+    return []; // Return an empty array if items is not valid
+  }
+
   const pages = [];
   let currentPage = [];
   let currentHeight = 0;
 
   items.forEach((item) => {
     const isSmallScreen = typeof window !== "undefined" && window.innerWidth < 640;
-    const baseHeight = isSmallScreen ? 220 : 120;
+    const baseHeight = isSmallScreen ? 250 : 150;  // Increased base height for better fitting
     const estimatedHeight =
-      baseHeight + (item.description ? Math.min(item.description.length / 4, 100) : 0);
+      baseHeight + (item.description1 ? Math.min(item.description1.length / 4, 140) : 0);  // Adjusted description height factor
 
     if (currentHeight + estimatedHeight > maxHeight && currentPage.length > 0) {
       pages.push(currentPage);
@@ -87,17 +92,20 @@ const SectionPage = forwardRef(({ title, subtitle, items }, ref) => (
             key={item.name}
             className="flex gap-3 rounded-2xl border bg-white/60 p-3 sm:p-4 shadow-sm backdrop-blur"
           >
-            {item.image && (
+            {/* {item.image && (
               <img
                 src={item.image}
                 alt={item.name}
                 className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg object-cover flex-shrink-0"
               />
-            )}
+            )} */}
             <div className="flex-1">
               <p className="text-base font-semibold">{item.name}</p>
               {item.description && (
                 <p className="text-sm text-neutral-600">{item.description}</p>
+              )}
+              {item.description1 && (
+                <p className="text-sm text-neutral-600">{item.description1}</p>
               )}
               <div className="mt-1 flex justify-between items-center">
                 <p className="text-sm sm:text-base font-semibold">{item.price}</p>
@@ -119,30 +127,31 @@ SectionPage.displayName = "SectionPage";
 const InfoPage = forwardRef((_, ref) => (
   <Page ref={ref}>
     <div className="flex h-full flex-col">
-      <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#68a879]">About Us</h2>
-      <p className="mt-2 text-sm text-neutral-700">
-        Welcome to <span className="font-semibold">Fifteenseventythree</span>, a historic setting serving
+      <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#68a879] backdrop-blur">About Us</h2>
+      <p className="mt-2 text-sm text-neutral-700 backdrop-blur">
+        Welcome to <span className="font-semibold ">The Walnut Tree Inn</span>, a historic setting serving
         modern comfort food and crafted cocktails in the heart of Leicester.
       </p>
 
-      <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 backdrop-blur">
         <div className="rounded-2xl border bg-white/60 p-4">
           <p className="text-sm font-semibold">Location</p>
           <p className="text-sm text-neutral-600 leading-relaxed">
-            The Old Grammar School,<br />
-            41 Free school Lane, Highcross,<br />
-            Leicester, LE1 4FY
+            The Walnut Tree Inn <br />
+            21 Station Road
+            Blisworth NN7 3DS
+            Northants
           </p>
         </div>
         <div className="rounded-2xl border bg-white/60 p-4">
           <p className="text-sm font-semibold">Contact</p>
-          <p className="text-sm text-neutral-600">0116 251 6879</p>
+          <p className="text-sm text-neutral-600">01604 859551</p>
           <p className="text-sm text-neutral-600">info@fifteenseventythree.com</p>
         </div>
       </div>
 
-      <div className="mt-auto text-[11px] text-neutral-500">
-        © {new Date().getFullYear()} Fifteenseventythree. All rights reserved.
+      <div className="mt-auto text-[11px] text-neutral-800">
+        © {new Date().getFullYear()} The Walnut Tree Inn. All rights reserved.
       </div>
     </div>
   </Page>
@@ -162,15 +171,15 @@ BackCoverPage.displayName = "BackCoverPage";
 export default function MenuFlipbook() {
   const flipRef = useRef(null);
   const [page, setPage] = useState(0);
-  const [bookSize, setBookSize] = useState({ width: 700, height: 900 });
+  const [bookSize, setBookSize] = useState({ width: 700, height: 700 });
 
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       const isMobile = screenWidth < 640;
       setBookSize({
-        width: isMobile ? screenWidth * 0.9 : 700,
-        height: isMobile ? window.innerHeight * 0.7 : 900,
+        width: isMobile ? screenWidth * 0.8 : 600, // Reduced width for better responsiveness
+        height: isMobile ? window.innerHeight * 0.6 : 1000, // Reduced height for better fitting
       });
     };
     handleResize();
@@ -178,13 +187,15 @@ export default function MenuFlipbook() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+
+
   const { pages, sectionPageMap } = useMemo(() => {
     const arr = [];
     const map = {};
     arr.push(
       <CoverPage
         key="cover"
-        restaurant="Fifteenseventythree"
+        restaurant="The Walnut Tree Inn"
         tagline="Modern Comfort Food & Coastal Cocktails"
       />
     );
@@ -216,7 +227,7 @@ export default function MenuFlipbook() {
   const goTo = (p) => flipRef.current?.pageFlip()?.flip(p);
 
   return (
-    <div className="mx-auto max-w-7xl px-3 py-6 sm:py-10">
+    <div className="mx-auto max-w-7xl px-3 py-6 sm:py-15">
       {/* Header / Controls */}
       <div className="mb-4 flex flex-col items-center justify-between gap-3 sm:mb-6 sm:flex-row">
         <h1 className="text-2xl font-bold tracking-tight text-[#68a879]">Restaurant Menu</h1>
@@ -230,31 +241,29 @@ export default function MenuFlipbook() {
       </div>
 
       {/* Book */}
-      <div className="mx-auto flex w-full justify-center">
-        <HTMLFlipBook
-          width={bookSize.width}
-          height={bookSize.height}
-          minWidth={320}
-          maxWidth={900}
-          maxHeight={1200}
-          size="stretch"
-          flippingTime={800}
-          usePortrait={true}
-          showCover={true}
-          drawShadow={true}
-          autoSize={true}
-          mobileScrollSupport={true}
-          onFlip={(e) => setPage(e.data)}
-          ref={flipRef}
-          className="w-full"
-        >
-          {pages.map((node, idx) => (
-            <div key={idx} className="h-full w-full">
-              {node}
-            </div>
-          ))}
-        </HTMLFlipBook>
-      </div>
+      <HTMLFlipBook
+        width={bookSize.width}
+        height={bookSize.height}
+        minWidth={320}
+        maxWidth={900}
+        maxHeight={800} // Adjusted max height to handle larger content
+        size="stretch"
+        flippingTime={800}
+        usePortrait={true}
+        showCover={true}
+        drawShadow={true}
+        autoSize={true}
+        mobileScrollSupport={true}
+        onFlip={(e) => setPage(e.data)}
+        ref={flipRef}
+        className="w-full"
+      >
+        {pages.map((node, idx) => (
+          <div key={idx} className="h-full w-full">
+            {node}
+          </div>
+        ))}
+      </HTMLFlipBook>
 
       {/* Quick Navigator */}
       <div className="mx-auto mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2">
