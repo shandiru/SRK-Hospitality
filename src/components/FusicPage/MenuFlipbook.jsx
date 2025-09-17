@@ -184,7 +184,7 @@ export default function MenuFlipbook() {
     arr.push(
       <CoverPage
         key="cover"
-        restaurant="ASPECTS"
+        restaurant="Fusic"
         tagline="Cuban-American Tapas, Cocktails & Good Times"
       />
     );
