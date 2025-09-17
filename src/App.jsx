@@ -31,8 +31,8 @@ export default function App() {
           <Route path="/al-naseeb" element={<Alnaseeb />} />
           <Route path="/freddies" element={<Freddie />} />
           <Route path="/toluca" element={<Toluca />} />
-          <Route path="/test1" element={<Aspects />} />
-           <Route path="/Fusic" element={<Fusic />} />
+          <Route path="/aspects" element={<Aspects />} />
+           <Route path="/fusic" element={<Fusic />} />
         </Routes>
         <SiteFooter />
       </main>
