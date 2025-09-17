@@ -22,17 +22,13 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold text-gray-800">Opening Hours</h4>
                 <p className="text-gray-600">
-                  <span className="font-semibold text-orange-600">Pickup</span><br />
-                  Mon, Tue, Thu: 5:30 PM - 10:50 PM<br />
-                  Fri, Sat: 5:30 PM - 1:00 AM<br />
-                  Sun: 5:30 PM - 10:50 PM<br />
-                  Wed: <span className="text-red-500">Closed</span><br />
-                  <br />
-                  <span className="font-semibold text-orange-600">Delivery</span><br />
-                  Mon, Tue, Thu: 5:30 PM - 10:50 PM<br />
-                  Fri, Sat: 5:30 PM - 1:00 AM<br />
-                  Sun: 5:30 PM - 10:50 PM<br />
-                  Wed: <span className="text-red-500">Closed</span>
+                  <span className="font-semibold text-orange-600">Lunch</span><br />
+                  Monday to Friday: 11:30am – 2:30pm<br /><br />
+                  <span className="font-semibold text-orange-600">Dinner</span><br />
+                  Sunday to Thursday: 5:00pm – 10:00pm<br />
+                  Friday to Saturday: 5:00pm – 11:00pm<br /><br />
+                  <span className="font-semibold text-orange-600">Bar</span><br />
+                  Open 7 Days A Week — Everyone Welcome
                 </p>
               </div>
             </div>
@@ -46,13 +42,14 @@ export default function ContactSection() {
                 <h4 className="font-bold text-gray-800">Visit Us</h4>
                 <p className="text-gray-600">
                   <a
-                    href="https://www.google.co.uk/maps/place/45+Market+Pl,+Long+Eaton,+Nottingham+NG10+1JL,+UK/@52.8983326,-1.2713499,17z"
+                    href="https://www.google.com/maps/place/Aspects,+7+Mill+Hill,+Enderby,+Leicester,+LE19+4AL"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline"
                   >
-                    45A Market Place, Long Eaton,<br />
-                    Nottingham, NG10 1JL
+                    Aspects,<br />
+                    7 Mill Hill, Enderby,<br />
+                    Leicester, LE19 4AL
                   </a>
                 </p>
               </div>
@@ -66,8 +63,8 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold text-gray-800">Call Us</h4>
                 <p className="text-gray-600">
-                  <a href="tel:01158714164" className="text-blue-600 hover:underline">
-                    0115 871 4164
+                  <a href="tel:01162863307" className="text-blue-600 hover:underline">
+                    0116 286 3307
                   </a>
                 </p>
               </div>
@@ -81,26 +78,17 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold text-gray-800">Mail Us</h4>
                 <p className="text-orange-600 font-medium">
-                  info@alnaseeb.co.uk
+                  info@aspectsenderby.co.uk
                 </p>
               </div>
             </div>
           </div>
-
-          {/* Image */}
-          {/* <div className="mt-8">
-            <img
-              src="/f1.jpg"
-              alt="Al Naseeb Restaurant"
-              className="rounded-xl shadow-md"
-            />
-          </div> */}
         </div>
 
         {/* Right Column - Form */}
         <div>
           <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
-            Send your message Here
+            Send your message here
           </h2>
 
           <form className="space-y-6">
