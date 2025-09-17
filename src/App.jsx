@@ -14,6 +14,7 @@ import Freddie from "./Page/FreddiePage.jsx";
 import Walnut from "./Page/Walnut.jsx";
 import Aspects from "./Page/AspectsPage.jsx";
 import Toluca from "./Page/Toluca.jsx";
+import Fusic from "./Page/FusicPage.jsx";
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/freddies" element={<Freddie />} />
           <Route path="/toluca" element={<Toluca />} />
           <Route path="/test1" element={<Aspects />} />
+           <Route path="/Fusic" element={<Fusic />} />
         </Routes>
         <SiteFooter />
       </main>
