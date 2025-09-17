@@ -12,7 +12,7 @@ import BARDOS from "./Page/BardoshermanosPage.jsx";
 import Alnaseeb from "./Page/AlnaseebrestaurantPage.jsx";
 import Freddie from "./Page/FreddiePage.jsx";
 import Walnut from "./Page/Walnut.jsx";
-
+import Aspects from "./Page/AspectsPage.jsx";
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -28,6 +28,7 @@ export default function App() {
           <Route path="/dos-hermanos" element={<BARDOS />} />
           <Route path="/al-naseeb" element={<Alnaseeb />} />
           <Route path="/freddies" element={<Freddie />} />
+          <Route path="/test1" element={<Aspects />} />
         </Routes>
         <SiteFooter />
       </main>
