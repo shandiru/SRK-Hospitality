@@ -118,7 +118,7 @@ SectionPage.displayName = "SectionPage";
 
 const InfoPage = forwardRef((_, ref) => (
   <Page ref={ref}>
-    <div className="flex h-full flex-col">
+    {/* <div className="flex h-full flex-col">
       <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#68a879]">About Us</h2>
       <p className="mt-2 text-sm text-neutral-700">
         Welcome to <span className="font-semibold">Bar Dos Hermanos</span>, a vibrant 1940’s Cuban-American style bar 
@@ -144,7 +144,7 @@ const InfoPage = forwardRef((_, ref) => (
       <div className="mt-auto text-[11px] text-neutral-500">
         © {new Date().getFullYear()} Bar Dos Hermanos. All rights reserved.
       </div>
-    </div>
+    </div> */}
   </Page>
 ));
 InfoPage.displayName = "InfoPage";

@@ -126,7 +126,7 @@ SectionPage.displayName = "SectionPage";
 
 const InfoPage = forwardRef((_, ref) => (
   <Page ref={ref}>
-    <div className="flex h-full flex-col">
+    {/* <div className="flex h-full flex-col">
       <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#68a879] backdrop-blur">About Us</h2>
       <p className="mt-2 text-sm text-neutral-700 backdrop-blur">
         Welcome to <span className="font-semibold ">The Walnut Tree Inn</span>, a historic setting serving
@@ -153,7 +153,7 @@ const InfoPage = forwardRef((_, ref) => (
       <div className="mt-auto text-[11px] text-neutral-800">
         © {new Date().getFullYear()} The Walnut Tree Inn. All rights reserved.
       </div>
-    </div>
+    </div> */}
   </Page>
 ));
 InfoPage.displayName = "InfoPage";
