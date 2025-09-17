@@ -11,12 +11,12 @@ export default function Venu() {
         <VenuesHero />
       </section>
 
-<section>
-    <VenuesGrid />
-</section>
+      <section>
+        <VenuesGrid />
+      </section>
 
-      
-   
+
+
     </div>
   );
 }

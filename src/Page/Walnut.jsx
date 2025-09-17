@@ -1,14 +1,14 @@
 import React from "react";
 
 // Sections from components/HomePage
-import AboutSection from "../components/BarPage/AboutSection";
-import MenuFlipbook from "../components/BarPage/MenuFlipbook";
-import Gallery from "../components/BarPage/Gallery";
-import GiftCardSection from "../components/BarPage/GiftCardSection";
-import ContactSection from "../components/BarPage/ContactSection";
-import MapSection from "../components/BarPage/MapSection";
-import WelcomeSection from "../components/BarPage/WelcomeSection";
-export default function BAR() {
+import AboutSection from "../components/Walnut/AboutSection";
+import MenuFlipbook from "../components/Walnut/MenuFlipbook";
+import Gallery from "../components/Walnut/Gallery";
+import ContactSection from "../components/Walnut/ContactSection";
+import MapSection from "../components/Walnut/MapSection";
+import WelcomeSection from "../components/Walnut/WelcomeSection";
+
+export default function Walnut() {
   return (
     <div>
       {/* Hero */}

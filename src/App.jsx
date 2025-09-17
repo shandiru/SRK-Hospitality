@@ -11,6 +11,8 @@ import BARCELONE from "./Page/BarcelonetarestaurantPage.jsx";
 import BARDOS from "./Page/BardoshermanosPage.jsx";
 import Alnaseeb from "./Page/AlnaseebrestaurantPage.jsx";
 import Freddie from "./Page/FreddiePage.jsx";
+import Walnut from "./Page/Walnut.jsx";
+
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -19,16 +21,13 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
-           <Route path="/venues" element={<Venu />} />
-            <Route path="/1573bar" element={<BAR />} />
-             <Route path="/barceloneta" element={<BARCELONE />} />
-              <Route path="/dos-hermanos" element={<BARDOS />} />
-                <Route path="/al-naseeb" element={<Alnaseeb />} />
-                 <Route path="/freddies" element={<Freddie />} />
-
-
-
-         
+          <Route path="/venues" element={<Venu />} />
+          <Route path="/1573bar" element={<BAR />} />
+          <Route path="/walnut" element={<Walnut />} />
+          <Route path="/barceloneta" element={<BARCELONE />} />
+          <Route path="/dos-hermanos" element={<BARDOS />} />
+          <Route path="/al-naseeb" element={<Alnaseeb />} />
+          <Route path="/freddies" element={<Freddie />} />
         </Routes>
         <SiteFooter />
       </main>
