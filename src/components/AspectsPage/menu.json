@@ -795,6 +795,116 @@
       }
     ]
   }
+,
+
+  {
+    "id": "cocktails",
+    "title": "Cocktails",
+    "items": [
+      { "name": "B52", "price": "6.50", "description": "Baileys, Cointreau and Khlua" },
+      { "name": "B53", "price": "6.50", "description": "Baileys, Vodka and Khlua" },
+      { "name": "Blue Lagoon", "price": "5.75", "description": "Vodka, Blue Caraco and Lemonade" },
+      { "name": "Barardi Cooler", "price": "5.25", "description": "White Rum, Orange, Pineapple and Cranberry Juice" },
+      { "name": "Black Russian", "price": "5.75", "description": "Vodka, Khlua and Coke" },
+      { "name": "Bloody Mary", "price": "5.25", "description": "Vodka, Worcester and Tabasco sauce, Lemon and Tomato Juice" },
+      { "name": "Blue Moon", "price": "5.25", "description": "Vodka, Tequila and Blue Caraco" },
+      { "name": "Cosmopolitan", "price": "5.25", "description": "Vodka, Cranberry Juice and Lemon Juice" },
+      { "name": "Woo Woo", "price": "5.75", "description": "Vodka, Peach Schnapps and Cranberry Juice" },
+      { "name": "Long Island Ice Tea", "price": "6.95", "description": "Gin, Vodka, Black Rum, Tequila, Triple sec, Cranberry, Lemon Juice and Coke" },
+      { "name": "Pina Colada", "price": "5.25", "description": "Rum and Pineapple Juice" }
+    ]
+  },
+  {
+    "id": "mocktails",
+    "title": "Mocktails",
+    "items": [
+      { "name": "Tomado Twist", "price": "3.50", "description": "Cranberry-raspberry juice is softened with the sparkle of lemon-lime soda" },
+      { "name": "Shirley Temple II", "price": "3.50", "description": "Orange juice, lemon-lime soda and a splash of grenadine with a cherry on top" },
+      { "name": "Virgin Pina Colada", "price": "3.50", "description": "Pineapple juice, milk, cream, and sugar" },
+      { "name": "Strawberry Bliss", "price": "3.50", "description": "Fresh muddled strawberries, cranberry juice, sugar and a splash of lime juice" }
+    ]
+  },
+  {
+    "id": "liqueurs",
+    "title": "Liqueurs",
+    "items": [
+      { "name": "All measures are 25ml unless specified otherwise", "price": "3.10", "description": "Cherry Brandy, Ammeretto, Cointreau, Drambuie, Grand Marnier, Khlua, Benedictine, Triple Sec, Baileys Irish Cream 50ml, Blue Caraco, Creme de Menthe, Tia Maria, Galliano, Glayva" }
+    ]
+  },
+  {
+    "id": "spirits_and_fortified_wines",
+    "title": "Spirits and Fortified Wines",
+    "items": [
+      { "name": "All measures are 25ml unless specified otherwise", "price": "2.60", "description": "Gin Gordans, Rum Captain Morgans, Vodka Smirnoff, Rum Bacardi, Bells Whiskey, Famous Grouse Whiskey, Martell VS Brandy, Martini Dry 50ml, Martini Rosso 50ml, Archers, Cinzano Bianco 50ml, Campari, Pimms, Harveys Bristol Cream, Cockburn Ruby Port, Green Ginger 50ml, Sambuca" }
+    ]
+  },
+  {
+    "id": "spirits",
+    "title": "Spirits",
+    "items": [
+      { "name": "Gin Bombay Sapphire", "price": "2.70", "description": "" },
+      { "name": "Rum Sailor Jerry", "price": "2.70", "description": "" },
+      { "name": "Southern Comfort", "price": "2.70", "description": "" },
+      { "name": "Malibu", "price": "2.70", "description": "" },
+      { "name": "Pernod", "price": "2.70", "description": "" },
+      { "name": "After Shock", "price": "2.70", "description": "" },
+      { "name": "Grey Grouse", "price": "3.20", "description": "" },
+      { "name": "Chivas Regal", "price": "2.70", "description": "" },
+      { "name": "Canadian Club", "price": "2.70", "description": "" },
+      { "name": "Jamesons", "price": "2.90", "description": "" },
+      { "name": "Jack Daniels", "price": "2.90", "description": "" },
+      { "name": "Black Label", "price": "3.20", "description": "" },
+      { "name": "Jagermeister", "price": "3.00", "description": "" }
+    ]
+  },
+  {
+    "id": "malt_whiskey",
+    "title": "Malt Whiskey",
+    "items": [
+      { "name": "Talisker", "price": "3.35", "description": "" },
+      { "name": "Oban", "price": "3.65", "description": "" }
+    ]
+  },
+  {
+    "id": "brandy",
+    "title": "Brandy",
+    "items": [
+      { "name": "Martell VS", "price": "2.60", "description": "" },
+      { "name": "Courvoisier", "price": "2.75", "description": "" },
+      { "name": "Remy Martin VSOP", "price": "3.40", "description": "" },
+      { "name": "Remy Martin XO", "price": "7.95", "description": "" }
+    ]
+  },
+  {
+    "id": "draft_beers_and_ciders",
+    "title": "Draft Beers and Ciders",
+    "items": [
+      { "name": "Pedigree, Carlsberg, Strongbow, Kronenberg, Stella, Guinness", "price": "", "description": "Served in 1/2 PINT / PINT" }
+    ]
+  },
+  {
+    "id": "bottle_beers",
+    "title": "Bottle Beers",
+    "items": [
+      { "name": "Budweizer, Becks, Peroni, Corona, WKD, Bacardi Breezer, Smirnoff Ice, Newcastle Brown Ale, Magners", "price": "", "description": "" }
+    ]
+  },
+  {
+    "id": "indian_bottle_beers",
+    "title": "Indian Bottle Beers",
+    "items": [
+      { "name": "Cobra, Kingfisher premium", "price": "", "description": "" }
+    ]
+  },
+  {
+    "id": "soft_drinks_mixers",
+    "title": "Soft Drinks / Mixers",
+    "items": [
+      { "name": "Fruit Juices", "price": "", "description": "Orange, Pineapple, Grapefruit, Cranberry Juice, Britvic J20's, Appletizer, Red Bull and Ginger Beer" },
+      { "name": "Pepsi Cola, Lemonade and Soda", "price": "", "description": "" },
+      { "name": "Mineral water", "price": "", "description": "Still or Sparkling" }
+    ]
+  }
 
 
 ]
