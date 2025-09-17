@@ -7,15 +7,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const images = [
-  '/a1.jpg',
-  '/a2.png',
-  '/a3.jpg',
-  '/a4.jpg',
-  '/a5.jpg',
-  '/a6.jpg',
-  '/a7.jpg',
-  '/a8.jpg',
-  '/a9.jpg',
+  '/fu1.jpg',
+  '/fu2.jpg',
+  '/fu3.jpeg',
+  '/fu4.jpeg',
+  '/fu5.jpeg',
+  '/fu6.jpg',
+  
 ];
 
 
