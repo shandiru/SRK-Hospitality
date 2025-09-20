@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://srk-hospitality.vercel.app/sitemap.xml
