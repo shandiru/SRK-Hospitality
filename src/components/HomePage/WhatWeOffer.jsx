@@ -16,7 +16,7 @@ export default function WhatWeOffer() {
     {
       icon: <FaUtensils className="text-[#DDB64E]" />,
       badge: 'Fine Dining',
-      video: '/videos/steak.mp4',
+      video: '/steak.mp4',
       title: 'Premium Steaks',
       description:
         'Savour a perfectly cooked steak in Leicester, prepared by our skilled chefs using the finest cuts.',
