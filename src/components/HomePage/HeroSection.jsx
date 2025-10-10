@@ -2,15 +2,20 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="relative h-[90vh] flex items-center justify-center">
-      {/* Background image */}
-      <img
-        src="/hero-bg.jpg"
-        alt="Food table background"
+    <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
         className="absolute inset-0 w-full h-full object-cover brightness-50"
-      />
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      {/* Content */}
+      {/* Overlay Content */}
       <div className="relative z-10 text-center px-6">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-wide animate-fadeIn">
           Exceptional Taste & Hospitality

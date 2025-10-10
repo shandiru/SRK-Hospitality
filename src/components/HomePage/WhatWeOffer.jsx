@@ -8,7 +8,7 @@ export default function WhatWeOffer() {
     {
       icon: <MdFreeBreakfast className="text-[#DDB64E]" />,
       badge: 'Breakfast',
-      image: '/images/breakfast.jpg',
+      video: '/breakfast.mp4',
       title: 'Start Your Day Right',
       description:
         'Begin with a hearty breakfast in Nottingham, featuring fresh ingredients and expertly crafted dishes.',
@@ -16,7 +16,7 @@ export default function WhatWeOffer() {
     {
       icon: <FaUtensils className="text-[#DDB64E]" />,
       badge: 'Fine Dining',
-      image: '/images/steak.jpg',
+      video: '/videos/steak.mp4',
       title: 'Premium Steaks',
       description:
         'Savour a perfectly cooked steak in Leicester, prepared by our skilled chefs using the finest cuts.',
@@ -24,7 +24,7 @@ export default function WhatWeOffer() {
     {
       icon: <FaMusic className="text-[#DDB64E]" />,
       badge: 'Nightlife',
-      image: '/images/nightlife.jpg',
+      video: '/nightlife.mp4',
       title: 'Dance the Night Away',
       description:
         'Experience our vibrant nightclubs with top DJs, premium drinks, and an electric atmosphere.',
@@ -32,7 +32,7 @@ export default function WhatWeOffer() {
     {
       icon: <FaAward className="text-[#DDB64E]" />,
       badge: 'Award-Winning',
-      image: '/images/indian-cuisine.jpg',
+      video: '/indian-cuisine.mp4',
       title: 'Exotic Indian Cuisine',
       description:
         'Discover our award-winning Indian restaurant, featuring authentic flavours and traditional recipes.',
@@ -59,9 +59,12 @@ export default function WhatWeOffer() {
               className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition duration-300"
             >
               <div className="relative">
-                <img
-                  src={service.image}
-                  alt={service.title}
+                <video
+                  src={service.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-40 object-cover"
                 />
                 <span className="absolute top-2 left-2 bg-white text-[#DDB64E] text-xs font-medium px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
