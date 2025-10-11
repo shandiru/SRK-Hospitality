@@ -15,6 +15,7 @@ import Walnut from "./Page/Walnut.jsx";
 import Aspects from "./Page/AspectsPage.jsx";
 import Toluca from "./Page/Toluca.jsx";
 import Fusic from "./Page/FusicPage.jsx";
+import RestaurantManagerPage from "./Page/RestaurantManagerPage.jsx"
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -33,6 +34,9 @@ export default function App() {
           <Route path="/toluca" element={<Toluca />} />
           <Route path="/aspects" element={<Aspects />} />
            <Route path="/fusic" element={<Fusic />} />
+           <Route path="/RestaurantManagerPage" element={<RestaurantManagerPage />} />
+
+          
         </Routes>
         <SiteFooter />
       </main>
