@@ -16,6 +16,7 @@ import Aspects from "./Page/AspectsPage.jsx";
 import Toluca from "./Page/Toluca.jsx";
 import Fusic from "./Page/FusicPage.jsx";
 import RestaurantManagerPage from "./Page/RestaurantManagerPage.jsx"
+import Vacancies from "./Page/Vacancies.jsx"
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="/aspects" element={<Aspects />} />
            <Route path="/fusic" element={<Fusic />} />
            <Route path="/RestaurantManagerPage" element={<RestaurantManagerPage />} />
+            <Route path="/vacancies" element={<Vacancies />} />
 
           
         </Routes>
