@@ -1,53 +1,34 @@
+
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="arjcIOEX9fxfrVubVEedsV639UMujigZxMWv8WERNsI" />
-  <link rel="icon" type="image/png" href="/log.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+
+     <link rel="icon" type="image/png" href="/log.png" />
   
   <!-- ✅ Title & Basic Meta -->
   <title>SRK Hospitality | Premium Hospitality Services</title>
-  <meta name="description" content="Discover SRK Hospitality – premium hospitality services focused on comfort, quality, and excellence." />
-  <meta name="keywords" content="SRK Hospitality, hospitality services, luxury hospitality, premium hospitality, hotel services" />
 
-  <!-- ✅ Open Graph (for Google & Social Media) -->
-  <meta property="og:title" content="SRK Hospitality | Premium Hospitality Services" />
-  <meta property="og:description" content="Discover SRK Hospitality – premium hospitality services focused on comfort, quality, and excellence." />
-  <meta property="og:image" content="https://srk-hospitality.vercel.app/log.png" />
-  <meta property="og:url" content="https://srk-hospitality.vercel.app/" />
-  <meta property="og:type" content="website" />
-
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SRK Hospitality | Premium Hospitality Services" />
-  <meta name="twitter:description" content="Discover SRK Hospitality – premium hospitality services focused on comfort, quality, and excellence." />
-  <meta name="twitter:image" content="https://srk-hospitality.vercel.app/log.png" />
-
-  <!-- ✅ Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Open+Sans:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
-  
-  <style>
+    <!-- Set initial theme before app mounts to avoid flash -->
+    <script>
+      (() => {
+        const stored = localStorage.getItem('theme'); // 'dark' | 'light' | null
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const useDark = stored ? stored === 'dark' : prefersDark;
+        document.documentElement.classList.toggle('dark', useDark);
+      })();
+    </script>
+     <style>
     * {
       font-family: Lucida Bright, Georgia, serif; 
     }
   </style>
-</head>
+  </head>
 
-<!-- ✅ Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N5QSKDRRVQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-N5QSKDRRVQ');
-</script>
-
-<body style="font-family: 'Open Sans', sans-serif; margin:0; padding:0;">
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

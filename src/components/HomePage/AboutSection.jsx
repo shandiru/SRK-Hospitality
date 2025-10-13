@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function AboutSection() {
-  const brandGold = "#DDB64E"; // Only brand color
+  const brandGold = "#DDB64E";
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -14,14 +15,36 @@ export default function AboutSection() {
       once: true,
       offset: 80,
     });
+
+    // Detect system or saved theme
+    const root = document.documentElement;
+    const dark = root.classList.contains("dark");
+    setIsDark(dark);
+
+    const observer = new MutationObserver(() => {
+      setIsDark(root.classList.contains("dark"));
+    });
+
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
   }, []);
 
   return (
     <section
-      className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-8 md:px-12 lg:px-20 overflow-hidden bg-white"
+      className={`relative py-16 sm:py-20 md:py-24 px-4 sm:px-8 md:px-12 lg:px-20 overflow-hidden transition-colors duration-700 ${
+        isDark ? "bg-[#0E1517]" : "bg-white"
+      }`}
     >
       {/* Subtle background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(221,182,78,0.06),_transparent_75%)] pointer-events-none"></div>
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            isDark
+              ? "radial-gradient(ellipse at center, rgba(221,182,78,0.08), transparent 75%)"
+              : "radial-gradient(ellipse at center, rgba(221,182,78,0.06), transparent 75%)",
+        }}
+      ></div>
 
       {/* Container */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 md:gap-20 lg:gap-24 relative z-10 font-serif">
@@ -41,16 +64,29 @@ export default function AboutSection() {
         {/* === Right: Text === */}
         <div
           data-aos="fade-up"
-          className="relative bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[#E8D9A8]/70 p-6 sm:p-8 md:p-10 transition-all duration-500"
+          className={`relative rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[#E8D9A8]/70 p-6 sm:p-8 md:p-10 transition-all duration-500 ${
+            isDark ? "bg-[#111A1D]" : "bg-white"
+          }`}
         >
           <div className="text-center lg:text-left">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-[Playfair_Display] font-bold text-[#111111] leading-tight hover:text-[#DDB64E] transition-colors duration-500">
+            <h2
+              className={`text-3xl sm:text-4xl md:text-5xl font-[Playfair_Display] font-bold leading-tight transition-colors duration-500 ${
+                isDark ? "text-white hover:text-[#DDB64E]" : "text-[#111111] hover:text-[#DDB64E]"
+              }`}
+            >
               About Us
             </h2>
-            <div className="w-20 sm:w-24 h-[3px] bg-[#DDB64E] mt-3 mb-6 mx-auto lg:mx-0"></div>
+            <div
+              className="w-20 sm:w-24 h-[3px] mt-3 mb-6 mx-auto lg:mx-0"
+              style={{ backgroundColor: brandGold }}
+            ></div>
           </div>
 
-          <div className="text-[#333333] text-base sm:text-[17px] md:text-[18px] leading-relaxed space-y-5 font-[Inter]">
+          <div
+            className={`text-base sm:text-[17px] md:text-[18px] leading-relaxed space-y-5 font-[Inter] transition-colors duration-500 ${
+              isDark ? "text-[#E9ECEC]" : "text-[#333333]"
+            }`}
+          >
             <p data-aos="fade-up" data-aos-delay="100">
               <strong>SRK</strong> stands as a symbol of independent hospitality
               and heartfelt service. With over two decades of experience, we’ve
@@ -70,7 +106,11 @@ export default function AboutSection() {
           <div
             data-aos="fade-up"
             data-aos-delay="400"
-            className="mt-8 border-l-4 border-[#DDB64E] pl-4 italic text-[#444444] text-base sm:text-lg leading-relaxed transition-colors duration-500"
+            className={`mt-8 border-l-4 pl-4 italic text-base sm:text-lg leading-relaxed transition-colors duration-500 ${
+              isDark
+                ? "text-[#E9ECEC] border-[#DDB64E]"
+                : "text-[#444444] border-[#DDB64E]"
+            }`}
           >
             “At SRK, hospitality isn’t a service — it’s a feeling. Every smile,
             every flavour, and every detail tells our story.”
@@ -82,18 +122,31 @@ export default function AboutSection() {
       <div
         data-aos="fade-up"
         data-aos-delay="300"
-        className="max-w-5xl mx-auto mt-16 md:mt-20 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[#E8D9A8]/70 p-6 sm:p-10 md:p-12 text-center transition-all duration-500 relative z-10"
+        className={`max-w-5xl mx-auto mt-16 md:mt-20 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[#E8D9A8]/70 p-6 sm:p-10 md:p-12 text-center transition-all duration-500 relative z-10 ${
+          isDark ? "bg-[#111A1D]" : "bg-white"
+        }`}
       >
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-[Playfair_Display] font-semibold text-[#111111] hover:text-[#DDB64E] transition-colors duration-500">
+        <h3
+          className={`text-2xl sm:text-3xl md:text-4xl font-[Playfair_Display] font-semibold transition-colors duration-500 ${
+            isDark ? "text-white hover:text-[#DDB64E]" : "text-[#111111] hover:text-[#DDB64E]"
+          }`}
+        >
           A Legacy of Taste and Togetherness
         </h3>
-        <p className="text-[#333333] text-base sm:text-lg md:text-xl leading-relaxed mt-5 sm:mt-6 max-w-3xl mx-auto font-[Inter]">
+        <p
+          className={`text-base sm:text-lg md:text-xl leading-relaxed mt-5 sm:mt-6 max-w-3xl mx-auto font-[Inter] transition-colors duration-500 ${
+            isDark ? "text-[#E9ECEC]" : "text-[#333333]"
+          }`}
+        >
           From our first venue in the East Midlands to our growing family across
           the region, SRK has remained committed to creating spaces where
           flavour meets friendship, and where the art of hospitality continues
           to evolve — refined, yet always sincere.
         </p>
-        <div className="w-20 sm:w-24 h-[2px] bg-[#DDB64E] mx-auto mt-8"></div>
+        <div
+          className="w-20 sm:w-24 h-[2px] mx-auto mt-8"
+          style={{ backgroundColor: brandGold }}
+        ></div>
       </div>
     </section>
   );

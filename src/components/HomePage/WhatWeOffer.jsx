@@ -9,8 +9,9 @@ import { MdFreeBreakfast } from "react-icons/md";
 export default function WhatWeOffer() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
-  const brandGold = "#DDB64E"; // Only brand color
+  const brandGold = "#DDB64E"; // Brand color
 
   useEffect(() => {
     AOS.init({
@@ -19,6 +20,18 @@ export default function WhatWeOffer() {
       once: true,
       offset: 80,
     });
+
+    // Detect dark mode
+    const root = document.documentElement;
+    const dark = root.classList.contains("dark");
+    setIsDark(dark);
+
+    const observer = new MutationObserver(() => {
+      setIsDark(root.classList.contains("dark"));
+    });
+
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
   }, []);
 
   const services = [
@@ -83,19 +96,29 @@ export default function WhatWeOffer() {
   };
 
   return (
-    <section className="relative py-20 px-4 md:px-12 overflow-visible bg-white">
-      <div className="max-w-7xl mx-auto text-center font-serif">
+    <section
+      className={`relative py-20 px-4 md:px-12 overflow-visible transition-colors duration-700 ${
+        isDark ? "bg-[#0E1517]" : "bg-white"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto text-center font-serif relative z-10">
         {/* Heading */}
         <span
           data-aos="fade-down"
-          className="inline-block bg-[#DDB64E]/20 text-[#DDB64E] text-sm font-medium px-4 py-1 rounded-full mb-4"
+          className={`inline-block text-sm font-medium px-4 py-1 rounded-full mb-4 ${
+            isDark
+              ? "bg-[#DDB64E]/25 text-[#DDB64E]"
+              : "bg-[#DDB64E]/20 text-[#DDB64E]"
+          }`}
         >
           What We Offer
         </span>
 
         <h2
           data-aos="fade-down"
-          className="text-4xl md:text-5xl font-[Playfair_Display] font-bold text-[#111111] mb-4"
+          className={`text-4xl md:text-5xl font-[Playfair_Display] font-bold mb-4 transition-colors duration-500 ${
+            isDark ? "text-white" : "text-[#111111]"
+          }`}
         >
           At SRK, You Can Have It All
         </h2>
@@ -103,7 +126,9 @@ export default function WhatWeOffer() {
         <p
           data-aos="fade-up"
           data-aos-delay="150"
-          className="text-[#333333] text-lg max-w-2xl mx-auto mb-14 font-[Inter]"
+          className={`text-lg max-w-2xl mx-auto mb-14 font-[Inter] transition-colors duration-500 ${
+            isDark ? "text-[#E9ECEC]" : "text-[#333333]"
+          }`}
         >
           From hearty breakfasts to vibrant nightlife, every SRK experience is
           crafted with passion and authenticity.
@@ -122,7 +147,13 @@ export default function WhatWeOffer() {
                 i
               )}`}
             >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-[#E8D9A8]/70 hover:shadow-[0_12px_40px_rgba(221,182,78,0.3)] transition-all duration-500 h-[520px] flex flex-col">
+              <div
+                className={`rounded-2xl overflow-hidden transition-all duration-500 h-[520px] flex flex-col border border-[#E8D9A8]/70 ${
+                  isDark
+                    ? "bg-[#111A1D] shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(221,182,78,0.25)]"
+                    : "bg-white shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_12px_40px_rgba(221,182,78,0.3)]"
+                }`}
+              >
                 {/* Video Header */}
                 <div className="relative h-[240px] overflow-hidden">
                   <video
@@ -133,7 +164,11 @@ export default function WhatWeOffer() {
                     playsInline
                     className="w-full h-full object-cover"
                   />
-                  <span className="absolute top-3 left-3 bg-white text-[#DDB64E] text-xs font-medium px-3 py-1 rounded-md flex items-center gap-1 shadow-sm">
+                  <span
+                    className={`absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-md flex items-center gap-1 shadow-sm ${
+                      isDark ? "bg-[#0E1517] text-[#DDB64E]" : "bg-white text-[#DDB64E]"
+                    }`}
+                  >
                     {s.icon} {s.badge}
                   </span>
                 </div>
@@ -141,17 +176,27 @@ export default function WhatWeOffer() {
                 {/* Card Content */}
                 <div className="p-6 text-left flex flex-col justify-between flex-grow font-[Inter]">
                   <div>
-                    <h3 className="text-xl font-semibold text-[#111111] mb-2">
+                    <h3
+                      className={`text-xl font-semibold mb-2 transition-colors duration-500 ${
+                        isDark ? "text-white" : "text-[#111111]"
+                      }`}
+                    >
                       {s.title}
                     </h3>
-                    <p className="text-[#333333] text-sm leading-relaxed">
+                    <p
+                      className={`text-sm leading-relaxed transition-colors duration-500 ${
+                        isDark ? "text-[#E9ECEC]" : "text-[#333333]"
+                      }`}
+                    >
                       {s.description}
                     </p>
                   </div>
                   <div className="mt-6">
                     <a
                       href="/venues"
-                      className="text-[#DDB64E] font-medium hover:underline text-sm"
+                      className={`font-medium hover:underline text-sm transition-colors duration-500 ${
+                        isDark ? "text-[#DDB64E]" : "text-[#DDB64E]"
+                      }`}
                     >
                       Learn More →
                     </a>
@@ -168,13 +213,21 @@ export default function WhatWeOffer() {
                 (prev) => (prev - 1 + services.length) % services.length
               )
             }
-            className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 bg-white/80 text-black w-10 h-10 rounded-full shadow-md hover:scale-110 transition text-lg font-bold"
+            className={`absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full shadow-md text-lg font-bold transition-all duration-300 hover:scale-110 ${
+              isDark
+                ? "bg-[#1C3B45] text-white"
+                : "bg-white text-black bg-opacity-80"
+            }`}
           >
             ‹
           </button>
           <button
             onClick={() => setActiveIndex((prev) => (prev + 1) % services.length)}
-            className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 bg-white/80 text-black w-10 h-10 rounded-full shadow-md hover:scale-110 transition text-lg font-bold"
+            className={`absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full shadow-md text-lg font-bold transition-all duration-300 hover:scale-110 ${
+              isDark
+                ? "bg-[#1C3B45] text-white"
+                : "bg-white text-black bg-opacity-80"
+            }`}
           >
             ›
           </button>

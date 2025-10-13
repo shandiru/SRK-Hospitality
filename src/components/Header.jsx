@@ -2,15 +2,30 @@
 
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import ThemeToggle from "./ThemeToggle"; // make sure the path is correct
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
-  // Brand color from logo
   const brandGold = "#DDB64E";
 
-  // Add scroll effect
+  // Detect current theme
+  useEffect(() => {
+    const root = document.documentElement;
+    const dark = root.classList.contains("dark");
+    setIsDark(dark);
+
+    const observer = new MutationObserver(() => {
+      setIsDark(root.classList.contains("dark"));
+    });
+
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
+
+  // Scroll detection
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
@@ -26,10 +41,8 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 font-serif ${
-        scrolled
-          ? "bg-white/95 shadow-md backdrop-blur-md"
-          : "bg-transparent"
-      }`}
+        isDark ? "bg-[#0E1517]" : "bg-white"
+      } ${scrolled ? "shadow-md" : ""}`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 md:py-5">
         {/* Logo */}
@@ -41,7 +54,7 @@ export default function Header() {
           />
           <span
             className={`hidden sm:block text-base md:text-lg tracking-wide font-serif ${
-              scrolled ? "text-black" : "text-white"
+              isDark ? "text-white" : "text-black"
             }`}
           >
             SRK HOSPITALITY LIMITED
@@ -49,15 +62,15 @@ export default function Header() {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-10">
+        <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               className={`text-sm font-semibold transition-all duration-300 ${
-                scrolled
-                  ? `text-black hover:text-[${brandGold}]`
-                  : `text-white hover:text-[${brandGold}]`
+                isDark
+                  ? `text-white hover:text-[${brandGold}]`
+                  : `text-black hover:text-[${brandGold}]`
               }`}
             >
               {link.name.toUpperCase()}
@@ -67,17 +80,24 @@ export default function Header() {
           {/* Gold Accent Button */}
           <a
             href="/vacancies"
-            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 bg-[${brandGold}] text-black hover:opacity-90`}
+            className="px-5 py-2 rounded-full font-semibold transition-all duration-300"
+            style={{
+              backgroundColor: brandGold,
+              color: isDark ? "#000" : "#000",
+            }}
           >
             JOIN OUR TEAM
           </a>
+
+          {/* Theme Toggle */}
+          <ThemeToggle />
         </nav>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className={`md:hidden text-3xl transition-colors duration-300 ${
-            scrolled ? "text-black" : "text-white"
+            isDark ? "text-white" : "text-black"
           }`}
         >
           {menuOpen ? <FiX /> : <FiMenu />}
@@ -113,6 +133,9 @@ export default function Header() {
           >
             JOIN OUR TEAM
           </a>
+
+          {/* Theme toggle for mobile */}
+          <ThemeToggle />
         </div>
       </div>
     </header>

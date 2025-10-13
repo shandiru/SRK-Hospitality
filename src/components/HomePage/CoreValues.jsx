@@ -6,7 +6,9 @@ import "aos/dist/aos.css";
 import { FaUserFriends, FaUtensils, FaStar } from "react-icons/fa";
 
 export default function CoreValues() {
-  const brandGold = "#DDB64E"; // Only brand color
+  const brandGold = "#DDB64E"; // Brand color
+  const [isDark, setIsDark] = useState(false);
+  const [activeCard, setActiveCard] = useState(null);
 
   useEffect(() => {
     AOS.init({
@@ -15,9 +17,19 @@ export default function CoreValues() {
       once: true,
       offset: 80,
     });
-  }, []);
 
-  const [activeCard, setActiveCard] = useState(null);
+    // Detect current theme
+    const root = document.documentElement;
+    const dark = root.classList.contains("dark");
+    setIsDark(dark);
+
+    const observer = new MutationObserver(() => {
+      setIsDark(root.classList.contains("dark"));
+    });
+
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
 
   const handleTouch = (index) => {
     setActiveCard(index);
@@ -46,19 +58,29 @@ export default function CoreValues() {
   ];
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-white overflow-hidden">
+    <section
+      className={`py-20 px-6 md:px-12 overflow-hidden transition-colors duration-700 ${
+        isDark ? "bg-[#0E1517]" : "bg-white"
+      }`}
+    >
       <div className="max-w-7xl mx-auto text-center font-[Inter]">
         {/* Heading Section */}
         <span
           data-aos="fade-down"
-          className="inline-block bg-[#DDB64E]/20 text-[#DDB64E] text-sm md:text-base font-medium px-5 py-1.5 rounded-full mb-5"
+          className={`inline-block text-sm md:text-base font-medium px-5 py-1.5 rounded-full mb-5 transition-colors duration-500 ${
+            isDark
+              ? "bg-[#DDB64E]/25 text-[#DDB64E]"
+              : "bg-[#DDB64E]/20 text-[#DDB64E]"
+          }`}
         >
           Our Values
         </span>
 
         <h2
           data-aos="fade-down"
-          className="text-3xl md:text-5xl font-[Playfair_Display] font-bold text-[#111111] mb-4"
+          className={`text-3xl md:text-5xl font-[Playfair_Display] font-bold mb-4 transition-colors duration-500 ${
+            isDark ? "text-white" : "text-[#111111]"
+          }`}
         >
           Built on Three Core Values
         </h2>
@@ -66,7 +88,9 @@ export default function CoreValues() {
         <p
           data-aos="fade-up"
           data-aos-delay="150"
-          className="text-[#333333] text-base md:text-lg max-w-2xl mx-auto mb-16"
+          className={`text-base md:text-lg max-w-2xl mx-auto mb-16 transition-colors duration-500 ${
+            isDark ? "text-[#E9ECEC]" : "text-[#333333]"
+          }`}
         >
           Everything we do is guided by our commitment to excellence, quality, and
           value.
@@ -81,7 +105,11 @@ export default function CoreValues() {
               data-aos-delay={index * 150}
               onClick={() => handleTouch(index)}
               onMouseDown={() => handleTouch(index)}
-              className={`bg-white rounded-2xl p-10 shadow-sm transition-all duration-500 ease-out hover:shadow-[0_8px_25px_rgba(221,182,78,0.3)] hover:-translate-y-1 ${
+              className={`rounded-2xl p-10 transition-all duration-500 ease-out border border-[#E8D9A8]/60 ${
+                isDark
+                  ? "bg-[#111A1D] shadow-[0_10px_25px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_25px_rgba(221,182,78,0.25)]"
+                  : "bg-white shadow-sm hover:shadow-[0_8px_25px_rgba(221,182,78,0.3)]"
+              } ${
                 activeCard === index
                   ? "shadow-[0_8px_25px_rgba(221,182,78,0.5)] scale-[1.02]"
                   : ""
@@ -101,19 +129,27 @@ export default function CoreValues() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl md:text-2xl font-[Playfair_Display] font-semibold text-[#111111] mb-4">
+              <h3
+                className={`text-xl md:text-2xl font-[Playfair_Display] font-semibold mb-4 transition-colors duration-500 ${
+                  isDark ? "text-white" : "text-[#111111]"
+                }`}
+              >
                 {value.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[#333333] text-sm md:text-base leading-relaxed font-[Inter]">
+              <p
+                className={`text-sm md:text-base leading-relaxed transition-colors duration-500 ${
+                  isDark ? "text-[#E9ECEC]" : "text-[#333333]"
+                }`}
+              >
                 {value.description}
               </p>
             </div>
           ))}
         </div>
 
-        {/* CTA (optional) */}
+        {/* CTA */}
         <div data-aos="fade-up" data-aos-delay="400" className="mt-16">
           <a
             href="/venues"
