@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
@@ -12,38 +12,40 @@ export default function ContactSection() {
       duration: 1000,
       easing: "ease-in-out",
       once: false,
-      mirror: true, // triggers on scroll up and down
+      mirror: true,
       offset: 100,
     });
   }, []);
 
-  // Handle mobile tap effect for the button
   const handleTap = () => {
     setActive(true);
     setTimeout(() => setActive(false), 600);
   };
 
   return (
-    <section className="bg-white py-20 px-4 overflow-hidden">
+    <section
+      className="py-24 px-6 md:px-12 overflow-hidden"
+      style={{ backgroundColor: "#FAF9F6" }}
+    >
       <div
-        className="max-w-3xl mx-auto text-center"
+        className="max-w-3xl mx-auto text-center font-[Inter]"
         data-aos="fade-up"
       >
-        {/* Heading */}
+        {/* Header Line with Title */}
         <div
-          className="flex items-center justify-center mb-10"
+          className="flex items-center justify-center mb-12"
           data-aos="zoom-in"
         >
-          <div className="flex-grow border-t border-[#DDB64E]/50"></div>
-          <h2 className="px-4 text-3xl md:text-4xl font-semibold text-[#DDB64E]">
+          <div className="flex-grow border-t border-[#DDB64E]/40"></div>
+          <h2 className="px-6 text-3xl md:text-5xl font-[Playfair_Display] font-bold text-[#0D3B2E] tracking-wide">
             Contact Us
           </h2>
-          <div className="flex-grow border-t border-[#DDB64E]/50"></div>
+          <div className="flex-grow border-t border-[#DDB64E]/40"></div>
         </div>
 
-        {/* Content */}
+        {/* Subtext */}
         <p
-          className="text-lg text-gray-800 font-medium mb-2"
+          className="text-lg md:text-xl text-[#0D3B2E] font-semibold mb-2"
           data-aos="fade-up"
           data-aos-delay="100"
         >
@@ -51,7 +53,7 @@ export default function ContactSection() {
         </p>
 
         <p
-          className="text-gray-600 max-w-2xl mx-auto mb-8"
+          className="text-[#3C4A4E] text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
           data-aos="fade-up"
           data-aos-delay="200"
         >
@@ -61,8 +63,12 @@ export default function ContactSection() {
 
         {/* Company Info */}
         <div data-aos="fade-up" data-aos-delay="300">
-          <h3 className="text-xl font-semibold text-gray-900">SRK Hospitality</h3>
-          <p className="text-gray-700 mb-10">East Midlands</p>
+          <h3 className="text-xl md:text-2xl font-[Playfair_Display] font-semibold text-[#0D3B2E] mb-1">
+            SRK Hospitality
+          </h3>
+          <p className="text-[#3C4A4E] mb-12 text-base md:text-lg">
+            East Midlands
+          </p>
         </div>
 
         {/* Button */}
@@ -71,10 +77,10 @@ export default function ContactSection() {
             href="mailto:info@srkhospitality.co.uk"
             onClick={handleTap}
             onMouseDown={handleTap}
-            className={`inline-block font-semibold px-8 py-3 rounded-full shadow-md transition-all duration-500 ease-out transform hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(221,182,78,0.4)] ${
+            className={`inline-block font-[Inter] font-semibold px-10 py-3.5 rounded-full transition-all duration-500 ease-out transform tracking-wide ${
               active
-                ? "bg-[#DDB64E] shadow-[0_8px_25px_rgba(221,182,78,0.5)] scale-[1.03] text-white"
-                : "bg-[#DDB64E] text-white hover:bg-[#caa63e]"
+                ? "bg-[#DDB64E] text-white shadow-[0_8px_25px_rgba(221,182,78,0.5)] scale-[1.03]"
+                : "bg-[#DDB64E] text-white hover:bg-[#caa63e] hover:shadow-[0_8px_25px_rgba(221,182,78,0.3)] hover:-translate-y-1"
             }`}
           >
             DROP US A LINE!

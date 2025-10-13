@@ -1,10 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Brand colors
+  const brandGreen = "#0D3B2E";
+  const brandGold = "#DDB64E";
+  const brandCream = "#FAF9F6";
+
+  // Add scroll effect
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -13,9 +26,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm font-body">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 font-serif ${
+        scrolled
+          ? "bg-white/95 shadow-md backdrop-blur-md"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 md:py-5">
         {/* Logo */}
         <a href="/" className="flex items-center space-x-3">
           <img
@@ -23,50 +41,84 @@ export default function Header() {
             alt="SRK Hospitality"
             className="h-10 w-10 object-contain"
           />
-          <span className="hidden sm:block text-gray-800 text-base tracking-wide font-heading">
+          <span
+            className={`hidden sm:block text-base md:text-lg tracking-wide font-serif ${
+              scrolled ? "text-[#0D3B2E]" : "text-white"
+            }`}
+          >
             SRK HOSPITALITY LIMITED
           </span>
         </a>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-10">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-700 text-sm font-medium tracking-wide hover:text-yellow-600 transition"
+              className={`text-sm font-semibold transition-all duration-300 ${
+                scrolled
+                  ? "text-[#0D3B2E] hover:text-[#DDB64E]"
+                  : "text-white hover:text-[#DDB64E]"
+              }`}
             >
               {link.name.toUpperCase()}
             </a>
           ))}
+
+          {/* Gold Accent Button */}
+          <a
+            href="/vacancies"
+            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 ${
+              scrolled
+                ? "bg-[#DDB64E] text-[#0D3B2E] hover:bg-[#c9a948]"
+                : "bg-[#DDB64E] text-[#0D3B2E] hover:bg-[#c9a948]"
+            }`}
+          >
+            JOIN OUR TEAM
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-2xl text-gray-800"
+          className={`md:hidden text-3xl transition-colors duration-300 ${
+            scrolled ? "text-[#0D3B2E]" : "text-white"
+          }`}
         >
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown Menu */}
       <div
-        className={`md:hidden bg-white overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-64" : "max-h-0"
+        className={`md:hidden overflow-hidden transition-all duration-500 ${
+          menuOpen ? "max-h-80" : "max-h-0"
         }`}
+        style={{
+          backgroundColor: brandGreen,
+        }}
       >
-        <div className="flex flex-col items-center py-4 space-y-4">
+        <div className="flex flex-col items-center py-6 space-y-5 text-center">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-gray-700 text-sm font-medium hover:text-yellow-600"
+              className="text-[#FAF9F6] text-sm font-medium tracking-wider hover:text-[#DDB64E] transition"
             >
               {link.name.toUpperCase()}
             </a>
           ))}
+
+          {/* CTA inside mobile menu */}
+          <a
+            href="/vacancies"
+            onClick={() => setMenuOpen(false)}
+            className="px-6 py-2 rounded-full font-semibold bg-[#DDB64E] text-[#0D3B2E] hover:bg-[#c9a948] transition"
+          >
+            JOIN OUR TEAM
+          </a>
         </div>
       </div>
     </header>
