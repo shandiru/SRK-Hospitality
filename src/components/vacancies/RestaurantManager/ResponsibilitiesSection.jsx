@@ -1,9 +1,23 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CircleCheck } from 'lucide-react';
 
 export default function ResponsibilitiesSection() {
-  const brandGold = "#DDB64E";
+  const brandGold = '#DDB64E';
+  const [isDark, setIsDark] = useState(false);
+
+  // ✅ Detect dark/light mode dynamically
+  useEffect(() => {
+    const root = document.documentElement;
+    const dark = root.classList.contains('dark');
+    setIsDark(dark);
+
+    const observer = new MutationObserver(() => {
+      setIsDark(root.classList.contains('dark'));
+    });
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
 
   const responsibilities = [
     'Provide friendly, courteous, and professional service at all times to the highest standards, leading by example',
@@ -15,16 +29,29 @@ export default function ResponsibilitiesSection() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-white">
+    <section
+      className={`py-20 px-6 transition-colors duration-700 ${
+        isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#111111]'
+      }`}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Left Column */}
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-6xl font-serif font-bold tracking-tight text-[#111111]">
+            <h2
+              className="text-3xl md:text-6xl font-serif font-bold tracking-tight"
+              style={{ color: brandGold }}
+            >
               Key Responsibilities
             </h2>
-            <p className="text-lg text-[#333333] leading-relaxed">
-              As a Restaurant Manager at SRK Hospitality, you'll be at the heart of creating exceptional dining experiences while leading and inspiring your team to excellence.
+            <p
+              className={`text-lg leading-relaxed ${
+                isDark ? 'text-[#DADADA]' : 'text-[#333333]'
+              }`}
+            >
+              As a Restaurant Manager at SRK Hospitality, you'll be at the heart
+              of creating exceptional dining experiences while leading and
+              inspiring your team to excellence.
             </p>
           </div>
 
@@ -41,7 +68,13 @@ export default function ResponsibilitiesSection() {
                     style={{ color: brandGold }}
                   />
                 </div>
-                <p className="text-[#111111] leading-relaxed">{item}</p>
+                <p
+                  className={`leading-relaxed transition-colors duration-300 ${
+                    isDark ? 'text-[#E9ECEC]' : 'text-[#111111]'
+                  }`}
+                >
+                  {item}
+                </p>
               </div>
             ))}
           </div>
