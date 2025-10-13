@@ -5,29 +5,28 @@ import HTMLFlipBook from "react-pageflip";
 import { motion } from "framer-motion";
 import sectionsSeed from "./menu.json";
 
-// ---------- Brand Colors ----------
+// ---------- Colors ----------
 const COLORS = {
-  green: "#68a879",  // Barceloneta accent
   gold: "#DDB64E",
   light: {
-    background: "#FEF9F0",
+    background: "#fef9f0",
     pageBg: "#FFFFFF",
     sectionBg: "rgba(255,255,255,0.8)",
-    text: "#1C1C1C",
-    border: "#E5E5E5",
+    text: "#3B3B3B",
     shadow: "rgba(0,0,0,0.15)",
+    buttonBg: "#FFFFFF",
   },
   dark: {
     background: "#0E1517",
     pageBg: "#1F1F1F",
     sectionBg: "rgba(31,31,31,0.85)",
     text: "#E9ECEC",
-    border: "#2B2B2B",
     shadow: "rgba(0,0,0,0.5)",
+    buttonBg: "#222",
   },
 };
 
-// ---------- Pagination Helper ----------
+// ---------- Utility ----------
 const paginateByHeight = (items, maxHeight = 550) => {
   const pages = [];
   let currentPage = [];
@@ -57,11 +56,11 @@ const paginateByHeight = (items, maxHeight = 550) => {
 const Page = forwardRef(({ children, mode }, ref) => (
   <div
     ref={ref}
-    className="relative h-full w-full overflow-hidden rounded-3xl transition-all duration-700"
+    className="relative h-full w-full rounded-3xl overflow-hidden transition-all duration-500"
     style={{
       backgroundColor: mode.pageBg,
       boxShadow: `0 8px 30px ${mode.shadow}`,
-      border: `2px solid ${mode.border}`,
+      border: `4px solid ${!mode.dark ? COLORS.gold : "transparent"}`,
     }}
   >
     <div className="h-full w-full p-4 sm:p-8">{children}</div>
@@ -73,17 +72,21 @@ Page.displayName = "Page";
 const CoverPage = forwardRef(({ restaurant, tagline, mode }, ref) => (
   <Page ref={ref} mode={mode}>
     <div
-      className="flex h-full flex-col items-center justify-center text-center"
+      className="flex h-full w-full flex-col items-center justify-center text-center rounded-xl relative overflow-hidden"
       style={{
         background: `linear-gradient(to bottom right, ${mode.pageBg}, ${mode.background})`,
+        boxShadow: `inset 0 0 30px ${mode.shadow}`,
       }}
     >
       <motion.h1
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl sm:text-5xl font-extrabold tracking-tight"
-        style={{ color: COLORS.green }}
+        className="text-4xl sm:text-5xl font-extrabold tracking-tight text-center"
+        style={{
+          color: COLORS.gold,
+          textShadow: `2px 2px 6px ${mode.shadow}`,
+        }}
       >
         {restaurant}
       </motion.h1>
@@ -91,12 +94,16 @@ const CoverPage = forwardRef(({ restaurant, tagline, mode }, ref) => (
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="mt-3 text-base sm:text-lg"
+        className="mt-3 text-base sm:text-lg font-medium"
         style={{ color: mode.text }}
       >
         {tagline}
       </motion.p>
-      <div className="absolute bottom-4 right-4 text-xs" style={{ color: mode.text }}>
+
+      <div
+        className="absolute bottom-4 right-4 text-xs"
+        style={{ color: mode.text }}
+      >
         Swipe / drag to flip ➔
       </div>
     </div>
@@ -108,10 +115,10 @@ CoverPage.displayName = "CoverPage";
 const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
   <Page ref={ref} mode={mode}>
     <div className="flex h-full flex-col">
-      <div className="mb-3">
+      <div className="mb-4">
         <h2
           className="text-xl sm:text-2xl font-bold tracking-tight mb-1"
-          style={{ color: COLORS.green }}
+          style={{ color: COLORS.gold, textShadow: `0 2px 6px ${mode.shadow}` }}
         >
           {title}
         </h2>
@@ -121,16 +128,12 @@ const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
           </p>
         )}
       </div>
-
-      <div className="grid grid-cols-1 gap-3 pb-5">
+      <div className="grid grid-cols-1 gap-4 pb-5">
         {items.map((item) => (
           <div
             key={item.name}
-            className="flex gap-3 rounded-2xl p-3 sm:p-4 transition-all duration-300"
-            style={{
-              backgroundColor: mode.sectionBg,
-              border: `1px solid ${mode.border}`,
-            }}
+            className="flex gap-3 rounded-2xl p-4 shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
+            style={{ backgroundColor: mode.sectionBg }}
           >
             {item.image && (
               <img
@@ -144,21 +147,18 @@ const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
                 {item.name}
               </p>
               {item.description && (
-                <p className="text-sm opacity-80" style={{ color: mode.text }}>
+                <p className="text-sm" style={{ color: mode.text }}>
                   {item.description}
                 </p>
               )}
-              <div className="mt-1 flex justify-between items-center">
+              <div className="mt-2 flex justify-between items-center">
                 <p className="text-sm sm:text-base font-semibold" style={{ color: mode.text }}>
                   {item.price}
                 </p>
                 {item.badge && (
                   <span
                     className="inline-block rounded-full px-2 py-0.5 text-[10px] font-medium"
-                    style={{
-                      backgroundColor: COLORS.gold,
-                      color: "#3B3B3B",
-                    }}
+                    style={{ backgroundColor: COLORS.gold, color: "#3B3B3B" }}
                   >
                     {item.badge}
                   </span>
@@ -173,11 +173,61 @@ const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
 ));
 SectionPage.displayName = "SectionPage";
 
+// ---------- Info Page ----------
+const InfoPage = forwardRef(({ mode }, ref) => (
+  <Page ref={ref} mode={mode}>
+    <div className="flex h-full flex-col">
+      <h2
+        className="text-xl sm:text-2xl font-bold tracking-tight mb-2"
+        style={{ color: COLORS.gold }}
+      >
+        About Us
+      </h2>
+      <p className="text-sm mb-5" style={{ color: mode.text }}>
+        Welcome to <span className="font-semibold">Barceloneta</span>, where vibrant Mediterranean
+        flavours meet a warm and lively atmosphere. Join us for authentic Spanish tapas, seasonal
+        dishes, and a curated selection of wines and cocktails.
+      </p>
+
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div
+          className="rounded-2xl border p-4 shadow-sm"
+          style={{ backgroundColor: mode.sectionBg, borderColor: COLORS.gold }}
+        >
+          <p className="text-sm font-semibold" style={{ color: COLORS.gold }}>
+            Location
+          </p>
+          <p className="text-sm" style={{ color: mode.text }}>
+            54 Queen’s Rd, Clarendon Park<br />
+            Leicester, LE2 1TU.
+          </p>
+        </div>
+        <div
+          className="rounded-2xl border p-4 shadow-sm"
+          style={{ backgroundColor: mode.sectionBg, borderColor: COLORS.gold }}
+        >
+          <p className="text-sm font-semibold" style={{ color: COLORS.gold }}>
+            Contact
+          </p>
+          <p className="text-sm" style={{ color: mode.text }}>0116 270 8408</p>
+          <p className="text-sm" style={{ color: mode.text }}>+44 7405 317594</p>
+          <p className="text-sm" style={{ color: mode.text }}>info@barcelonetarestaurant.co.uk</p>
+        </div>
+      </div>
+
+      <div className="mt-auto text-[11px]" style={{ color: mode.text }}>
+        © {new Date().getFullYear()} Barceloneta. All rights reserved.
+      </div>
+    </div>
+  </Page>
+));
+InfoPage.displayName = "InfoPage";
+
 // ---------- Back Cover ----------
 const BackCoverPage = forwardRef(({ mode }, ref) => (
   <Page ref={ref} mode={mode}>
     <div className="flex h-full items-center justify-center">
-      <p className="text-center text-sm" style={{ color: mode.text }}>
+      <p className="font-medium" style={{ color: mode.text }}>
         See you again soon 👋
       </p>
     </div>
@@ -192,20 +242,18 @@ export default function MenuFlipbook() {
   const [bookSize, setBookSize] = useState({ width: 700, height: 900 });
   const [isDark, setIsDark] = useState(false);
 
-  // ✅ Detect dark mode
   useEffect(() => {
     const root = document.documentElement;
     setIsDark(root.classList.contains("dark"));
-    const observer = new MutationObserver(() => {
-      setIsDark(root.classList.contains("dark"));
-    });
+    const observer = new MutationObserver(() =>
+      setIsDark(root.classList.contains("dark"))
+    );
     observer.observe(root, { attributes: true, attributeFilter: ["class"] });
     return () => observer.disconnect();
   }, []);
 
   const mode = isDark ? COLORS.dark : COLORS.light;
 
-  // ✅ Responsive sizing
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
@@ -251,6 +299,7 @@ export default function MenuFlipbook() {
       });
     });
 
+    arr.push(<InfoPage key="info" mode={mode} />);
     arr.push(<BackCoverPage key="back" mode={mode} />);
     return { pages: arr, sectionPageMap: map };
   }, [mode]);
@@ -261,22 +310,19 @@ export default function MenuFlipbook() {
 
   return (
     <div
-      className="mx-auto max-w-7xl px-3 py-6 sm:py-10 transition-colors duration-700"
+      className="mx-auto max-w-7xl px-3 py-6 sm:py-10 rounded-3xl transition-all duration-500"
       style={{ background: mode.background }}
     >
-      {/* Header / Controls */}
+      {/* Header */}
       <div className="mb-4 flex flex-col items-center justify-between gap-3 sm:mb-6 sm:flex-row">
-        <h1
-          className="text-2xl font-bold tracking-tight"
-          style={{ color: COLORS.green }}
-        >
+        <h1 className="text-2xl font-bold tracking-tight" style={{ color: COLORS.gold }}>
           Restaurant Menu
         </h1>
         <div className="flex items-center gap-2">
           <button
             onClick={goPrev}
             className="rounded-2xl border px-3 py-2 text-sm shadow-md hover:scale-105 transition-transform duration-300 font-semibold"
-            style={{ color: mode.text, borderColor: COLORS.gold, backgroundColor: mode.pageBg }}
+            style={{ color: mode.text, borderColor: COLORS.gold, backgroundColor: mode.buttonBg }}
           >
             ◀ Prev
           </button>
@@ -286,7 +332,7 @@ export default function MenuFlipbook() {
           <button
             onClick={goNext}
             className="rounded-2xl border px-3 py-2 text-sm shadow-md hover:scale-105 transition-transform duration-300 font-semibold"
-            style={{ color: mode.text, borderColor: COLORS.gold, backgroundColor: mode.pageBg }}
+            style={{ color: mode.text, borderColor: COLORS.gold, backgroundColor: mode.buttonBg }}
           >
             Next ▶
           </button>
@@ -294,48 +340,45 @@ export default function MenuFlipbook() {
       </div>
 
       {/* Flipbook */}
-      <HTMLFlipBook
-        width={bookSize.width}
-        height={bookSize.height}
-        minWidth={320}
-        maxWidth={900}
-        maxHeight={1200}
-        size="stretch"
-        flippingTime={800}
-        usePortrait={true}
-        showCover={true}
-        drawShadow={true}
-        autoSize={true}
-        mobileScrollSupport={true}
-        onFlip={(e) => setPage(e.data)}
-        ref={flipRef}
-        className="w-full"
-      >
-        {pages.map((node, idx) => (
-          <div key={idx} className="h-full w-full">
-            {node}
-          </div>
-        ))}
-      </HTMLFlipBook>
+      <div className="mx-auto flex w-full justify-center">
+        <HTMLFlipBook
+          width={bookSize.width}
+          height={bookSize.height}
+          minWidth={320}
+          maxWidth={900}
+          maxHeight={1200}
+          size="stretch"
+          flippingTime={800}
+          usePortrait
+          showCover
+          drawShadow
+          autoSize
+          mobileScrollSupport
+          onFlip={(e) => setPage(e.data)}
+          ref={flipRef}
+          className="w-full"
+        >
+          {pages.map((node, idx) => (
+            <div key={idx} className="h-full w-full">
+              {node}
+            </div>
+          ))}
+        </HTMLFlipBook>
+      </div>
 
-      {/* Section Quick Navigator */}
+      {/* Quick Navigation */}
       <div className="mx-auto mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2">
         {sectionsSeed.map((s) => {
           const target = sectionPageMap[s.id];
           const isActive = page === target || page === target - 1 || page === target + 1;
-
           return (
             <button
               key={s.id}
               onClick={() => goTo(target)}
               className={`rounded-2xl border px-3 py-2 text-sm shadow-md hover:scale-105 transition-transform duration-300 font-semibold ${
-                isActive ? "ring-2 ring-amber-300" : ""
+                isActive ? "ring-2" : ""
               }`}
-              style={{
-                color: mode.text,
-                borderColor: COLORS.gold,
-                backgroundColor: mode.pageBg,
-              }}
+              style={{ color: mode.text, borderColor: COLORS.gold, backgroundColor: mode.buttonBg }}
             >
               {s.title}
             </button>

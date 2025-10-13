@@ -5,7 +5,28 @@ import HTMLFlipBook from "react-pageflip";
 import { motion } from "framer-motion";
 import sectionsSeed from "./menu.json";
 
-// ---------- Utility ----------
+// ---------- THEME COLORS ----------
+const COLORS = {
+  gold: "#DDB64E",
+  light: {
+    background: "#fef9f0",
+    pageBg: "#ffffff",
+    sectionBg: "rgba(255,255,255,0.85)",
+    text: "#3B3B3B",
+    shadow: "rgba(0,0,0,0.1)",
+    buttonBg: "#ffffff",
+  },
+  dark: {
+    background: "#0E1517",
+    pageBg: "#1A1A1A",
+    sectionBg: "rgba(26,26,26,0.85)",
+    text: "#E9ECEC",
+    shadow: "rgba(0,0,0,0.5)",
+    buttonBg: "#222",
+  },
+};
+
+// ---------- PAGINATION ----------
 const paginateByHeight = (items, maxHeight = 550) => {
   const pages = [];
   let currentPage = [];
@@ -31,30 +52,40 @@ const paginateByHeight = (items, maxHeight = 550) => {
   return pages;
 };
 
-// ---------- Shared Page ----------
-const Page = forwardRef(({ children, className }, ref) => (
+// ---------- SHARED PAGE ----------
+const Page = forwardRef(({ children, mode }, ref) => (
   <div
     ref={ref}
-    className={
-      "relative h-full w-full bg-neutral-50 [box-shadow:0_10px_30px_rgba(0,0,0,0.12)] overflow-hidden " +
-      (className || "")
-    }
+    className="relative h-full w-full overflow-hidden rounded-3xl transition-all duration-500 border"
+    style={{
+      backgroundColor: mode.pageBg,
+      borderColor: COLORS.gold,
+      boxShadow: `0 10px 30px ${mode.shadow}`,
+    }}
   >
-    <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white via-transparent to-neutral-200" />
     <div className="h-full w-full p-4 sm:p-8">{children}</div>
   </div>
 ));
 Page.displayName = "Page";
 
-// ---------- Specific Pages ----------
-const CoverPage = forwardRef(({ restaurant, tagline }, ref) => (
-  <Page ref={ref} className="bg-gradient-to-br from-amber-50 to-orange-100">
-    <div className="flex h-full flex-col items-center justify-center text-center">
+// ---------- SPECIFIC PAGES ----------
+const CoverPage = forwardRef(({ restaurant, tagline, mode }, ref) => (
+  <Page ref={ref} mode={mode}>
+    <div
+      className="flex h-full flex-col items-center justify-center text-center"
+      style={{
+        background: `linear-gradient(135deg, ${mode.pageBg}, ${mode.background})`,
+      }}
+    >
       <motion.h1
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#68a879]"
+        className="text-4xl sm:text-5xl font-extrabold tracking-tight"
+        style={{
+          color: COLORS.gold,
+          textShadow: `2px 2px 6px ${mode.shadow}`,
+        }}
       >
         {restaurant}
       </motion.h1>
@@ -62,30 +93,42 @@ const CoverPage = forwardRef(({ restaurant, tagline }, ref) => (
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="mt-3 text-base sm:text-lg text-neutral-600"
+        className="mt-3 text-base sm:text-lg font-medium"
+        style={{ color: mode.text }}
       >
         {tagline}
       </motion.p>
-    </div>
-    <div className="absolute bottom-4 right-4 text-xs text-neutral-500">
-      Swipe / drag to flip ➔
+      <div className="absolute bottom-4 right-4 text-xs" style={{ color: mode.text }}>
+        Swipe / drag to flip ➔
+      </div>
     </div>
   </Page>
 ));
 CoverPage.displayName = "CoverPage";
 
-const SectionPage = forwardRef(({ title, subtitle, items }, ref) => (
-  <Page ref={ref}>
+const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
+  <Page ref={ref} mode={mode}>
     <div className="flex h-full flex-col">
       <div className="mb-3">
-        <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#68a879]  backdrop-blur">{title}</h2>
-        {subtitle && <p className="text-sm text-black backdrop-blur">{subtitle}</p>}
+        <h2
+          className="text-xl sm:text-2xl font-bold tracking-tight mb-1"
+          style={{ color: COLORS.gold }}
+        >
+          {title}
+        </h2>
+        {subtitle && (
+          <p className="text-sm font-medium" style={{ color: mode.text }}>
+            {subtitle}
+          </p>
+        )}
       </div>
+
       <div className="grid grid-cols-1 gap-3 pb-5">
         {items.map((item) => (
           <div
             key={item.name}
-            className="flex gap-3 rounded-2xl border bg-white/60 p-3 sm:p-4 shadow-sm backdrop-blur"
+            className="flex gap-3 rounded-2xl border p-3 sm:p-4 shadow-lg hover:scale-[1.03] hover:shadow-xl transition-all duration-300"
+            style={{ backgroundColor: mode.sectionBg, borderColor: COLORS.gold }}
           >
             {item.image && (
               <img
@@ -95,14 +138,26 @@ const SectionPage = forwardRef(({ title, subtitle, items }, ref) => (
               />
             )}
             <div className="flex-1">
-              <p className="text-base font-semibold">{item.name}</p>
+              <p className="text-base font-semibold" style={{ color: mode.text }}>
+                {item.name}
+              </p>
               {item.description && (
-                <p className="text-sm text-neutral-600">{item.description}</p>
+                <p className="text-sm opacity-80" style={{ color: mode.text }}>
+                  {item.description}
+                </p>
               )}
-              <div className="mt-1 flex justify-between items-center">
-                <p className="text-sm sm:text-base font-semibold">{item.price}</p>
+              <div className="mt-2 flex justify-between items-center">
+                <p className="text-sm sm:text-base font-semibold" style={{ color: mode.text }}>
+                  {item.price}
+                </p>
                 {item.badge && (
-                  <span className="inline-block rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-medium text-amber-700">
+                  <span
+                    className="inline-block rounded-full px-2 py-0.5 text-[10px] font-medium"
+                    style={{
+                      backgroundColor: COLORS.gold,
+                      color: "#3B3B3B",
+                    }}
+                  >
                     {item.badge}
                   </span>
                 )}
@@ -116,54 +171,93 @@ const SectionPage = forwardRef(({ title, subtitle, items }, ref) => (
 ));
 SectionPage.displayName = "SectionPage";
 
-const InfoPage = forwardRef((_, ref) => (
-  <Page ref={ref}>
-    {/* <div className="flex h-full flex-col">
-      <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#68a879]">About Us</h2>
-      <p className="mt-2 text-sm text-neutral-700">
-        Welcome to <span className="font-semibold">Bar Dos Hermanos</span>, a vibrant 1940’s Cuban-American style bar 
-        offering cocktails, tapas, draughts, cask ales, and world rums.
+const InfoPage = forwardRef(({ mode }, ref) => (
+  <Page ref={ref} mode={mode}>
+    <div className="flex h-full flex-col">
+      <h2 className="text-2xl font-bold mb-3" style={{ color: COLORS.gold }}>
+        About Us
+      </h2>
+      <p className="text-sm mb-6" style={{ color: mode.text }}>
+        Welcome to <span className="font-semibold">Bar Dos Hermanos</span>, a vibrant 1940’s
+        Cuban-American style bar offering cocktails, tapas, draughts, cask ales, and world rums.
       </p>
 
-      <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <div className="rounded-2xl border bg-white/60 p-4">
-          <p className="text-sm font-semibold">Location</p>
-          <p className="text-sm text-neutral-600 leading-relaxed">
-            52 Queens Road,<br />
-            Clarendon Park,<br />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div
+          className="rounded-2xl border p-4"
+          style={{
+            borderColor: COLORS.gold,
+            backgroundColor: mode.sectionBg,
+          }}
+        >
+          <p className="text-sm font-semibold" style={{ color: COLORS.gold }}>
+            Location
+          </p>
+          <p className="text-sm" style={{ color: mode.text }}>
+            52 Queens Road,
+            <br />
+            Clarendon Park,
+            <br />
             Leicester LE2 1TU, England
           </p>
         </div>
-        <div className="rounded-2xl border bg-white/60 p-4">
-          <p className="text-sm font-semibold">Contact</p>
-          <p className="text-sm text-neutral-600">07405 317594</p>
-          <p className="text-sm text-neutral-600">info@bardoshermanos.co.uk</p>
+        <div
+          className="rounded-2xl border p-4"
+          style={{
+            borderColor: COLORS.gold,
+            backgroundColor: mode.sectionBg,
+          }}
+        >
+          <p className="text-sm font-semibold" style={{ color: COLORS.gold }}>
+            Contact
+          </p>
+          <p className="text-sm" style={{ color: mode.text }}>
+            07405 317594
+          </p>
+          <p className="text-sm" style={{ color: mode.text }}>
+            info@bardoshermanos.co.uk
+          </p>
         </div>
       </div>
 
-      <div className="mt-auto text-[11px] text-neutral-500">
+      <div className="mt-auto text-[11px]" style={{ color: mode.text }}>
         © {new Date().getFullYear()} Bar Dos Hermanos. All rights reserved.
       </div>
-    </div> */}
+    </div>
   </Page>
 ));
 InfoPage.displayName = "InfoPage";
 
-const BackCoverPage = forwardRef((_, ref) => (
-  <Page ref={ref} className="bg-gradient-to-tr from-neutral-100 to-neutral-50">
+const BackCoverPage = forwardRef(({ mode }, ref) => (
+  <Page ref={ref} mode={mode}>
     <div className="flex h-full items-center justify-center">
-      <p className="text-neutral-600">See you again soon 👋</p>
+      <p className="text-sm font-medium" style={{ color: mode.text }}>
+        See you again soon 👋
+      </p>
     </div>
   </Page>
 ));
 BackCoverPage.displayName = "BackCoverPage";
 
-// ---------- Main Component ----------
+// ---------- MAIN ----------
 export default function MenuFlipbook() {
   const flipRef = useRef(null);
   const [page, setPage] = useState(0);
   const [bookSize, setBookSize] = useState({ width: 700, height: 900 });
+  const [isDark, setIsDark] = useState(false);
 
+  // Detect dark mode
+  useEffect(() => {
+    const root = document.documentElement;
+    setIsDark(root.classList.contains("dark"));
+    const observer = new MutationObserver(() => setIsDark(root.classList.contains("dark")));
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
+
+  const mode = isDark ? COLORS.dark : COLORS.light;
+
+  // Responsive sizing
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
@@ -174,18 +268,20 @@ export default function MenuFlipbook() {
       });
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const { pages, sectionPageMap } = useMemo(() => {
     const arr = [];
     const map = {};
+
     arr.push(
       <CoverPage
         key="cover"
-        restaurant="Fusic"
+        restaurant="Bar Dos Hermanos"
         tagline="Cuban-American Tapas, Cocktails & Good Times"
+        mode={mode}
       />
     );
 
@@ -200,36 +296,54 @@ export default function MenuFlipbook() {
             title={section.title + (chunks.length > 1 ? ` (Page ${idx + 1})` : "")}
             subtitle={section.subtitle}
             items={chunk}
+            mode={mode}
           />
         );
         currentIndex++;
       });
     });
 
-    arr.push(<InfoPage key="info" />);
-    arr.push(<BackCoverPage key="back" />);
+    arr.push(<InfoPage key="info" mode={mode} />);
+    arr.push(<BackCoverPage key="back" mode={mode} />);
     return { pages: arr, sectionPageMap: map };
-  }, []);
+  }, [mode]);
 
   const goPrev = () => flipRef.current?.pageFlip()?.flipPrev();
   const goNext = () => flipRef.current?.pageFlip()?.flipNext();
   const goTo = (p) => flipRef.current?.pageFlip()?.flip(p);
 
   return (
-    <div className="mx-auto max-w-7xl px-3 py-6 sm:py-10">
-      {/* Header / Controls */}
-      <div className="mb-4 flex flex-col items-center justify-between gap-3 sm:mb-6 sm:flex-row">
-        <h1 className="text-2xl font-bold tracking-tight text-[#68a879]">Restaurant Menu</h1>
+    <div
+      className="mx-auto max-w-7xl px-3 py-6 sm:py-10 rounded-3xl transition-all duration-500"
+      style={{ background: mode.background }}
+    >
+      {/* Header */}
+      <div className="mb-4 flex flex-col items-center justify-between gap-3 sm:flex-row">
+        <h1 className="text-2xl font-bold tracking-tight" style={{ color: COLORS.gold }}>
+          Restaurant Menu
+        </h1>
         <div className="flex items-center gap-2">
-          <button onClick={goPrev} className="rounded-2xl border px-3 py-2 text-sm shadow-sm hover:bg-neutral-50">◀ Prev</button>
-          <span className="text-sm tabular-nums select-none">
+          <button
+            onClick={goPrev}
+            className="rounded-2xl border px-3 py-2 text-sm shadow-md hover:scale-105 transition-transform font-semibold"
+            style={{ color: mode.text, borderColor: COLORS.gold, backgroundColor: mode.buttonBg }}
+          >
+            ◀ Prev
+          </button>
+          <span className="text-sm tabular-nums select-none" style={{ color: mode.text }}>
             {String(page + 1).padStart(2, "0")} / {String(pages.length).padStart(2, "0")}
           </span>
-          <button onClick={goNext} className="rounded-2xl border px-3 py-2 text-sm shadow-sm hover:bg-neutral-50">Next ▶</button>
+          <button
+            onClick={goNext}
+            className="rounded-2xl border px-3 py-2 text-sm shadow-md hover:scale-105 transition-transform font-semibold"
+            style={{ color: mode.text, borderColor: COLORS.gold, backgroundColor: mode.buttonBg }}
+          >
+            Next ▶
+          </button>
         </div>
       </div>
 
-      {/* Book */}
+      {/* Flipbook */}
       <div className="mx-auto flex w-full justify-center">
         <HTMLFlipBook
           width={bookSize.width}
@@ -239,11 +353,11 @@ export default function MenuFlipbook() {
           maxHeight={1200}
           size="stretch"
           flippingTime={800}
-          usePortrait={true}
-          showCover={true}
-          drawShadow={true}
-          autoSize={true}
-          mobileScrollSupport={true}
+          usePortrait
+          showCover
+          drawShadow
+          autoSize
+          mobileScrollSupport
           onFlip={(e) => setPage(e.data)}
           ref={flipRef}
           className="w-full"
@@ -256,21 +370,23 @@ export default function MenuFlipbook() {
         </HTMLFlipBook>
       </div>
 
-      {/* Quick Navigator */}
+      {/* Quick Navigation */}
       <div className="mx-auto mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2">
         {sectionsSeed.map((s) => {
           const target = sectionPageMap[s.id];
-          const isActive =
-            page === target || page === target - 1 || page === target + 1;
-
+          const isActive = page === target || page === target - 1 || page === target + 1;
           return (
             <button
               key={s.id}
               onClick={() => goTo(target)}
-              className={`
-                rounded-2xl border px-3 py-2 text-sm shadow-sm hover:bg-neutral-50 
-                ${isActive ? "border-amber-400 ring-2 ring-amber-200" : "border-neutral-300"}
-              `}
+              className={`rounded-2xl border px-3 py-2 text-sm shadow-md hover:scale-105 transition-transform font-semibold ${
+                isActive ? "ring-2" : ""
+              }`}
+              style={{
+                color: mode.text,
+                borderColor: COLORS.gold,
+                backgroundColor: mode.buttonBg,
+              }}
             >
               {s.title}
             </button>
