@@ -1,33 +1,78 @@
-import {
-  FiMapPin,
-  FiPhone,
-  FiSend,
-  FiClock
-} from 'react-icons/fi';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { FiMapPin, FiPhone, FiSend, FiClock } from 'react-icons/fi';
+
+const BRAND_GOLD = '#E1B43B'; // Your logo gold
 
 export default function ContactSection() {
+  const [isDark, setIsDark] = useState(false);
+
+  // ✅ Detect dark/light mode dynamically
+  useEffect(() => {
+    const root = document.documentElement;
+    const dark = root.classList.contains('dark');
+    setIsDark(dark);
+
+    const observer = new MutationObserver(() => {
+      setIsDark(root.classList.contains('dark'));
+    });
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="bg-white py-20 px-4">
+    <section
+      className={`transition-colors duration-700 py-20 px-4 ${
+        isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'
+      }`}
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Left Column */}
         <div>
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Contact Us</h2>
+          <h2
+            className="text-3xl font-extrabold mb-6"
+            style={{ color: BRAND_GOLD }}
+          >
+            Contact Us
+          </h2>
 
           <div className="space-y-6">
             {/* Opening Hours */}
             <div className="flex items-start gap-4">
-              <div className="bg-orange-100 p-3 rounded-full text-orange-500">
+              <div
+                className="p-3 rounded-full"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
                 <FiClock size={20} />
               </div>
               <div>
-                <h4 className="font-bold text-gray-800">Opening Hours</h4>
-                <p className="text-gray-600">
-                  <span className="font-semibold text-orange-600">Lunch</span><br />
-                  Monday to Friday: 11:30am – 2:30pm<br /><br />
-                  <span className="font-semibold text-orange-600">Dinner</span><br />
-                  Sunday to Thursday: 5:00pm – 10:00pm<br />
-                  Friday to Saturday: 5:00pm – 11:00pm<br /><br />
-                  <span className="font-semibold text-orange-600">Bar</span><br />
+                <h4 className="font-bold">Opening Hours</h4>
+                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <span className="font-semibold" style={{ color: BRAND_GOLD }}>
+                    Lunch
+                  </span>
+                  <br />
+                  Monday to Friday: 11:30am – 2:30pm
+                  <br />
+                  <br />
+                  <span className="font-semibold" style={{ color: BRAND_GOLD }}>
+                    Dinner
+                  </span>
+                  <br />
+                  Sunday to Thursday: 5:00pm – 10:00pm
+                  <br />
+                  Friday to Saturday: 5:00pm – 11:00pm
+                  <br />
+                  <br />
+                  <span className="font-semibold" style={{ color: BRAND_GOLD }}>
+                    Bar
+                  </span>
+                  <br />
                   Open 7 Days A Week — Everyone Welcome
                 </p>
               </div>
@@ -35,20 +80,27 @@ export default function ContactSection() {
 
             {/* Address */}
             <div className="flex items-start gap-4">
-              <div className="bg-orange-100 p-3 rounded-full text-orange-500">
+              <div
+                className="p-3 rounded-full"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
                 <FiMapPin size={20} />
               </div>
               <div>
-                <h4 className="font-bold text-gray-800">Visit Us</h4>
-                <p className="text-gray-600">
+                <h4 className="font-bold">Visit Us</h4>
+                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                   <a
                     href="https://www.google.com/maps/place/Aspects,+7+Mill+Hill,+Enderby,+Leicester,+LE19+4AL"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
+                    className="hover:underline"
+                    style={{ color: BRAND_GOLD }}
                   >
-                    Aspects,<br />
-                    7 Mill Hill, Enderby,<br />
+                    Aspects, 7 Mill Hill, Enderby,
+                    <br />
                     Leicester, LE19 4AL
                   </a>
                 </p>
@@ -57,13 +109,23 @@ export default function ContactSection() {
 
             {/* Phone */}
             <div className="flex items-start gap-4">
-              <div className="bg-orange-100 p-3 rounded-full text-orange-500">
+              <div
+                className="p-3 rounded-full"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
                 <FiPhone size={20} />
               </div>
               <div>
-                <h4 className="font-bold text-gray-800">Call Us</h4>
-                <p className="text-gray-600">
-                  <a href="tel:01162863307" className="text-blue-600 hover:underline">
+                <h4 className="font-bold">Call Us</h4>
+                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <a
+                    href="tel:01162863307"
+                    className="hover:underline"
+                    style={{ color: BRAND_GOLD }}
+                  >
                     0116 286 3307
                   </a>
                 </p>
@@ -72,12 +134,21 @@ export default function ContactSection() {
 
             {/* Email */}
             <div className="flex items-start gap-4">
-              <div className="bg-orange-100 p-3 rounded-full text-orange-500">
+              <div
+                className="p-3 rounded-full"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
                 <FiSend size={20} />
               </div>
               <div>
-                <h4 className="font-bold text-gray-800">Mail Us</h4>
-                <p className="text-orange-600 font-medium">
+                <h4 className="font-bold">Mail Us</h4>
+                <p
+                  className="font-medium"
+                  style={{ color: BRAND_GOLD }}
+                >
                   info@aspectsenderby.co.uk
                 </p>
               </div>
@@ -87,55 +158,81 @@ export default function ContactSection() {
 
         {/* Right Column - Form */}
         <div>
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
-            Send your message here
+          <h2
+            className="text-3xl font-extrabold mb-6"
+            style={{ color: BRAND_GOLD }}
+          >
+            Send Your Message Here
           </h2>
 
           <form className="space-y-6">
+            {/* Name */}
             <div>
-              <label className="block mb-1 text-sm font-medium text-gray-700">
-                Your name
-              </label>
+              <label className="block mb-1 text-sm font-medium">Your Name</label>
               <input
                 type="text"
                 placeholder="John Doe"
-                className="w-full rounded-full border px-4 py-3 outline-none focus:ring-2 focus:ring-orange-400"
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
+                  isDark
+                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                }`}
               />
             </div>
+
+            {/* Phone */}
             <div>
-              <label className="block mb-1 text-sm font-medium text-gray-700">
-                Phone
-              </label>
+              <label className="block mb-1 text-sm font-medium">Phone</label>
               <input
                 type="text"
                 placeholder="+44 123 456 7890"
-                className="w-full rounded-full border px-4 py-3 outline-none focus:ring-2 focus:ring-orange-400"
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
+                  isDark
+                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                }`}
               />
             </div>
+
+            {/* Email */}
             <div>
-              <label className="block mb-1 text-sm font-medium text-gray-700">
-                Your email
-              </label>
+              <label className="block mb-1 text-sm font-medium">Your Email</label>
               <input
                 type="email"
                 placeholder="email@example.com"
-                className="w-full rounded-full border px-4 py-3 outline-none focus:ring-2 focus:ring-orange-400"
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
+                  isDark
+                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                }`}
               />
             </div>
+
+            {/* Message */}
             <div>
-              <label className="block mb-1 text-sm font-medium text-gray-700">
-                Your message (optional)
+              <label className="block mb-1 text-sm font-medium">
+                Your Message (optional)
               </label>
               <textarea
-                rows={4}
+                rows="4"
                 placeholder="Write something..."
-                className="w-full rounded-2xl border px-4 py-3 outline-none focus:ring-2 focus:ring-orange-400 resize-none"
+                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${
+                  isDark
+                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                }`}
               />
             </div>
+
+            {/* Submit Button */}
             <div>
               <button
                 type="submit"
-                className="bg-orange-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-orange-600 transition duration-300"
+                className="font-semibold px-6 py-2 rounded-full transition duration-300 hover:scale-105"
+                style={{
+                  backgroundColor: BRAND_GOLD,
+                  color: isDark ? '#000' : '#fff',
+                }}
               >
                 SUBMIT
               </button>
