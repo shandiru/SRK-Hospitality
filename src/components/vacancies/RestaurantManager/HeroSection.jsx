@@ -1,185 +1,52 @@
-"use client";
-import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
+'use client';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
-// ✅ Custom marker icon (Leaflet default)
-import "leaflet/dist/leaflet.css";
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  shadowUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-});
-
-export default function UKMapInteractive() {
-  const COLORS = {
-    heading: "#40565C",
-    accent: "#1C3B45",
-    hover: "#294D56",
-  };
-
-  // ✅ City data
-  const cities = {
-    london: {
-      name: "London",
-      coords: [51.5072, -0.1276],
-      address: [
-        "Fast-Fit London Auto Centre",
-        "45 High Street",
-        "London",
-        "SW1A 1AA",
-      ],
-      phone: "020 7946 1234",
-      hours: "Monday–Saturday 8:30am–5:30pm",
-      services: [
-        "Tyres",
-        "MOT Testing",
-        "Brake Replacement",
-        "Wheel Alignment",
-        "Air Conditioning",
-      ],
-    },
-    cambridge: {
-      name: "Arbury, Cambridge",
-      coords: [52.2053, 0.1218],
-      address: [
-        "Fast-Fit Tyres and Exhausts",
-        "33-35 Histon Road",
-        "Arbury",
-        "Cambridge",
-        "CB4 3JB",
-      ],
-      phone: "01223 316 888",
-      hours: "Monday–Saturday 8:30am–5:30pm",
-      services: [
-        "Tyres",
-        "TPMS",
-        "Exhausts & Catalytic Converters",
-        "Wheel Alignment",
-        "Air Conditioning Re-Gas",
-        "Sanitising/Misting Service",
-      ],
-    },
-    manchester: {
-      name: "Manchester",
-      coords: [53.4808, -2.2426],
-      address: [
-        "Fast-Fit Manchester Centre",
-        "12 King Street",
-        "Manchester",
-        "M1 4HD",
-      ],
-      phone: "0161 555 7890",
-      hours: "Monday–Saturday 8:00am–6:00pm",
-      services: [
-        "Tyres",
-        "Suspension Repairs",
-        "Batteries",
-        "Exhausts",
-        "Wheel Balancing",
-      ],
-    },
-  };
-
-  const [selectedCity, setSelectedCity] = useState("cambridge");
-  const city = cities[selectedCity];
-
+export default function HeroSection() {
   return (
-    <section className="w-full py-10 bg-white dark:bg-[#0C1416] transition-colors">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* LEFT PANEL */}
-        <div className="rounded-2xl p-6 md:p-8 shadow-sm bg-[#F5F7F8] dark:bg-[#111A1D]">
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-4"
-            style={{ color: COLORS.heading }}
-          >
-            {city.name}
-          </h2>
-
-          <div className="space-y-4 text-[15px] text-gray-700 dark:text-gray-200">
-            <div>
-              <p className="font-semibold text-base" style={{ color: COLORS.accent }}>
-                Address
-              </p>
-              {city.address.map((line, i) => (
-                <div key={i}>{line}</div>
-              ))}
-            </div>
-
-            <div>
-              <p className="font-semibold" style={{ color: COLORS.accent }}>
-                Phone
-              </p>
-              <a
-                href={`tel:${city.phone}`}
-                className="underline decoration-transparent hover:decoration-inherit"
-                style={{ color: COLORS.hover }}
-              >
-                {city.phone}
-              </a>
-            </div>
-
-            <div>
-              <p className="font-semibold" style={{ color: COLORS.accent }}>
-                Opening Hours
-              </p>
-              <p>{city.hours}</p>
-              <p>Closed on Sundays and Bank Holidays</p>
-            </div>
-
-            <div>
-              <p className="font-semibold" style={{ color: COLORS.accent }}>
-                Services
-              </p>
-              <ul className="list-disc ml-5 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
-                {city.services.map((srv, i) => (
-                  <li key={i}>{srv}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="pt-3">
-              <a
-                href="#book-online"
-                className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold shadow-sm bg-[#1C3B45] text-white hover:opacity-90"
-              >
-                BOOK ONLINE ►
-              </a>
-            </div>
-          </div>
+    <section className="relative  flex items-center justify-center px-6 py-25 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8F7F3] to-[#F4F3EF]">
+      {/* Content */}
+      <div className="relative max-w-5xl mx-auto text-center space-y-8">
+        {/* Badge */}
+        <div className="inline-block px-4 py-2 bg-[#E9E9DF] rounded-full mb-4">
+          <p className="text-sm font-medium text-[#1E3A2A]">Now Hiring</p>
         </div>
 
-        {/* RIGHT PANEL: ACTUAL INTERACTIVE MAP */}
-        <div className="rounded-2xl overflow-hidden shadow-sm">
-          <MapContainer
-            center={[52.3555, -1.1743]} // roughly UK center
-            zoom={6}
-            style={{ height: "500px", width: "100%" }}
-          >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
+        {/* Title */}
+        <h1 className="text-6xl md:text-8xl font-serif font-light tracking-tight text-[#1E3A2A]">
+          Restaurant Manager
+        </h1>
 
-            {/* City Markers */}
-            {Object.entries(cities).map(([key, data]) => (
-              <Marker
-                key={key}
-                position={data.coords}
-                eventHandlers={{
-                  click: () => setSelectedCity(key),
-                }}
-              >
-                <Popup>
-                  <div className="text-sm font-medium">{data.name}</div>
-                </Popup>
-              </Marker>
-            ))}
-          </MapContainer>
+        {/* Subtext Row */}
+        <div className="flex items-center justify-center gap-3 text-lg text-[#3C3C3C]">
+          <span className="font-semibold text-[#1E3A2A]">SRK Hospitality</span>
+          <span>•</span>
+          <span>Full-time</span>
+          <span>•</span>
+          <span>Competitive Salary</span>
+        </div>
+
+        {/* Description */}
+        <p className="text-xl md:text-2xl text-[#4F4F4F] max-w-3xl mx-auto leading-relaxed">
+          Join us in creating timeless elegance and vibrant hospitality. We're searching for a confident leader to join one of the UK's most-loved restaurant brands.
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+          {/* Apply Now Button */}
+          <button
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium rounded-md px-8 h-12 text-base bg-[#134E4A] text-white hover:bg-[#0E3E3B] transition-all"
+          >
+            Apply Now
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </button>
+
+          {/* Learn More Button */}
+          <button
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium rounded-md px-8 h-12 text-base border border-[#D9D9D3] text-[#1E3A2A] bg-white hover:bg-[#F5F5F0] transition-all"
+          >
+            Learn More
+          </button>
         </div>
       </div>
     </section>
