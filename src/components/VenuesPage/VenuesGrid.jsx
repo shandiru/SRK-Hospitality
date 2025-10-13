@@ -17,7 +17,6 @@ const venues = [
   { name: "Aspects", desc: "Indian Restaurant", img: "/aspects.png", slug: "aspects" },
   { name: "Basement", desc: "Nightclub", img: "/basement.png", slug: "basement" },
   { name: "Subway Wigston", desc: "Fast Food", img: "/subway.png", slug: "subway-wigston" },
-  { name: "Subway Braunstone Gate", desc: "Fast Food", img: "/Subway Braunstone Gate.png", slug: "subway-braunstone" },
   { name: "Toluca", desc: "Mexican Bar & Grill", img: "/Toluca.png", slug: "toluca" },
   { name: "FUSIC", desc: "BBQ Special", img: "/FUSIC.png", slug: "fusic" },
 ];
@@ -25,13 +24,13 @@ const venues = [
 export default function VenuesGrid() {
   const cardsRef = useRef([]);
 
-  // ✅ Scroll animation
+  // ✅ Scroll animations
   useEffect(() => {
     cardsRef.current.forEach((card) => {
       if (!card) return;
       gsap.fromTo(
         card,
-        { opacity: 0, y: 40 },
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
@@ -41,7 +40,7 @@ export default function VenuesGrid() {
             trigger: card,
             start: "top 85%",
             end: "bottom 15%",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play none none reverse",
           },
         }
       );
@@ -49,48 +48,50 @@ export default function VenuesGrid() {
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, []);
 
-  // ✅ 3D hover & shine effect
+  // ✅ 3D hover effect
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      cardsRef.current.forEach((card) => {
-        if (!card) return;
+    cardsRef.current.forEach((card) => {
+      if (!card) return;
+
+      const shine = card.querySelector(".shine");
+
+      const handleMouseMove = (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -10;
-        const rotateY = ((x - centerX) / centerX) * 10;
 
-        const shine = card.querySelector(".shine");
+        const rotateX = ((y - centerY) / centerY) * -12; // tilt vertical
+        const rotateY = ((x - centerX) / centerX) * 12; // tilt horizontal
+
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+
+        const angle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI) - 90;
         if (shine) {
-          const angle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI) - 90;
-          shine.style.background = `linear-gradient(${angle}deg, rgba(255,255,255,0.3) 0%, transparent 80%)`;
+          shine.style.background = `linear-gradient(${angle}deg, rgba(255,255,255,0.4) 0%, transparent 70%)`;
         }
+      };
 
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-      });
-    };
-
-    const handleMouseLeave = () => {
-      cardsRef.current.forEach((card) => {
-        if (!card) return;
+      const handleMouseLeave = () => {
         card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
-      });
-    };
+        if (shine) shine.style.background = "transparent";
+      };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseleave", handleMouseLeave);
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseleave", handleMouseLeave);
-    };
+      card.addEventListener("mousemove", handleMouseMove);
+      card.addEventListener("mouseleave", handleMouseLeave);
+
+      return () => {
+        card.removeEventListener("mousemove", handleMouseMove);
+        card.removeEventListener("mouseleave", handleMouseLeave);
+      };
+    });
   }, []);
 
   return (
-    <section className="bg-[#FAF9F6] py-24 px-6 md:px-12 font-[Inter]" id="venues-grid">
-      {/* Section Heading */}
-      <div className="max-w-7xl mx-auto text-center mb-16">
+    <section className="bg-[#FAF9F6] py-28 px-6 md:px-12 font-[Inter]" id="venues-grid">
+      {/* Section Header */}
+      <div className="max-w-7xl mx-auto text-center mb-20">
         <span className="inline-block bg-[#DDB64E]/20 text-[#DDB64E] text-sm font-medium px-4 py-1 rounded-full mb-4">
           Our Venues
         </span>
@@ -103,31 +104,37 @@ export default function VenuesGrid() {
         </p>
       </div>
 
-      {/* Venue Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center">
+      {/* 3D Venue Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 place-items-center">
         {venues.map((v, i) => (
           <Link to={`/${v.slug}`} key={v.name}>
             <div
               ref={(el) => (cardsRef.current[i] = el)}
-              className="relative w-[280px] h-[320px] overflow-hidden rounded-2xl shadow-xl border border-[#E8D9A8]/60 group cursor-pointer transition-all duration-500 hover:shadow-[0_8px_40px_rgba(221,182,78,0.4)] will-change-transform bg-center bg-cover"
-              style={{ backgroundImage: `url(${v.img})` }}
+              className="relative w-[320px] sm:w-[340px] lg:w-[380px] h-[360px] sm:h-[380px] lg:h-[420px] rounded-2xl border border-[#E8D9A8]/60 overflow-hidden cursor-pointer shadow-2xl transition-transform duration-500 ease-out"
+              style={{
+                backgroundImage: `url(${v.img})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                transformStyle: "preserve-3d",
+                perspective: "1000px",
+              }}
             >
-              {/* 3D Shine Layer */}
-              <div className="shine absolute inset-0 rounded-2xl z-10 pointer-events-none transition-all duration-300"></div>
+              {/* Shine layer */}
+              <div className="shine absolute inset-0 rounded-2xl z-10 pointer-events-none"></div>
 
-              {/* Dark Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent z-20"></div>
+              {/* Dark gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent z-20"></div>
 
-              {/* Text Overlay */}
-              <div className="absolute bottom-0 w-full px-5 pb-6 text-white text-center z-30">
-                <h3 className="text-xl font-[Playfair_Display] font-semibold mb-1">
+              {/* Text content */}
+              <div className="absolute bottom-0 w-full px-6 pb-8 text-white text-center z-30">
+                <h3 className="text-2xl font-[Playfair_Display] font-semibold mb-1">
                   {v.name}
                 </h3>
-                <p className="text-sm font-[Inter] text-gray-200">{v.desc}</p>
+                <p className="text-base font-[Inter] text-gray-200">{v.desc}</p>
               </div>
 
-              {/* Gold Border Glow */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#DDB64E] transition-all duration-500 z-20"></div>
+              {/* Gold hover border glow */}
+              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#DDB64E] transition-all duration-500 z-40"></div>
             </div>
           </Link>
         ))}
