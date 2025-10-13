@@ -4,7 +4,7 @@ export default function VenuesHero() {
   const brandGold = "#DDB64E";
 
   return (
-    <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden font-[Inter]">
+    <section className="relative h-[100vh] md:h-[100vh] flex items-center justify-center overflow-hidden font-[Inter]">
       {/* Background Image */}
       <img
         src="/hero-bg.jpg"

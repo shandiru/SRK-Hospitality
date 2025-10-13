@@ -16,7 +16,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-[90vh] flex items-center justify-center overflow-hidden font-serif">
+    <section className="relative h-[100vh] flex items-center justify-center overflow-hidden font-serif">
       {/* Background Video */}
       <video
         autoPlay
