@@ -1,55 +1,57 @@
-'use client';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // ✅ React Router navigation
+"use client";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Vacancies() {
-  const navigate = useNavigate(); // ✅ Initialize navigation
-  const brandGreen = '#0D3B2E';
-  const brandCream = '#FAF9F6';
-  const brandGold = '#DDB64E';
+  const navigate = useNavigate();
 
-  const categories = ['All', 'Restaurant', 'Bar', 'Kitchen', 'Management'];
+  const brandGreen = "#0D3B2E";
+  const brandCream = "#FAF9F6";
+  const brandGold = "#DDB64E";
+
+  const categories = ["All", "Restaurant", "Bar", "Kitchen", "Management"];
 
   const vacancies = [
     {
       id: 1,
-      title: 'Restaurant Manager',
-      category: 'Management',
-      company: 'SRK Hospitality',
-      type: 'Full-time',
-      salary: 'Competitive Salary',
-      route: '/RestaurantManagerPage',
+      title: "Restaurant Manager",
+      category: "Management",
+      company: "SRK Hospitality",
+      type: "Full-time",
+      salary: "Competitive Salary",
+      route: "/RestaurantManagerPage",
       description:
-        'Join us in creating timeless elegance and vibrant hospitality. We\'re searching for a confident leader to join one of the UK\'s most-loved restaurant brands.',
+        "Join us in creating timeless elegance and vibrant hospitality. We're searching for a confident leader to join one of the UK’s most-loved restaurant brands.",
     },
     {
       id: 2,
-      title: 'Head Chef',
-      category: 'Kitchen',
-      company: 'SRK Hospitality',
-      type: 'Full-time',
-      salary: 'Attractive Salary + Benefits',
-      route: '/HeadChefPage',
+      title: "Head Chef",
+      category: "Kitchen",
+      company: "SRK Hospitality",
+      type: "Full-time",
+      salary: "Attractive Salary + Benefits",
+      route: "/HeadChefPage",
       description:
-        'Lead a passionate kitchen team in crafting premium dishes that define our culinary excellence. Experience in fine dining is a plus.',
+        "Lead a passionate kitchen team in crafting premium dishes that define our culinary excellence. Experience in fine dining is a plus.",
     },
     {
       id: 3,
-      title: 'Bar Supervisor',
-      category: 'Bar',
-      company: 'SRK Hospitality',
-      type: 'Full-time',
-      salary: 'Competitive Salary',
-      route: '/BarSupervisorPage',
+      title: "Bar Supervisor",
+      category: "Bar",
+      company: "SRK Hospitality",
+      type: "Full-time",
+      salary: "Competitive Salary",
+      route: "/BarSupervisorPage",
       description:
-        'We\'re looking for a charismatic bar leader to bring energy and sophistication to our cocktail experience.',
+        "We’re looking for a charismatic bar leader to bring energy and sophistication to our cocktail experience.",
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredVacancies =
-    selectedCategory === 'All'
+    selectedCategory === "All"
       ? vacancies
       : vacancies.filter((job) => job.category === selectedCategory);
 
@@ -80,8 +82,8 @@ export default function Vacancies() {
             onClick={() => setSelectedCategory(cat)}
             className={`px-5 py-2 rounded-full border transition-all duration-300 ${
               selectedCategory === cat
-                ? 'bg-[#0D3B2E] text-white border-[#0D3B2E]'
-                : 'border-[#0D3B2E] text-[#0D3B2E] hover:bg-[#0D3B2E] hover:text-white'
+                ? "bg-[#0D3B2E] text-white border-[#0D3B2E]"
+                : "border-[#0D3B2E] text-[#0D3B2E] hover:bg-[#0D3B2E] hover:text-white"
             }`}
           >
             {cat}
@@ -94,7 +96,7 @@ export default function Vacancies() {
         {filteredVacancies.map((job) => (
           <div
             key={job.id}
-            onClick={() => navigate(job.route)} // ✅ React Router navigation
+            onClick={() => navigate(job.route)}
             className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-[#EDEBE7] flex flex-col justify-between cursor-pointer h-[520px]"
           >
             <div>
@@ -118,7 +120,7 @@ export default function Vacancies() {
                 className="px-5 py-2 rounded-lg font-semibold transition-all duration-300"
                 style={{
                   backgroundColor: brandGreen,
-                  color: '#FFFFFF',
+                  color: "#FFFFFF",
                 }}
               >
                 Apply Now
@@ -147,6 +149,7 @@ export default function Vacancies() {
           and dedication are what we value most.
         </p>
         <button
+          onClick={() => setIsModalOpen(true)} // ✅ Open modal
           className="px-8 py-3 rounded-lg font-semibold"
           style={{
             backgroundColor: brandGold,
@@ -156,6 +159,79 @@ export default function Vacancies() {
           Submit Your CV
         </button>
       </div>
+
+      {/* ========================= CV SUBMISSION MODAL ========================= */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl"
+            >
+              ✕
+            </button>
+
+            {/* Modal Header */}
+            <h2 className="text-3xl font-serif font-bold text-[#0D3B2E] mb-2 text-center">
+              Submit Your CV
+            </h2>
+            <p className="text-gray-600 text-center mb-6">
+              We’d love to know more about you. Please fill out the details below.
+            </p>
+
+            {/* Form */}
+            <form className="space-y-5">
+              <div>
+                <label className="block text-sm font-semibold text-[#0D3B2E] mb-2">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#DDB64E] outline-none"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-[#0D3B2E] mb-2">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#DDB64E] outline-none"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-[#0D3B2E] mb-2">
+                  Upload CV
+                </label>
+                <input
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 cursor-pointer bg-[#FAF9F6]"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3 rounded-lg font-semibold mt-4 transition-all duration-300"
+                style={{
+                  backgroundColor: brandGold,
+                  color: brandGreen,
+                }}
+              >
+                Submit Application
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
