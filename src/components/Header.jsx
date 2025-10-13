@@ -7,10 +7,8 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Brand colors
-  const brandGreen = "#0D3B2E";
+  // Brand color from logo
   const brandGold = "#DDB64E";
-  const brandCream = "#FAF9F6";
 
   // Add scroll effect
   useEffect(() => {
@@ -43,7 +41,7 @@ export default function Header() {
           />
           <span
             className={`hidden sm:block text-base md:text-lg tracking-wide font-serif ${
-              scrolled ? "text-[#0D3B2E]" : "text-white"
+              scrolled ? "text-black" : "text-white"
             }`}
           >
             SRK HOSPITALITY LIMITED
@@ -58,8 +56,8 @@ export default function Header() {
               href={link.href}
               className={`text-sm font-semibold transition-all duration-300 ${
                 scrolled
-                  ? "text-[#0D3B2E] hover:text-[#DDB64E]"
-                  : "text-white hover:text-[#DDB64E]"
+                  ? `text-black hover:text-[${brandGold}]`
+                  : `text-white hover:text-[${brandGold}]`
               }`}
             >
               {link.name.toUpperCase()}
@@ -69,11 +67,7 @@ export default function Header() {
           {/* Gold Accent Button */}
           <a
             href="/vacancies"
-            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 ${
-              scrolled
-                ? "bg-[#DDB64E] text-[#0D3B2E] hover:bg-[#c9a948]"
-                : "bg-[#DDB64E] text-[#0D3B2E] hover:bg-[#c9a948]"
-            }`}
+            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 bg-[${brandGold}] text-black hover:opacity-90`}
           >
             JOIN OUR TEAM
           </a>
@@ -83,7 +77,7 @@ export default function Header() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className={`md:hidden text-3xl transition-colors duration-300 ${
-            scrolled ? "text-[#0D3B2E]" : "text-white"
+            scrolled ? "text-black" : "text-white"
           }`}
         >
           {menuOpen ? <FiX /> : <FiMenu />}
@@ -96,7 +90,7 @@ export default function Header() {
           menuOpen ? "max-h-80" : "max-h-0"
         }`}
         style={{
-          backgroundColor: brandGreen,
+          backgroundColor: brandGold,
         }}
       >
         <div className="flex flex-col items-center py-6 space-y-5 text-center">
@@ -105,7 +99,7 @@ export default function Header() {
               key={link.name}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-[#FAF9F6] text-sm font-medium tracking-wider hover:text-[#DDB64E] transition"
+              className="text-white text-sm font-medium tracking-wider hover:opacity-90 transition"
             >
               {link.name.toUpperCase()}
             </a>
@@ -115,7 +109,7 @@ export default function Header() {
           <a
             href="/vacancies"
             onClick={() => setMenuOpen(false)}
-            className="px-6 py-2 rounded-full font-semibold bg-[#DDB64E] text-[#0D3B2E] hover:bg-[#c9a948] transition"
+            className="px-6 py-2 rounded-full font-semibold bg-white text-black hover:bg-opacity-90 transition"
           >
             JOIN OUR TEAM
           </a>

@@ -4,9 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Vacancies() {
   const navigate = useNavigate();
-
-  const brandGreen = "#0D3B2E";
-  const brandCream = "#FAF9F6";
   const brandGold = "#DDB64E";
 
   const categories = ["All", "Restaurant", "Bar", "Kitchen", "Management"];
@@ -56,19 +53,16 @@ export default function Vacancies() {
       : vacancies.filter((job) => job.category === selectedCategory);
 
   return (
-    <section
-      className="py-24 px-6 lg:px-12"
-      style={{ backgroundColor: brandCream, color: brandGreen }}
-    >
+    <section className="py-24 px-6 lg:px-12 bg-white text-[#111111] font-[Inter]">
       {/* Header */}
       <div className="text-center mb-12">
-        <span className="inline-block bg-[#EDEBE7] text-sm px-4 py-1 rounded-full mb-4 font-medium">
+        <span className="inline-block bg-[#F5F5F5] text-sm px-4 py-1 rounded-full mb-4 font-medium text-[#111111]">
           Now Hiring
         </span>
         <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4">
           Career Opportunities
         </h1>
-        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+        <p className="text-lg text-[#333333] max-w-2xl mx-auto">
           Explore exciting roles and be part of a team that redefines British
           hospitality with elegance and warmth.
         </p>
@@ -80,10 +74,10 @@ export default function Vacancies() {
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-5 py-2 rounded-full border transition-all duration-300 ${
+            className={`px-5 py-2 rounded-full border transition-all duration-300 font-medium ${
               selectedCategory === cat
-                ? "bg-[#0D3B2E] text-white border-[#0D3B2E]"
-                : "border-[#0D3B2E] text-[#0D3B2E] hover:bg-[#0D3B2E] hover:text-white"
+                ? "bg-[#DDB64E] text-[#111111] border-[#DDB64E]"
+                : "border-[#DDB64E] text-[#111111] hover:bg-[#DDB64E] hover:text-[#111111]"
             }`}
           >
             {cat}
@@ -97,20 +91,22 @@ export default function Vacancies() {
           <div
             key={job.id}
             onClick={() => navigate(job.route)}
-            className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-[#EDEBE7] flex flex-col justify-between cursor-pointer h-[520px]"
+            className="group bg-white rounded-2xl shadow-lg hover:shadow-[0_10px_30px_rgba(221,182,78,0.3)] transition-all duration-300 p-8 border border-[#EAEAEA] flex flex-col justify-between cursor-pointer h-[520px]"
           >
             <div>
-              <span className="inline-block bg-[#EDEBE7] text-xs px-3 py-1 rounded-full mb-3 font-medium">
+              <span className="inline-block bg-[#FFF8E6] text-xs px-3 py-1 rounded-full mb-3 font-medium text-[#111111]">
                 Now Hiring
               </span>
-              <h2 className="text-3xl font-serif font-bold mb-3 text-[#0D3B2E] group-hover:text-[#0B3025]">
+              <h2 className="text-3xl font-serif font-bold mb-3 text-[#111111] group-hover:text-[#DDB64E] transition-colors duration-300">
                 {job.title}
               </h2>
-              <p className="font-semibold mb-1">{job.company}</p>
-              <p className="text-sm mb-4 text-gray-600">
+              <p className="font-semibold mb-1 text-[#111111]">
+                {job.company}
+              </p>
+              <p className="text-sm mb-4 text-[#555555]">
                 {job.type} · {job.salary}
               </p>
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-[#333333] mb-6 leading-relaxed">
                 {job.description}
               </p>
             </div>
@@ -119,17 +115,17 @@ export default function Vacancies() {
               <button
                 className="px-5 py-2 rounded-lg font-semibold transition-all duration-300"
                 style={{
-                  backgroundColor: brandGreen,
-                  color: "#FFFFFF",
+                  backgroundColor: brandGold,
+                  color: "#111111",
                 }}
               >
                 Apply Now
               </button>
               <button
-                className="px-5 py-2 rounded-lg font-semibold border transition-all duration-300"
+                className="px-5 py-2 rounded-lg font-semibold border transition-all duration-300 hover:bg-[#DDB64E]/20"
                 style={{
-                  borderColor: brandGreen,
-                  color: brandGreen,
+                  borderColor: brandGold,
+                  color: "#111111",
                 }}
               >
                 Learn More
@@ -140,20 +136,22 @@ export default function Vacancies() {
       </div>
 
       {/* CTA Section */}
-      <div className="mt-20 text-center py-16 rounded-3xl bg-[#0D3B2E] text-white">
-        <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-6">
+      <div
+        className="mt-20 text-center py-16 rounded-3xl text-[#111111]"
+        style={{ backgroundColor: brandGold }}
+      >
+        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
           Join Our Hospitality Family
         </h2>
-        <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-200">
+        <p className="text-lg mb-8 max-w-2xl mx-auto text-[#222222]">
           Become part of our growing legacy in hospitality. Experience, passion,
           and dedication are what we value most.
         </p>
         <button
-          onClick={() => setIsModalOpen(true)} // ✅ Open modal
-          className="px-8 py-3 rounded-lg font-semibold"
+          onClick={() => setIsModalOpen(true)}
+          className="px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-white hover:bg-[#F7F7F7]"
           style={{
-            backgroundColor: brandGold,
-            color: brandGreen,
+            color: "#111111",
           }}
         >
           Submit Your CV
@@ -167,63 +165,63 @@ export default function Vacancies() {
             {/* Close Button */}
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl"
+              className="absolute top-4 right-4 text-gray-500 hover:text-[#111111] text-2xl"
             >
               ✕
             </button>
 
             {/* Modal Header */}
-            <h2 className="text-3xl font-serif font-bold text-[#0D3B2E] mb-2 text-center">
+            <h2 className="text-3xl font-serif font-bold text-[#111111] mb-2 text-center">
               Submit Your CV
             </h2>
-            <p className="text-gray-600 text-center mb-6">
+            <p className="text-[#333333] text-center mb-6">
               We’d love to know more about you. Please fill out the details below.
             </p>
 
             {/* Form */}
             <form className="space-y-5">
               <div>
-                <label className="block text-sm font-semibold text-[#0D3B2E] mb-2">
+                <label className="block text-sm font-semibold text-[#111111] mb-2">
                   Full Name
                 </label>
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#DDB64E] outline-none"
+                  className="w-full border border-[#D3D3D3] rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#DDB64E] outline-none"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-[#0D3B2E] mb-2">
+                <label className="block text-sm font-semibold text-[#111111] mb-2">
                   Email Address
                 </label>
                 <input
                   type="email"
                   placeholder="your@email.com"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#DDB64E] outline-none"
+                  className="w-full border border-[#D3D3D3] rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#DDB64E] outline-none"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-[#0D3B2E] mb-2">
+                <label className="block text-sm font-semibold text-[#111111] mb-2">
                   Upload CV
                 </label>
                 <input
                   type="file"
                   accept=".pdf,.doc,.docx"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 cursor-pointer bg-[#FAF9F6]"
+                  className="w-full border border-[#D3D3D3] rounded-lg px-4 py-2 cursor-pointer bg-[#FAFAFA]"
                   required
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-lg font-semibold mt-4 transition-all duration-300"
+                className="w-full py-3 rounded-full font-semibold mt-4 transition-all duration-300 hover:shadow-[0_8px_25px_rgba(221,182,78,0.5)]"
                 style={{
                   backgroundColor: brandGold,
-                  color: brandGreen,
+                  color: "#111111",
                 }}
               >
                 Submit Application

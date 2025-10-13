@@ -22,6 +22,7 @@ const venues = [
 ];
 
 export default function VenuesGrid() {
+  const brandGold = "#DDB64E";
   const cardsRef = useRef([]);
 
   // ✅ Scroll animations
@@ -62,8 +63,8 @@ export default function VenuesGrid() {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        const rotateX = ((y - centerY) / centerY) * -12; // tilt vertical
-        const rotateY = ((x - centerX) / centerX) * 12; // tilt horizontal
+        const rotateX = ((y - centerY) / centerY) * -12;
+        const rotateY = ((x - centerX) / centerX) * 12;
 
         card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
 
@@ -89,28 +90,28 @@ export default function VenuesGrid() {
   }, []);
 
   return (
-    <section className="bg-[#FAF9F6] py-28 px-6 md:px-12 font-[Inter]" id="venues-grid">
+    <section className="bg-white py-24 px-6 md:px-12 font-[Inter]" id="venues-grid">
       {/* Section Header */}
-      <div className="max-w-7xl mx-auto text-center mb-20">
-        <span className="inline-block bg-[#DDB64E]/20 text-[#DDB64E] text-sm font-medium px-4 py-1 rounded-full mb-4">
+      <div className="max-w-7xl mx-auto text-center mb-16">
+        <span className="inline-block bg-[#DDB64E]/15 text-[#DDB64E] text-sm font-medium px-4 py-1 rounded-full mb-4">
           Our Venues
         </span>
-        <h2 className="text-4xl md:text-5xl font-[Playfair_Display] font-bold text-[#0D3B2E] mb-3">
+        <h2 className="text-4xl md:text-5xl font-[Playfair_Display] font-bold text-[#111111] mb-3">
           Experience the Heart of SRK Hospitality
         </h2>
-        <p className="text-[#3C4A4E] text-base md:text-lg max-w-2xl mx-auto">
-          Each venue tells its own story — from fine dining elegance to vibrant nightlife,
-          we bring flavour, style, and warmth to every experience.
+        <p className="text-[#333333] text-base md:text-lg max-w-2xl mx-auto">
+          Each venue tells its own story — from fine dining elegance to vibrant nightlife.
+          We bring flavour, style, and warmth to every experience.
         </p>
       </div>
 
       {/* 3D Venue Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center">
         {venues.map((v, i) => (
           <Link to={`/${v.slug}`} key={v.name}>
             <div
               ref={(el) => (cardsRef.current[i] = el)}
-              className="relative w-[320px] sm:w-[340px] lg:w-[380px] h-[360px] sm:h-[380px] lg:h-[420px] rounded-2xl border border-[#E8D9A8]/60 overflow-hidden cursor-pointer shadow-2xl transition-transform duration-500 ease-out"
+              className="relative w-[280px] sm:w-[300px] lg:w-[340px] h-[320px] sm:h-[340px] lg:h-[370px] rounded-2xl overflow-hidden cursor-pointer shadow-lg transition-transform duration-500 ease-out border border-[#EAEAEA]"
               style={{
                 backgroundImage: `url(${v.img})`,
                 backgroundSize: "cover",
@@ -122,8 +123,8 @@ export default function VenuesGrid() {
               {/* Shine layer */}
               <div className="shine absolute inset-0 rounded-2xl z-10 pointer-events-none"></div>
 
-              {/* Dark gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent z-20"></div>
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/50 to-transparent z-20"></div>
 
               {/* Text content */}
               <div className="absolute bottom-0 w-full px-6 pb-8 text-white text-center z-30">
@@ -133,8 +134,23 @@ export default function VenuesGrid() {
                 <p className="text-base font-[Inter] text-gray-200">{v.desc}</p>
               </div>
 
-              {/* Gold hover border glow */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#DDB64E] transition-all duration-500 z-40"></div>
+              {/* Gold hover glow */}
+              <div
+                className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-500 z-40"
+                style={{
+                  boxShadow: `0 0 0 rgba(0,0,0,0)`,
+                }}
+              ></div>
+
+              {/* Gold hover ring effect */}
+              <style>
+                {`
+                  a:hover div.relative {
+                    box-shadow: 0 0 25px ${brandGold}55;
+                    border-color: ${brandGold};
+                  }
+                `}
+              </style>
             </div>
           </Link>
         ))}

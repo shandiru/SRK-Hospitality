@@ -6,13 +6,14 @@ import "aos/dist/aos.css";
 import { FaUserFriends, FaUtensils, FaStar } from "react-icons/fa";
 
 export default function CoreValues() {
+  const brandGold = "#DDB64E"; // Only brand color
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
-      once: false,
-      mirror: true,
-      offset: 100,
+      once: true,
+      offset: 80,
     });
   }, []);
 
@@ -45,10 +46,7 @@ export default function CoreValues() {
   ];
 
   return (
-    <section
-      className="py-24 px-6 md:px-12 overflow-hidden"
-      style={{ backgroundColor: "#FAF9F6" }}
-    >
+    <section className="py-20 px-6 md:px-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto text-center font-[Inter]">
         {/* Heading Section */}
         <span
@@ -60,7 +58,7 @@ export default function CoreValues() {
 
         <h2
           data-aos="fade-down"
-          className="text-3xl md:text-5xl font-[Playfair_Display] font-bold text-[#0D3B2E] mb-4"
+          className="text-3xl md:text-5xl font-[Playfair_Display] font-bold text-[#111111] mb-4"
         >
           Built on Three Core Values
         </h2>
@@ -68,7 +66,7 @@ export default function CoreValues() {
         <p
           data-aos="fade-up"
           data-aos-delay="150"
-          className="text-[#3C4A4E] text-base md:text-lg max-w-2xl mx-auto mb-16"
+          className="text-[#333333] text-base md:text-lg max-w-2xl mx-auto mb-16"
         >
           Everything we do is guided by our commitment to excellence, quality, and
           value.
@@ -103,16 +101,29 @@ export default function CoreValues() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl md:text-2xl font-[Playfair_Display] font-semibold text-[#0D3B2E] mb-4">
+              <h3 className="text-xl md:text-2xl font-[Playfair_Display] font-semibold text-[#111111] mb-4">
                 {value.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[#3C4A4E] text-sm md:text-base leading-relaxed font-[Inter]">
+              <p className="text-[#333333] text-sm md:text-base leading-relaxed font-[Inter]">
                 {value.description}
               </p>
             </div>
           ))}
+        </div>
+
+        {/* CTA (optional) */}
+        <div data-aos="fade-up" data-aos-delay="400" className="mt-16">
+          <a
+            href="/venues"
+            className="inline-block px-8 py-3 rounded-full font-semibold text-black transition-all duration-500 hover:opacity-90"
+            style={{
+              backgroundColor: brandGold,
+            }}
+          >
+            Explore Our Venues
+          </a>
         </div>
       </div>
     </section>

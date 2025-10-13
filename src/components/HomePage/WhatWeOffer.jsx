@@ -10,17 +10,14 @@ export default function WhatWeOffer() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
 
-  const brandGreen = "#0D3B2E";
-  const brandGold = "#DDB64E";
-  const brandCream = "#FAF9F6";
+  const brandGold = "#DDB64E"; // Only brand color
 
   useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
-      once: false,
-      mirror: true,
-      offset: 100,
+      once: true,
+      offset: 80,
     });
   }, []);
 
@@ -59,7 +56,7 @@ export default function WhatWeOffer() {
     },
   ];
 
-  // Auto slide
+  // Auto-slide logic
   useEffect(() => {
     if (!hovered) {
       const timer = setInterval(() => {
@@ -86,10 +83,7 @@ export default function WhatWeOffer() {
   };
 
   return (
-    <section
-      className="relative py-24 px-4 md:px-12 overflow-visible"
-      style={{ backgroundColor: brandCream }}
-    >
+    <section className="relative py-20 px-4 md:px-12 overflow-visible bg-white">
       <div className="max-w-7xl mx-auto text-center font-serif">
         {/* Heading */}
         <span
@@ -101,7 +95,7 @@ export default function WhatWeOffer() {
 
         <h2
           data-aos="fade-down"
-          className="text-4xl md:text-5xl font-[Playfair_Display] font-bold text-[#0D3B2E] mb-4"
+          className="text-4xl md:text-5xl font-[Playfair_Display] font-bold text-[#111111] mb-4"
         >
           At SRK, You Can Have It All
         </h2>
@@ -109,13 +103,13 @@ export default function WhatWeOffer() {
         <p
           data-aos="fade-up"
           data-aos-delay="150"
-          className="text-[#3C4A4E] text-lg max-w-2xl mx-auto mb-14 font-[Inter]"
+          className="text-[#333333] text-lg max-w-2xl mx-auto mb-14 font-[Inter]"
         >
           From hearty breakfasts to vibrant nightlife, every SRK experience is
           crafted with passion and authenticity.
         </p>
 
-        {/* === FLAT LIGHTSWIND STYLE CARDS === */}
+        {/* === Card Slider === */}
         <div
           className="relative flex items-center justify-center h-[520px] overflow-visible"
           onMouseEnter={() => setHovered(true)}
@@ -147,10 +141,10 @@ export default function WhatWeOffer() {
                 {/* Card Content */}
                 <div className="p-6 text-left flex flex-col justify-between flex-grow font-[Inter]">
                   <div>
-                    <h3 className="text-xl font-semibold text-[#0D3B2E] mb-2">
+                    <h3 className="text-xl font-semibold text-[#111111] mb-2">
                       {s.title}
                     </h3>
-                    <p className="text-[#3C4A4E] text-sm leading-relaxed">
+                    <p className="text-[#333333] text-sm leading-relaxed">
                       {s.description}
                     </p>
                   </div>
@@ -174,13 +168,13 @@ export default function WhatWeOffer() {
                 (prev) => (prev - 1 + services.length) % services.length
               )
             }
-            className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/80 text-[#0D3B2E] w-10 h-10 rounded-full shadow-md hover:scale-110 transition text-lg font-bold"
+            className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 bg-white/80 text-black w-10 h-10 rounded-full shadow-md hover:scale-110 transition text-lg font-bold"
           >
             ‹
           </button>
           <button
             onClick={() => setActiveIndex((prev) => (prev + 1) % services.length)}
-            className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/80 text-[#0D3B2E] w-10 h-10 rounded-full shadow-md hover:scale-110 transition text-lg font-bold"
+            className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 bg-white/80 text-black w-10 h-10 rounded-full shadow-md hover:scale-110 transition text-lg font-bold"
           >
             ›
           </button>
@@ -190,7 +184,7 @@ export default function WhatWeOffer() {
         <div data-aos="fade-up" data-aos-delay="400" className="mt-16">
           <a
             href="/venues"
-            className="inline-block px-8 py-3 rounded-full font-semibold text-[#0D3B2E] transition-all duration-500"
+            className="inline-block px-8 py-3 rounded-full font-semibold text-black transition-all duration-500 hover:opacity-90"
             style={{
               backgroundColor: brandGold,
             }}

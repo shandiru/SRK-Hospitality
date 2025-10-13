@@ -1,11 +1,11 @@
+"use client";
+
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function Hero() {
-  const brandGreen = "#0D3B2E";
-  const brandCream = "#FAF9F6";
-  const brandGold = "#DDB64E";
+  const brandGold = "#DDB64E"; // Only brand color
 
   useEffect(() => {
     AOS.init({
@@ -29,10 +29,10 @@ export default function Hero() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Overlay Gradient for depth */}
+      {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
 
-      {/* Overlay Content */}
+      {/* Content */}
       <div className="relative z-10 text-center px-6">
         <h1
           data-aos="fade-up"
@@ -44,7 +44,7 @@ export default function Hero() {
         <p
           data-aos="fade-up"
           data-aos-delay="200"
-          className="mt-5 text-lg md:text-xl text-[#FAF9F6] max-w-2xl mx-auto leading-relaxed"
+          className="mt-5 text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed"
         >
           Celebrating the passion of independent culinary experiences with
           timeless elegance and warmth.
@@ -61,7 +61,7 @@ export default function Hero() {
             className="px-8 py-3 rounded-full font-semibold transition-all duration-300"
             style={{
               backgroundColor: brandGold,
-              color: brandGreen,
+              color: "#000000",
             }}
           >
             Explore Venues
@@ -85,7 +85,7 @@ export default function Hero() {
       <div
         className="absolute bottom-0 left-0 right-0 h-[6px]"
         style={{
-          background: `linear-gradient(90deg, ${brandGold}, ${brandGreen})`,
+          backgroundColor: brandGold,
         }}
       ></div>
     </section>
