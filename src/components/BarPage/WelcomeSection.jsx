@@ -4,7 +4,7 @@ export default function WelcomeSection() {
   const brandGold = "#DDB64E";
 
   return (
-    <section className="relative w-full h-[80vh] font-[Playfair_Display]">
+    <section className="relative w-full h-[80vh] font-[Playfair_Display] h-[100vh]">
       {/* Background Image */}
       <img
         src="/Hero.png" // your hero image
