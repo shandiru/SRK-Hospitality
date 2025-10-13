@@ -1,45 +1,100 @@
 'use client';
 
+import React, { useEffect } from "react";
+
 export default function AboutSection() {
+  const brandGold = "#DDB64E";
+
+  // ✅ Auto-detect dark/light mode
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const html = document.documentElement;
+
+    if (media.matches) html.classList.add("dark");
+    else html.classList.remove("dark");
+
+    const listener = (e) => {
+      if (e.matches) html.classList.add("dark");
+      else html.classList.remove("dark");
+    };
+
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
   return (
-    <section className="bg-gradient-to-br from-white to-gray-100 pt-24 pb-20 px-4 md:px-12 lg:px-20">
+    <section className="bg-gradient-to-br from-[#F5F7F8] to-[#E9ECEC] dark:from-[#0C0C0C] dark:to-[#111A1D] pt-24 pb-20 px-4 md:px-12 lg:px-20 transition-colors duration-700">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
 
         {/* Left: Image */}
         <div className="w-full lg:w-1/2 flex justify-center">
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 max-w-[600px] w-full bg-white">
+          <div className="rounded-xl overflow-hidden shadow-2xl border max-w-[600px] w-full transition-all duration-500 bg-white dark:bg-[#0E1517] border-[#DDB64E]/40">
             <img
-              src="/fusic-about.webp" // ⬅️ Replace with your actual image path
-              alt="Aspects Restaurant Exterior"
+              src="/fusic-about.webp"
+              alt="FUSIC - Leicester Restaurant"
               className="w-full h-auto object-cover"
             />
-            <div className="bg-[#cc4894] text-white text-center text-lg md:text-xl font-semibold py-3 rounded-b-xl">
-              FUSIC - Leicester
+            <div
+              className="text-center text-lg md:text-xl font-semibold py-3 rounded-b-xl"
+              style={{
+                backgroundColor: brandGold,
+                color: "#111111",
+              }}
+            >
+              FUSIC – Leicester
             </div>
           </div>
         </div>
 
-        {/* Right: Text Content */}
+        {/* Right: Text */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#222] underline underline-offset-8 decoration-[#cc4894] mb-8">
+          <h2
+            className="text-4xl md:text-5xl font-extrabold mb-8 underline underline-offset-[10px]"
+            style={{
+              color: brandGold,
+              textDecorationColor: brandGold,
+            }}
+          >
             About Us
           </h2>
-          <div className="text-gray-700 text-[17px] md:text-[18px] leading-relaxed space-y-5">
+
+          <div className="text-[17px] md:text-[18px] leading-relaxed space-y-5 text-[#333333] dark:text-[#E8E8E8] transition-all duration-300">
             <p>
-              <strong>FUSIC - Restaurant</strong>
+              <strong>FUSIC Restaurant</strong> welcomes you to a unique dining experience that blends delicious cuisine with a lively atmosphere. 
+              Our mission is simple — to bring people together over food that makes them happy.
             </p>
+
             <p>
-              We look forward to your visit or pre-order. We take pride in our cuisine, and our mission is to make people happy through our food. Thank you and hopefully see you soon! Your FUSIC - Restaurant Team
+              Whether you’re joining us for dinner, pre-ordering for convenience, or hosting a special event, 
+              our team is dedicated to making your visit memorable.
             </p>
-            <strong>
-              Our event space - perfect for parties upto 70 people.
-            </strong>
+
+            <h3
+              className="text-2xl font-bold mt-8 mb-3"
+              style={{ color: brandGold }}
+            >
+              Private Events
+            </h3>
             <p>
-              Are you looking for the perfect venue for your next event? Whether it's an intimate birthday celebration or a grand party, our event space has everything you need! Our spacious and versatile area adapts to every occasion, making your event unforgettable.
+              Looking for the perfect venue for your next celebration? Our event space can host up to 70 guests — 
+              ideal for birthdays, anniversaries, or any special gathering. 
+              Enjoy modern décor, great music, and food that sets the mood for a truly unforgettable evening.
             </p>
-            <strong>Catering</strong>
+
+            <h3
+              className="text-2xl font-bold mt-8 mb-3"
+              style={{ color: brandGold }}
+            >
+              Catering Services
+            </h3>
             <p>
-              Are you hosting a special event and looking for delicious Indian cuisine? Look no further! Our Indian restaurant offers outstanding catering services that will impress your guests. From traditional dishes to modern creations, our catering menu has something for everyone. Let us take care of the food while you enjoy your event. Contact us today to discuss your catering needs and make your event a memorable one!
+              Hosting an event elsewhere? Let us bring the flavour to you. 
+              From traditional Indian classics to contemporary creations, our catering menu offers something for every palate. 
+              We’ll handle the food — you enjoy the occasion.
+            </p>
+
+            <p>
+              <strong>FUSIC – where flavour, fun, and friendship come together.</strong>
             </p>
           </div>
         </div>

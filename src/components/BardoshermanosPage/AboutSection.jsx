@@ -1,45 +1,74 @@
 'use client';
 
+import React, { useEffect } from "react";
+
 export default function AboutSection() {
+  const brandGold = "#DDB64E";
+
+  // ✅ Auto-apply dark / light mode
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const html = document.documentElement;
+    if (media.matches) html.classList.add("dark");
+    else html.classList.remove("dark");
+    const listener = (e) => {
+      if (e.matches) html.classList.add("dark");
+      else html.classList.remove("dark");
+    };
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
   return (
-    <section className="bg-gradient-to-br from-white to-gray-100 pt-24 pb-20 px-4 md:px-12 lg:px-20">
+    <section className="bg-gradient-to-br from-[#F5F7F8] to-[#E9ECEC] dark:from-[#0C0C0C] dark:to-[#111A1D] pt-24 pb-20 px-4 md:px-12 lg:px-20 transition-colors duration-700">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
         
-        {/* Left: Image */}
+        {/* Left Image */}
         <div className="w-full lg:w-1/2 flex justify-center">
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 max-w-[600px] w-full bg-white">
+          <div className="rounded-xl overflow-hidden shadow-2xl border max-w-[600px] w-full transition-all duration-500 bg-white dark:bg-[#0E1517] border-[#DDB64E]/40">
             <img
               src="/Bardosabout.png"
               alt="Bar Dos Hermanos Exterior"
               className="w-full h-auto object-cover"
             />
-            <div className="bg-red-600 text-white text-center text-lg md:text-xl font-semibold py-3 rounded-b-xl">
+            <div
+              className="text-center text-lg md:text-xl font-semibold py-3 rounded-b-xl"
+              style={{
+                backgroundColor: brandGold,
+                color: "#111111",
+              }}
+            >
               Bar Dos Hermanos
             </div>
           </div>
         </div>
 
-        {/* Right: Text Content */}
+        {/* Right Text */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 underline underline-offset-8 decoration-red-600 mb-8">
+          <h2
+            className="text-4xl md:text-5xl font-extrabold mb-8 underline underline-offset-[10px]"
+            style={{
+              color: brandGold,
+              textDecorationColor: brandGold,
+            }}
+          >
             About Us
           </h2>
-          <div className="text-gray-700 text-[17px] md:text-[18px] leading-relaxed space-y-5">
+
+          <div className="text-[17px] md:text-[18px] leading-relaxed space-y-5 text-[#333333] dark:text-[#E8E8E8] transition-all duration-300">
             <p>
-              <strong>Bar Dos Hermanos</strong> is styled as a 1940’s Cuban American bar. First opened in 2002, 
-              it boasts an extensive range of Cuban cocktails, premium draught and bottled beers including several 
-              cask-conditioned ales along with world rums and chupitos, as well as a large range of quality wines 
-              available by bottle or glass.
+              <strong>Bar Dos Hermanos</strong> brings the vibrant spirit of 1940’s Cuba to Leicester.  
+              Established in 2002, it features an extensive selection of Cuban cocktails, world-class rums,  
+              premium draught beers, and hand-picked wines — all served in a timeless art-deco setting.
             </p>
             <p>
-              Our bar is open seven days a week and operates a happy hour each day for those on a budget.
+              Open seven days a week, our lively bar offers daily happy hours for those looking to relax in style without compromise.
             </p>
             <p>
-              Feeling hungry? You can pick up a mouth-watering range of Bar tapas.
+              Feeling hungry? Treat yourself to a mouth-watering selection of authentic Spanish and Cuban tapas paired perfectly with your favourite drink.
             </p>
             <p>
-              Don’t miss out on our homemade breakfast and brunch served every weekend. You can also hire our 
-              venue exclusively for private parties and events.
+              Join us for homemade breakfast and brunch every weekend or hire our venue for private parties and exclusive events — complete with signature cocktails and music that keep the Cuban energy alive all night.
             </p>
           </div>
         </div>

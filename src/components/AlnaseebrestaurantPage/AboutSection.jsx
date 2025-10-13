@@ -1,39 +1,74 @@
 'use client';
 
+import React, { useEffect } from "react";
+
 export default function AboutSection() {
+  const brandGold = "#DDB64E";
+
+  // ✅ Auto dark/light mode detection
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const html = document.documentElement;
+    if (media.matches) html.classList.add("dark");
+    else html.classList.remove("dark");
+
+    const listener = (e) => {
+      if (e.matches) html.classList.add("dark");
+      else html.classList.remove("dark");
+    };
+
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
   return (
-    <section className="bg-gradient-to-br from-white to-gray-100 pt-24 pb-20 px-4 md:px-12 lg:px-20">
+    <section className="bg-gradient-to-br from-[#F5F7F8] to-[#E9ECEC] dark:from-[#0C0C0C] dark:to-[#111A1D] pt-24 pb-20 px-4 md:px-12 lg:px-20 transition-colors duration-700">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
         
         {/* Left: Image */}
         <div className="w-full lg:w-1/2 flex justify-center">
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 max-w-[600px] w-full bg-white">
+          <div className="rounded-xl overflow-hidden shadow-2xl border max-w-[600px] w-full transition-all duration-500 bg-white dark:bg-[#0E1517] border-[#DDB64E]/40">
             <img
-              src="/AL-nasee-about.png" // 🔁 Change this to your correct Al Naseeb image path
-              alt="Al Naseeb Exterior"
+              src="/AL-nasee-about.png"
+              alt="Al Naseeb Restaurant"
               className="w-full h-auto object-cover"
             />
-            <div className="bg-red-600 text-white text-center text-lg md:text-xl font-semibold py-3 rounded-b-xl">
-              AL NASEEB
+            <div
+              className="text-center text-lg md:text-xl font-semibold py-3 rounded-b-xl"
+              style={{
+                backgroundColor: brandGold,
+                color: "#111111",
+              }}
+            >
+              Al Naseeb
             </div>
           </div>
         </div>
 
         {/* Right: Text Content */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 underline underline-offset-8 decoration-red-600 mb-8">
-            Welcome to Al Naseeb!
+          <h2
+            className="text-4xl md:text-5xl font-extrabold mb-8 underline underline-offset-[10px]"
+            style={{
+              color: brandGold,
+              textDecorationColor: brandGold,
+            }}
+          >
+            Welcome to Al Naseeb
           </h2>
-          <div className="text-gray-700 text-[17px] md:text-[18px] leading-relaxed space-y-5">
+
+          <div className="text-[17px] md:text-[18px] leading-relaxed space-y-5 text-[#333333] dark:text-[#E8E8E8] transition-all duration-300">
             <p>
-              Our culinary team takes pride in crafting delectable dishes using the finest ingredients, ensuring that every bite is a flavor-packed delight.
-              But it's not just about the food—it's about creating a warm and inviting ambiance where laughter echoes, conversations flow, and friendships are nurtured.
+              At <strong>Al Naseeb</strong>, we believe that every meal should be more than just dining — it should be an experience filled with warmth, flavour, and connection.
             </p>
             <p>
-              We invite you to gather your loved ones, share a meal, and savor the moments that truly matter. Come to Al Naseeb and let the combination of good food, excellent service, and cherished company create an experience that will leave a smile on your face and your heart full.
+              Our talented chefs craft each dish using only the finest ingredients, blending traditional recipes with modern flair to bring out the best of Indian cuisine. Every bite is a celebration of taste and tradition.
             </p>
             <p>
-              We also deliver, bringing the goodness of Al Naseeb food right to your doorstep.
+              Whether you’re enjoying a family dinner, a friendly catch-up, or a special occasion, our welcoming atmosphere and dedicated team ensure that every visit feels memorable.
+            </p>
+            <p>
+              Prefer to dine at home? We also deliver, bringing the rich flavours of Al Naseeb straight to your doorstep — fresh, fast, and full of love.
             </p>
           </div>
         </div>

@@ -1,38 +1,73 @@
 'use client';
 
+import React, { useEffect } from "react";
+
 export default function AboutSection() {
+  const brandGold = "#DDB64E";
+
+  // ✅ Auto dark/light mode detection
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const html = document.documentElement;
+    if (media.matches) html.classList.add("dark");
+    else html.classList.remove("dark");
+
+    const listener = (e) => {
+      if (e.matches) html.classList.add("dark");
+      else html.classList.remove("dark");
+    };
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
   return (
-    <section className="bg-gradient-to-br from-white to-gray-100 pt-24 pb-20 px-4 md:px-12 lg:px-20">
+    <section className="bg-gradient-to-br from-[#F5F7F8] to-[#E9ECEC] dark:from-[#0C0C0C] dark:to-[#111A1D] pt-24 pb-20 px-4 md:px-12 lg:px-20 transition-colors duration-700">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
         
-        {/* Left: Image */}
+        {/* Left Image */}
         <div className="w-full lg:w-1/2 flex justify-center">
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 max-w-[600px] w-full bg-white">
+          <div className="rounded-xl overflow-hidden shadow-2xl border max-w-[600px] w-full transition-all duration-500 bg-white dark:bg-[#0E1517] border-[#DDB64E]/40">
             <img
-              src="/freddies.png" // ⬅️ Replace with your actual image path
+              src="/freddies.png"
               alt="Freddies Desserts Exterior"
               className="w-full h-auto object-cover"
             />
-            <div className="bg-[#cc4894] text-white text-center text-lg md:text-xl font-semibold py-3 rounded-b-xl">
-              FREDDIES DESSERTS
+            <div
+              className="text-center text-lg md:text-xl font-semibold py-3 rounded-b-xl"
+              style={{
+                backgroundColor: brandGold,
+                color: "#111111",
+              }}
+            >
+              Freddies Desserts
             </div>
           </div>
         </div>
 
-        {/* Right: Text Content */}
+        {/* Right Text */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#222] underline underline-offset-8 decoration-[#cc4894] mb-8">
+          <h2
+            className="text-4xl md:text-5xl font-extrabold mb-8 underline underline-offset-[10px]"
+            style={{
+              color: brandGold,
+              textDecorationColor: brandGold,
+            }}
+          >
             Cooked With Love
           </h2>
-          <div className="text-gray-700 text-[17px] md:text-[18px] leading-relaxed space-y-5">
+
+          <div className="text-[17px] md:text-[18px] leading-relaxed space-y-5 text-[#333333] dark:text-[#E8E8E8] transition-all duration-300">
             <p>
-              Order food online from <strong>Freddies Desserts!</strong> It’s so easy to use, fast and convenient. You can now order online all your favourite dishes and many more delicious options.
+              Welcome to <strong>Freddies Desserts</strong> — where every bite is made with love and happiness. 
+              We’re passionate about crafting desserts that not only taste amazing but also bring a smile with every spoonful.
             </p>
             <p>
-              Enjoy tasty treats delivered straight to your door in no time at all. Whether you're craving something sweet or just want to indulge in a dessert, we've got you covered.
+              From indulgent waffles and creamy milkshakes to signature sundaes and homemade cakes, 
+              we make every treat fresh to order using the finest ingredients.
             </p>
             <p>
-              We’re passionate about bringing smiles with every bite – thank you for choosing Freddies!
+              Order online and enjoy your favourite desserts delivered straight to your door — fast, fresh, and full of sweetness. 
+              At Freddies, dessert isn’t just food, it’s a moment of joy.
             </p>
           </div>
         </div>
