@@ -333,11 +333,11 @@ export default function MenuFlipbook() {
 
   return (
     <div
-      className="mx-auto max-w-7xl px-3 py-6 sm:py-10 rounded-3xl transition-all duration-500"
+      className=" px-3 py-6 sm:py-10 transition-all duration-500"
       style={{ background: mode.background }}
     >
       {/* Header */}
-      <div className="mb-4 flex flex-col items-center justify-between gap-3 sm:mb-6 sm:flex-row">
+      <div className="mb-4 mx-auto max-w-7xl rounded-3xl flex flex-col items-center justify-between gap-3 sm:mb-6 sm:flex-row">
         <h1
           className="text-2xl font-bold tracking-tight"
           style={{ color: COLORS.gold }}

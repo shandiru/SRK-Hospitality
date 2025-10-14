@@ -1,26 +1,9 @@
 'use client';
 
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function AboutSection() {
   const brandGold = "#DDB64E";
-
-  // ✅ Auto-detect dark/light mode
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const html = document.documentElement;
-
-    if (media.matches) html.classList.add("dark");
-    else html.classList.remove("dark");
-
-    const listener = (e) => {
-      if (e.matches) html.classList.add("dark");
-      else html.classList.remove("dark");
-    };
-
-    media.addEventListener("change", listener);
-    return () => media.removeEventListener("change", listener);
-  }, []);
 
   return (
     <section className="bg-gradient-to-br from-[#F5F7F8] to-[#E9ECEC] dark:from-[#0C0C0C] dark:to-[#111A1D] pt-24 pb-20 px-4 md:px-12 lg:px-20 transition-colors duration-700">
@@ -28,7 +11,7 @@ export default function AboutSection() {
 
         {/* Left: Image */}
         <div className="w-full lg:w-1/2 flex justify-center">
-          <div className="rounded-xl overflow-hidden shadow-2xl border max-w-[600px] w-full transition-all duration-500 bg-white dark:bg-[#0E1517] border-[#DDB64E]/40">
+          <div className="rounded-xl overflow-hidden shadow-2xl border max-w-[600px] w-full transition-all duration-500 hover:scale-[1.02] bg-white dark:bg-[#0E1517] border-[#DDB64E]/40">
             <img
               src="/fusic-about.webp"
               alt="FUSIC - Leicester Restaurant"
@@ -46,7 +29,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Right: Text */}
+        {/* Right: Text Content */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h2
             className="text-4xl md:text-5xl font-extrabold mb-8 underline underline-offset-[10px]"
