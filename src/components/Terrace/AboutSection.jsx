@@ -28,8 +28,8 @@ export default function AboutSection() {
           >
             <div className="relative">
               <img
-                src="/about.png"
-                alt="1573 Bar & Grill Exterior"
+                src="/terrace1.webp"
+                alt="The Terrace"
                 className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-700 ease-out"
               />
               <div
@@ -38,7 +38,7 @@ export default function AboutSection() {
                   background: `linear-gradient(90deg, ${brandGold}, ${brandGold}D0)`,
                 }}
               >
-                1573 Bar & Restaurant
+                The Terrace
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function AboutSection() {
               Grade II* listed building — one of England’s oldest school
               structures. Today, it stands proudly as{" "}
               <span style={{ color: brandGold, fontWeight: "600" }}>
-                1573 Bar & Grill
+               The Terrace
               </span>
               , a celebration of heritage and modern dining at Highcross
               Leicester.

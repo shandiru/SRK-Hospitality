@@ -45,7 +45,7 @@ export default function MapSection() {
           }`}
         >
           <iframe
-            src="https://maps.google.com/maps?q=1573%20Freeschool%20Ln%2C%20Leicester%20LE1%204NN%2C%20United%20Kingdom&t=m&z=15&output=embed&iwloc=near"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.977949999439!2d55.327656000000005!3d25.274893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5cb850fff549%3A0xcef35e1f213dc49b!2sThe%20Terrace!5e1!3m2!1sen!2slk!4v1761328433867!5m2!1sen!2slk"
             title="1573 Freeschool Ln, Leicester LE1 4NN, United Kingdom"
             aria-label="1573 Freeschool Ln, Leicester LE1 4NN, United Kingdom"
             loading="lazy"

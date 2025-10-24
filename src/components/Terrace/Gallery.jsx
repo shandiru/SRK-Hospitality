@@ -10,15 +10,15 @@ import 'swiper/css/pagination';
 const BRAND_GOLD = '#E1B43B'; // your logo color
 
 const images = [
-  '/bar1.jpeg',
-  '/bar2.jpeg',
-  '/bar3.jpeg',
-  '/bar4.jpeg',
-  '/bar5.jpeg',
-  '/bar6.jpeg',
-  '/bar7.jpeg',
-  '/bar8.jpeg',
-  '/bar9.jpeg',
+  '/terarce4.jpg',
+  '/terarce5.jpg',
+  '/terarce6.jpg',
+  '/terarce7.jpg',
+  '/terarce8.jpg',
+  '/terarce9.jpg',
+  '/terarce10.jpg',
+  '/terarce11.jpg',
+  '/terarce12.jpg',
 ];
 
 export default function Gallery() {

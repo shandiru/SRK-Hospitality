@@ -8,7 +8,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const venues = [
-  { name: "157 Bar and Grill", desc: "Bar and Grill", img: "/157.png", slug: "1573bar" },
+  { name: "The Terrace", desc: "Restaurant", img: "/157.png", slug: "terrace" },
+   { name: "Lynn_Leics", desc: "Restaurant", img: "/lynn.jpg", slug: "Lynn" },
   { name: "The Walnut Tree Inn", desc: "Fine dining experience", img: "/walnut.png", slug: "walnut" },
   { name: "Barceloneta", desc: "Spanish Bar", img: "/barceloneta.png", slug: "barceloneta" },
   { name: "Bar Dos Hermanos", desc: "Cuban Bar", img: "/doshermanos.png", slug: "dos-hermanos" },
