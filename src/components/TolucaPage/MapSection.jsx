@@ -45,7 +45,7 @@ export default function MapSection() {
           }`}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d77399.8992789567!2d-1.8287530000000003!3d52.682609!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870a78f3af5b0db%3A0x70a316ca68f66189!2s1-3%20City%20Arcade%2C%20Lichfield%20WS13%206LZ%2C%20UK!5e0!3m2!1sen!2sus!4v1758108297644!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1993.5764981780067!2d-1.8287532!3d52.682609199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870a73260faf92d%3A0xf08185db1b194ff8!2sToluca%20Mexican%20Bar%20%26%20Grill!5e1!3m2!1sen!2slk!4v1761583370985!5m2!1sen!2slk"
             title="Toluca – 1-3 City Arcade, Lichfield WS13 6LZ, UK"
             aria-label="Toluca – 1-3 City Arcade, Lichfield WS13 6LZ, UK"
             loading="lazy"

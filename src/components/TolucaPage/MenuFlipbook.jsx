@@ -170,76 +170,6 @@ const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
 ));
 SectionPage.displayName = "SectionPage";
 
-// ---------- INFO PAGE ----------
-const InfoPage = forwardRef(({ mode }, ref) => (
-  <Page ref={ref} mode={mode}>
-    <div className="flex h-full flex-col">
-      <h2 className="text-2xl font-bold mb-3" style={{ color: COLORS.gold }}>
-        About Us
-      </h2>
-      <p className="text-sm mb-6" style={{ color: mode.text }}>
-        Welcome to <span className="font-semibold">Toluca Mexican Bar & Grill</span>, 
-        where bold flavors, lively atmosphere, and Latin-inspired cocktails come together 
-        for a unique dining experience in the heart of Leicester.
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <div
-          className="rounded-2xl border p-4"
-          style={{
-            borderColor: COLORS.gold,
-            backgroundColor: mode.sectionBg,
-          }}
-        >
-          <p className="text-sm font-semibold" style={{ color: COLORS.gold }}>
-            Location
-          </p>
-          <p className="text-sm" style={{ color: mode.text }}>
-            Units 1-3 City Arcade,
-            <br />
-            Bore Street,
-            <br />
-            Lichfield WS13 6LZ
-          </p>
-        </div>
-        <div
-          className="rounded-2xl border p-4"
-          style={{
-            borderColor: COLORS.gold,
-            backgroundColor: mode.sectionBg,
-          }}
-        >
-          <p className="text-sm font-semibold" style={{ color: COLORS.gold }}>
-            Contact
-          </p>
-          <p className="text-sm" style={{ color: mode.text }}>
-            01543 471537
-          </p>
-          <p className="text-sm" style={{ color: mode.text }}>
-            info@toluca.co.uk
-          </p>
-        </div>
-      </div>
-
-      <div className="mt-auto text-[11px]" style={{ color: mode.text }}>
-        © {new Date().getFullYear()} Toluca Mexican Bar & Grill. All rights reserved.
-      </div>
-    </div>
-  </Page>
-));
-InfoPage.displayName = "InfoPage";
-
-// ---------- BACK COVER ----------
-const BackCoverPage = forwardRef(({ mode }, ref) => (
-  <Page ref={ref} mode={mode}>
-    <div className="flex h-full items-center justify-center">
-      <p className="text-sm font-medium" style={{ color: mode.text }}>
-        Gracias por visitarnos 🌮
-      </p>
-    </div>
-  </Page>
-));
-BackCoverPage.displayName = "BackCoverPage";
 
 // ---------- MAIN ----------
 export default function MenuFlipbook() {
@@ -303,9 +233,6 @@ export default function MenuFlipbook() {
         currentIndex++;
       });
     });
-
-    arr.push(<InfoPage key="info" mode={mode} />);
-    arr.push(<BackCoverPage key="back" mode={mode} />);
     return { pages: arr, sectionPageMap: map };
   }, [mode]);
 
