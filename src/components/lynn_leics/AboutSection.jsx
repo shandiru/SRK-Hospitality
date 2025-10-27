@@ -53,34 +53,23 @@ export default function AboutSection() {
                        text-[#333333] dark:text-[#E8E8E8] transition-all duration-300"
           >
             <p>
-              Nestled in the heart of Blisworth, The lynn blends rustic
-              charm with contemporary comfort — offering a perfect spot to dine,
-              relax, and stay.
+             Where sophistication meets unforgettable flavour
             </p>
 
             <p>
-              Our recently refurbished inn features 11 beautifully appointed rooms,
-              a modern British restaurant, and a warm bar atmosphere where every
-              guest feels at home.
+             Welcome to LYNN, Leicester’s premier destination for elevated dining and exquisite cocktails. Located in the heart of the city, we bring together impeccable culinary artistry, refined mixology, and a vibrant atmosphere that celebrates style and culture.
             </p>
 
             <p>
-              Whether you're joining us for a family celebration, a business event,
-              or a quiet weekend escape, we promise a welcoming environment and
-              exceptional hospitality.
+             Our chefs craft every dish with precision and passion, showcasing the finest seasonal ingredients and global influences. Our bar team curates a cocktail list that blends innovation with elegance, ensuring each sip delivers a memorable experience.
             </p>
 
-            <h3
-              className="text-2xl font-bold mt-10 mb-3 text-center lg:text-left"
-              style={{ color: brandGold }}
-            >
-              Award-Winning Hospitality
-            </h3>
+            <p>
+              Whether you join us for an intimate evening, a celebration with friends, or after-hours drinks, LYNN offers an experience defined by luxury, warmth, and attention to every detail.
+            </p>
 
             <p>
-              We’re proud recipients of TripAdvisor’s Certificate of Excellence for
-              seven consecutive years — a reflection of our dedication to quality,
-              comfort, and genuine care for our guests.
+              Indulge in the extraordinary. This is LYNN.
             </p>
           </div>
         </div>

@@ -347,7 +347,7 @@ export default function MenuFlipbook() {
             <button
               key={s.id}
               onClick={() => goTo(target)}
-              className={`rounded-2xl border px-3 py-2 text-sm shadow-sm hover:bg-neutral-50 ${
+              className={`rounded-2xl border px-3 py-2 dark:hover:text-black text-sm shadow-sm hover:bg-neutral-50 ${
                 isActive ? "border-amber-400 ring-2 ring-amber-200" : "border-neutral-300"
               }`}
             >

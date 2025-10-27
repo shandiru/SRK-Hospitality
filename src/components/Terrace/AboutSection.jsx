@@ -61,59 +61,12 @@ export default function AboutSection() {
                        text-[#333333] dark:text-[#EAEAEA]"
           >
             <p>
-              The Old (Free) Grammar School, built in <strong>1573</strong>, is a
-              Grade II* listed building — one of England’s oldest school
-              structures. Today, it stands proudly as{" "}
-              <span style={{ color: brandGold, fontWeight: "600" }}>
-               The Terrace
-              </span>
-              , a celebration of heritage and modern dining at Highcross
-              Leicester.
+              The Terrace Restaurant is a popular multi-cuisine restaurant chain operated by the Hospitality Division of Thumbay Group. The first restaurant was opened on 12th March, 2010. It won the internationally acclaimed HACCP (Hazard Analysis Control Point) certification, which is accredited by the Dubai Accreditation Center (DAC).
             </p>
 
             <p>
-              Since opening in 2009, we’ve become a destination for those who
-              appreciate fine food, rich history, and genuine hospitality.
+              The Terrace products and menus are prepared by skillful, specialized, and experienced chefs and nutritionists to help cater healthy and delicious food. What sets Terrace apart is the attention to detail and the focus on quality. From maintaining stringent food preparation standards to creating the perfect ambience, the team is extremely passionate about executing everything to the highest standards.
             </p>
-
-            <p>
-              Every meal is crafted with the freshest seasonal ingredients,
-              paired with an exclusive range of wines and champagnes — creating
-              unforgettable dining experiences.
-            </p>
-
-            <p>
-              Our menu brings together premium cuts, ocean-fresh seafood, and
-              vegetarian delicacies — all perfectly grilled and elegantly served.
-            </p>
-
-            <p>
-              Step onto our outdoor terrace and enjoy a drink overlooking the
-              bustling Highcross courtyard — the perfect mix of old charm and
-              new energy.
-            </p>
-          </div>
-
-          {/* Accent Divider */}
-          <div
-            className="w-28 h-[3px] mt-10 mb-10 rounded-full mx-auto lg:mx-0"
-            style={{
-              backgroundColor: brandGold,
-            }}
-          ></div>
-
-          {/* CTA Button */}
-          <div>
-            <a
-              href="/menu"
-              className="inline-block font-semibold px-8 py-3.5 rounded-full text-base md:text-lg 
-                         transition-all duration-500 shadow-md text-black hover:scale-[1.05]"
-              style={{
-                backgroundColor: brandGold,
-              }}
-            >
-              Explore Our Menu
-            </a>
           </div>
         </div>
       </div>
