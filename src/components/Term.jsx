@@ -28,7 +28,7 @@ const TermsConditions = () => {
                   <section>
                       <h2 className="text-2xl font-medium">3. Intellectual Property</h2>
                       <p className="text-white">
-                          All content on this website (including text, images, graphics, and logos) is owned by or licensed to Shahz Tyres.
+                          All content on this website (including text, images, graphics, and logos) is owned by or licensed to SRK Hospitality Limited.
                           You may view, download, and print content for personal use only.
                           You must not copy, reproduce, or distribute our website content without prior written consent.
                       </p>
@@ -77,10 +77,7 @@ const TermsConditions = () => {
                           If you have any questions about these Terms of Use, please contact us:
                       </p>
                       <div className="text-white">
-                          <p><strong>Shahz Tyres</strong></p>
-                          <p>Email: <a href="mailto:" className="text-blue-500 hover:underline"></a></p>
-                          <p>Phone: 01530 648 708</p>
-                          <p>Address: </p>
+                          <p><strong>SRK Hospitality Limited</strong></p>
                       </div>
                   </section>
               </div>

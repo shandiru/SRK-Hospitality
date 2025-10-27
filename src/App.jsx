@@ -19,6 +19,9 @@ import Vacancies from "./Page/Vacancies.jsx"
 import Lynnleics from "./Page/lynn_leics.jsx";
 import Terrace from "./Page/Terrace.jsx";
 import Lindbergh from "./Page/Lindbergh.jsx";
+import GDPRConsent from "./components/GDPRButton.jsx";
+import TermsConditions from "./components/Term.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
 
 export default function App() {
   return (
@@ -42,8 +45,11 @@ export default function App() {
           <Route path="/venues" element={<Venu />} />
           <Route path="/RestaurantManagerPage" element={<RestaurantManagerPage />} />
           <Route path="/vacancies" element={<Vacancies />} />
+          <Route path="/terms" element={<TermsConditions />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
         <SiteFooter />
+        <GDPRConsent />
       </main>
     </div>
   );

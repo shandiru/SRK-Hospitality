@@ -110,10 +110,7 @@ const PrivacyPolicy = () => {
                         If you have any questions about this Privacy Policy or how we handle your personal data, please contact us:
                     </p>
                     <div className="text-white">
-                        <p><strong>Shahz Tyres</strong></p>
-                        <p>Email: <a href="mailto:" className="text-blue-500 hover:underline"></a></p>
-                        <p>Phone: 01530 648 708</p>
-                        <p>Address: </p>
+                        <p><strong>SRK Hospitality Limited</strong></p>
                     </div>
                     <p className="mt-2 text-white">
                         If you are not satisfied with our response, you have the right to lodge a complaint with the{' '}
