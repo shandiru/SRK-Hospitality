@@ -19,7 +19,7 @@ export default function Lindbergh() {
         <AboutSection />
       </section>
       <section>
-        <MenuFlipbook />
+        {/* <MenuFlipbook /> */}
       </section>
       <section>
         <Gallery />
