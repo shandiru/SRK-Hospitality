@@ -8,8 +8,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const venues = [
-  { name: "The Terrace", desc: "Restaurant", img: "/157.png", slug: "terrace" },
-   { name: "Lynn_Leics", desc: "Restaurant", img: "/lynn.jpg", slug: "Lynn" },
+  { name: "The Terrace", desc: "Restaurant", img: "/terrace-home.jpg", slug: "terrace" },
+  { name: "Lynn_Leics", desc: "Restaurant", img: "/lynn.jpg", slug: "Lynn" },
+  { name: "Lindbergh", desc: "Sports bar", img: "/lynn.jpg", slug: "Lynn" },
   { name: "The Walnut Tree Inn", desc: "Fine dining experience", img: "/walnut.png", slug: "walnut" },
   { name: "Barceloneta", desc: "Spanish Bar", img: "/barceloneta.png", slug: "barceloneta" },
   { name: "Bar Dos Hermanos", desc: "Cuban Bar", img: "/doshermanos.png", slug: "dos-hermanos" },
@@ -106,9 +107,8 @@ export default function VenuesGrid() {
   return (
     <section
       id="venues-grid"
-      className={`py-24 px-6 md:px-12 font-[Inter] transition-colors duration-700 ${
-        isDark ? "bg-[#0C0C0C] text-[#E9ECEC]" : "bg-white text-[#111111]"
-      }`}
+      className={`py-24 px-6 md:px-12 font-[Inter] transition-colors duration-700 ${isDark ? "bg-[#0C0C0C] text-[#E9ECEC]" : "bg-white text-[#111111]"
+        }`}
     >
       {/* Section Header */}
       <div className="max-w-7xl mx-auto text-center mb-16">
@@ -130,9 +130,8 @@ export default function VenuesGrid() {
         </h2>
 
         <p
-          className={`text-base md:text-lg max-w-2xl mx-auto ${
-            isDark ? "text-[#CFCFCF]" : "text-[#333333]"
-          }`}
+          className={`text-base md:text-lg max-w-2xl mx-auto ${isDark ? "text-[#CFCFCF]" : "text-[#333333]"
+            }`}
         >
           Each venue tells its own story — from fine dining elegance to vibrant nightlife.
           We bring flavour, style, and warmth to every experience.
@@ -145,9 +144,8 @@ export default function VenuesGrid() {
           <Link to={`/${v.slug}`} key={v.name}>
             <div
               ref={(el) => (cardsRef.current[i] = el)}
-              className={`relative w-[280px] sm:w-[300px] lg:w-[340px] h-[320px] sm:h-[340px] lg:h-[370px] rounded-2xl overflow-hidden cursor-pointer shadow-lg transition-transform duration-500 ease-out border ${
-                isDark ? "border-[#222]" : "border-[#EAEAEA]"
-              }`}
+              className={`relative w-[280px] sm:w-[300px] lg:w-[340px] h-[320px] sm:h-[340px] lg:h-[370px] rounded-2xl overflow-hidden cursor-pointer shadow-lg transition-transform duration-500 ease-out border ${isDark ? "border-[#222]" : "border-[#EAEAEA]"
+                }`}
               style={{
                 backgroundImage: `url(${v.img})`,
                 backgroundSize: "cover",
@@ -161,11 +159,10 @@ export default function VenuesGrid() {
 
               {/* Gradient Overlay */}
               <div
-                className={`absolute inset-0 z-20 rounded-2xl ${
-                  isDark
+                className={`absolute inset-0 z-20 rounded-2xl ${isDark
                     ? "bg-gradient-to-t from-black/80 via-black/60 to-transparent"
                     : "bg-gradient-to-t from-black/75 via-black/50 to-transparent"
-                }`}
+                  }`}
               ></div>
 
               {/* Text */}
