@@ -761,6 +761,288 @@
     { "name": "Choice of Ice Cream", "description": "Vanilla / Chocolate / Mango", "price": "12.00" }
   ]
 }
+,{
+  "id": "veg_corner_starters_delight",
+  "title": "Starters & Delight Corner (Veg-Corner Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "Tandoori Paneer Tikka", "description": "", "price": "20.00" },
+    { "name": "Gobi 65", "description": "", "price": "15.00" },
+    { "name": "Salt & Pepper Mushroom", "description": "", "price": "17.00" },
+    { "name": "Masala Pappad", "description": "", "price": "6.00" },
+    { "name": "Aloo Tikki", "description": "", "price": "12.00" },
+    { "name": "Crispy Fried Veg.", "description": "", "price": "12.00" },
+    { "name": "Tandoori Gobi", "description": "", "price": "12.00" },
+    { "name": "Tandoori Aloo", "description": "", "price": "12.00" },
+    { "name": "Hara Bhara Kabab", "description": "", "price": "12.00" },
+    { "name": "Veg. Lollipop", "description": "", "price": "18.00" },
+    { "name": "Chinese Chilly Idli", "description": "", "price": "10.00" },
+    { "name": "Chilly Paneer", "description": "", "price": "17.00" },
+    { "name": "Bombay Sandwich", "description": "", "price": "15.00" },
+    { "name": "Grilled Veg. Sandwich", "description": "", "price": "18.00" },
+    { "name": "Veg. Burger", "description": "", "price": "15.00" },
+    { "name": "Veg. and Cheese Burger", "description": "", "price": "18.00" },
+    { "name": "Veg. and Paneer Kathi Roll", "description": "", "price": "18.00" },
+    { "name": "Pav Bhaji", "description": "", "price": "18.00" }
+  ]
+}
+,
+{
+  "id": "veg_corner_thali_biriyani",
+  "title": "Thali & Rice & Biriyani Corner (Veg-Corner Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "Lunch Thali", "description": "Chapatti, Rice, Sambar, Poriyal, Rasam, Koothu & Sweet", "price": "16.00" },
+    { "name": "Special Thali", "description": "Chapati or Puri, Rice, Pickle, Pappad, Sambar, Poriyal, Rasam, Kootu, Kadai Panner, Curd, Buttermilk & Sweet", "price": "20.00" },
+    { "name": "Plain Basmati Rice", "description": "", "price": "8.00" },
+    { "name": "Lemon Rice", "description": "", "price": "12.00" },
+    { "name": "Curd Rice", "description": "", "price": "12.00" },
+    { "name": "Veg. Biriyani", "description": "", "price": "18.00" },
+    { "name": "Spicy Andhra Biriyani", "description": "", "price": "18.00" },
+    { "name": "Kerala Veg. Biriyani", "description": "", "price": "18.00" },
+    { "name": "Paneer Tikka Biriyani", "description": "", "price": "22.00" },
+    { "name": "Veg. Pulao", "description": "", "price": "12.00" },
+    { "name": "Jeera Rice", "description": "", "price": "10.00" },
+    { "name": "Kashmiri Pulao", "description": "", "price": "15.00" },
+    { "name": "Veg Corner Special Biryani", "description": "", "price": "20.00" }
+  ]
+}
+,
+{
+  "id": "veg_corner_subji",
+  "title": "Subji Corner (Veg-Corner Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "Aloo Mutter", "description": "", "price": "12.00" },
+    { "name": "Mix Veg.", "description": "", "price": "15.00" },
+    { "name": "Veg. Jalfrezi", "description": "", "price": "15.00" },
+    { "name": "Mushroom Paneer", "description": "", "price": "20.00" },
+    { "name": "Vegetable Kuruma", "description": "", "price": "18.00" },
+    { "name": "Shai Paneer", "description": "", "price": "18.00" },
+    { "name": "Dum Aloo Kashmiri", "description": "", "price": "18.00" },
+    { "name": "Baigan Bharta", "description": "", "price": "15.00" },
+    { "name": "Bhindi Masala", "description": "", "price": "15.00" },
+    { "name": "Mutter Paneer", "description": "", "price": "18.00" },
+    { "name": "Mushroom Tikka Masala", "description": "", "price": "18.00" },
+    { "name": "Channa Masala", "description": "", "price": "15.00" },
+    { "name": "Aloo Gobi", "description": "", "price": "15.00" },
+    { "name": "Gobi Masala", "description": "", "price": "15.00" },
+    { "name": "Paneer Mutter", "description": "", "price": "18.00" },
+    { "name": "Paneer Burji", "description": "", "price": "20.00" },
+    { "name": "Kadai Veg.", "description": "", "price": "16.00" },
+    { "name": "Kadai Mushroom", "description": "", "price": "16.00" },
+    { "name": "Kadai Paneer", "description": "", "price": "18.00" }
+  ]
+}
+,
+{
+  "id": "veg_corner_curries",
+  "title": "Curries Corner (Veg-Corner Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "Paneer Pasanda", "description": "", "price": "18.00" },
+    { "name": "Dal Tadka", "description": "", "price": "12.00" },
+    { "name": "Maa Ki Dal", "description": "", "price": "15.00" },
+    { "name": "Dal Makhani", "description": "", "price": "15.00" },
+    { "name": "Rajma Masala", "description": "", "price": "15.00" },
+    { "name": "Kerala Mango Curry", "description": "", "price": "18.00" },
+    { "name": "Dal Palak", "description": "", "price": "15.00" },
+    { "name": "Paneer Tikka Masala", "description": "", "price": "18.00" },
+    { "name": "Palak Paneer", "description": "", "price": "18.00" },
+    { "name": "Chemma Paneer Curry", "description": "Veg Corner Special", "price": "20.00" }
+  ]
+}
+,{
+  "id": "salama_menu_pasta_arabic",
+  "title": "Pasta & Daily Arabic Food (Salama-Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "Panee Alfredo Ala Polo", "description": "مكرونة الفريدو", "price": "27.00" },
+    { "name": "Spaghetti Ala Bolognaise", "description": "سباغيتي بولونيز", "price": "32.00" },
+    { "name": "Spaghetti Ala Napolitano", "description": "سباغيتي نابوليتانو", "price": "22.00" },
+    { 
+      "name": "Daily Special Arabic Food", 
+      "description": "Chicken Machboos, Fish Siyadiya, Vermicelli Rice with Oriental Chicken, Maqluba with Chicken, Okra Mutton Saloona with Rice, Chicken Mandi. | الدجاج مجبوس، صيادية السمك، أرز بالشعرية مع دجاج شرقي، مقلوبة بالدجاج، ملوخية باللحم، دجاج مندي.", 
+      "price": "25.00" 
+    }
+  ]
+}
+,{
+  "id": "salama_menu_desserts",
+  "title": "Desserts (Salama-Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "Kunafa", "description": "كنافة", "price": "20.00" },
+    { "name": "Basbousa", "description": "بسبوسة", "price": "15.00" },
+    { "name": "Assorted Macrons", "description": "كريم كراميل", "price": "18.00" },
+    { "name": "Cheesecake", "description": "تشيز كيك", "price": "20.00" },
+    { "name": "Umm Ali", "description": "ام علي", "price": "18.00" },
+    { "name": "Chocolate Cake", "description": "كعكة الشوكولاتة", "price": "18.00" },
+    { "name": "Apple Pie", "description": "فطيرة تفاح", "price": "20.00" },
+    { "name": "Assorted Seasonal Fruit Platter", "description": "طبق فواكه موسمية متنوعة", "price": "22.00" }
+  ]
+}
+,
+{
+  "id": "salama_menu_starters",
+  "title": "Starters (Salama-Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "French Fries", "description": "البطاطس المقلية", "price": "10.00" },
+    { "name": "Hummus With Meat", "description": "حمص باللحم", "price": "18.00" },
+    { "name": "Fatayer", "description": "حلقات البصل", "price": "18.00" },
+    { "name": "Cheese Fries", "description": "بطاطا مقلية بالجبنة", "price": "15.00" },
+    { "name": "Falafel Plate", "description": "صحن فلافل", "price": "10.00" },
+    { "name": "Fish Finger", "description": "اصابع السمك", "price": "25.00" },
+    { "name": "Foul Medames", "description": "فول مدمس", "price": "12.00" },
+    { "name": "Foul with Egg", "description": "فول بالبيض", "price": "15.00" }
+  ]
+}
+,
+{
+  "id": "salama_menu_wraps_sandwiches",
+  "title": "Wraps & Sandwiches (Salama-Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "Arayes", "description": "عرابس", "price": "22.00" },
+    { "name": "Kofta Lamb Wrap", "description": "سندويش كفتة لحم", "price": "25.00" },
+    { "name": "Chicken Shawarma Wrap", "description": "سندويش شاورما دجاج", "price": "7.00" },
+    { "name": "Chicken Shawarma Plate", "description": "صحن شاورما دجاج", "price": "20.00" },
+    { "name": "Falafel Sandwich", "description": "ساندويش فلافل", "price": "6.00" }
+  ]
+}
+,
+{
+  "id": "salama_menu_beverages",
+  "title": "Beverages (Salama-Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "Fruit Juices", "description": "Orange / Mango / Watermelon / Pineapple / Cocktails | عصائر الفاكهة", "price": "18.00" },
+    { "name": "Soft Drinks", "description": "المشروبات الغازية", "price": "5.00" },
+    { "name": "Red Bull", "description": "ريد بول", "price": "15.00" },
+    { "name": "Water Small", "description": "مياه صغيرة", "price": "3.00" },
+    { "name": "Special Sulaimani Tea", "description": "شاي سليماني خاص", "price": "3.00" },
+    { "name": "Green Tea", "description": "شاي أخضر", "price": "5.00" },
+    { "name": "Espresso Italiano", "description": "اسبريسو ايطاليانو", "price": "13.00" },
+    { "name": "Cappuccino", "description": "كابتشينو", "price": "20.00" },
+    { "name": "Milkshakes", "description": "Chocolate / Avocado / Vanilla / Dates & Banana | ميلك شيك", "price": "20.00" }
+  ]
+}
+,{
+  "id": "salama_menu_special_dishes",
+  "title": "Try Our Special Dishes (Salama-Menu)",
+  "subtitle": "48 hrs. order in advance required | للطلب قبل ٤٨ ساعة مقدمًا",
+  "items": [
+    { "name": "Full Lamb Ouzi", "description": "خروف كامل أوزي", "price": "1250.00" },
+    { "name": "Lamb Leg Ouzi", "description": "فخذ غنم أوزي", "price": "375.00" },
+    { "name": "Whole Hamour Fish Sayadieh", "description": "سمك هامور كامل صيادية", "price": "875.00" },
+    { "name": "Full Chicken Mandhi", "description": "دجاج كامل مندي", "price": "52.00" },
+    { "name": "Lamb Mansaf", "description": "منسف لحم", "price": "78.00" }
+  ]
+}
+,
+{
+  "id": "salama_menu_manakish_pizza",
+  "title": "Manakish & Pizza (Salama-Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "Zaatar", "description": "زعتر بالجبن", "price": "10.00" },
+    { "name": "Cheese", "description": "سجق بالجبن", "price": "15.00" },
+    { "name": "Pizza Margherita (M)", "description": "بيتزا مارغريتا", "price": "12.00" },
+    { "name": "Pizza Margherita (L)", "description": "بيتزا مارغريتا", "price": "20.00" },
+    { "name": "Chicken Pizza (M)", "description": "بيتزا الدجاج", "price": "15.00" },
+    { "name": "Chicken Pizza (L)", "description": "بيتزا الدجاج", "price": "24.00" },
+    { "name": "Seafood Pizza (M)", "description": "بيتزا المأكولات البحرية", "price": "18.00" },
+    { "name": "Seafood Pizza (L)", "description": "بيتزا المأكولات البحرية", "price": "32.00" }
+  ]
+}
+,
+{
+  "id": "salama_menu_salads_cold_starters",
+  "title": "Salads / Cold Starters (Salama-Menu)",
+  "subtitle": "",
+  "items": [
+    { "name": "Chicken Caesar Salad", "description": "سلطة سيزر بالدجاج", "price": "20.00" },
+    { "name": "Fattoush Salad", "description": "سلطة فتوش", "price": "12.00" },
+    { "name": "Tabbouleh", "description": "تبولة", "price": "15.00" },
+    { "name": "Moutable", "description": "سلطة متبل", "price": "12.00" },
+    { "name": "Hummus", "description": "الحمص", "price": "10.00" },
+    { "name": "Tuna Salad", "description": "سلطة التونة", "price": "20.00" },
+    { "name": "Coleslaw Salad", "description": "بابا غنوج", "price": "10.00" },
+    { "name": "Wark Inab (Stuffed Wine Leaf)", "description": "ورق عنب", "price": "15.00" },
+    { 
+      "name": "Arabic Mezza", 
+      "description": "Traditional Mezza choice of Hummus, Mutable, Tabbouleh, Samosa, Oriental Salad, Pickled Vegetables, Olives, Garlic Sauce, Accompanied with Arabic Bread | مقبلات تقليدية من اختيار من حمص، متبل، تبولة، سمبوسة، سلطة شرقية، خضار مخلل، الزيتون، صوص ثوم، مع الخبز العربي.", 
+      "price": "42.00" 
+    }
+  ]
+}
+,
+{
+  "id": "salama_menu_soups",
+  "title": "Soups (Salama-Menu)",
+  "subtitle": "",
+  "items": [
+    { 
+      "name": "Shorba Tadas", 
+      "description": "Traditional Arabic Lentil Soup with Cumin Flavor | شوربة عدس عربية تقليدية بنكهة الكمون", 
+      "price": "15.00" 
+    },
+    { 
+      "name": "Choice of Cream Soup", 
+      "description": "Chicken / Vegetable Soup | شوربة دجاج / خضار", 
+      "price": "18.00" 
+    }
+  ]
+}
+,
+{
+  "id": "salama_menu_main_course",
+  "title": "Main Course (Salama-Menu)",
+  "subtitle": "",
+  "items": [
+    { 
+      "name": "Crispy Fried Jumbo Prawns", 
+      "description": "Delicious and Healthy Breaded Jumbo Prawns | روبيان جامبو مقلي مقرمش", 
+      "price": "45.00" 
+    },
+    { 
+      "name": "Arabic Mixed Grill", 
+      "description": "Assortment of Shish Tawook, Shish Kebab, Kofta Kebab, Hummus, Garlic Sauce, Arabic Bread | مشاوي عربية مشكلة تتكون من شيش طاووق، شيش كباب، كفتة كباب، حمص، ثوم، وخبز عربي", 
+      "price": "48.00" 
+    },
+    { 
+      "name": "Grilled Prawns", 
+      "description": "روبيان مشوي", 
+      "price": "45.00" 
+    },
+    { 
+      "name": "Shish Tawook", 
+      "description": "شيش طاووق", 
+      "price": "28.00" 
+    },
+    { 
+      "name": "Grilled Chicken Half", 
+      "description": "نصف دجاجة مشوية", 
+      "price": "20.00" 
+    },
+    { 
+      "name": "Chicken Wings Grill", 
+      "description": "أجنحة الدجاج المشوية", 
+      "price": "20.00" 
+    },
+    { 
+      "name": "Kofta Kebab", 
+      "description": "كفتة مشوية", 
+      "price": "30.00" 
+    },
+    { 
+      "name": "Shish Kebab", 
+      "description": "شيش كباب", 
+      "price": "35.00" 
+    }
+  ]
+}
 
   
   
