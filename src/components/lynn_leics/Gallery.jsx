@@ -10,6 +10,10 @@ import 'swiper/css/pagination';
 const BRAND_GOLD = '#E1B43B'; // Your logo gold
 
 const images = [
+  '/lynnn1.png',
+  '/lynnn2.png',
+  '/lynnn3.png',
+  '/lynnn4.png',
   '/lynn1.png',
   '/lynn3.png',
   '/lynn4.png',
@@ -38,9 +42,8 @@ export default function Gallery() {
 
   return (
     <section
-      className={`transition-colors duration-700 py-10 px-4 ${
-        isDark ? 'bg-black text-[#E9ECEC]' : 'bg-[#f9f6f2] text-[#1C1C1C]'
-      }`}
+      className={`transition-colors duration-700 py-10 px-4 ${isDark ? 'bg-black text-[#E9ECEC]' : 'bg-[#f9f6f2] text-[#1C1C1C]'
+        }`}
     >
       <div className="max-w-6xl mx-auto">
         {/* Optional Title */}
@@ -71,11 +74,10 @@ export default function Gallery() {
           {images.map((src, idx) => (
             <SwiperSlide key={idx}>
               <div
-                className={`overflow-hidden rounded-xl shadow-md border transition-colors duration-500 ${
-                  isDark
+                className={`overflow-hidden rounded-xl shadow-md border transition-colors duration-500 ${isDark
                     ? 'border-[#E1B43B]/40 bg-[#0D0D0D]'
                     : 'border-[#E1B43B]/30 bg-white'
-                }`}
+                  }`}
               >
                 <img
                   src={src}
