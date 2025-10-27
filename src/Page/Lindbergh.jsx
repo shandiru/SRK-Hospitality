@@ -1,16 +1,14 @@
 import React from "react";
 
 // Sections from components/HomePage
-import AboutSection from "../components/Terrace/AboutSection";
-import MenuFlipbook from "../components/Terrace/MenuFlipbook";
-import Gallery from "../components/Terrace/Gallery";
-import GiftCardSection from "../components/Terrace/GiftCardSection";
-import ContactSection from "../components/Terrace/ContactSection";
-import MapSection from "../components/Terrace/MapSection";
-import WelcomeSection from "../components/Terrace/WelcomeSection";
+import AboutSection from "../components/Lindbergh/AboutSection";
+import MenuFlipbook from "../components/Lindbergh/MenuFlipbook";
+import Gallery from "../components/Lindbergh/Gallery";
+import ContactSection from "../components/Lindbergh/ContactSection";
+import MapSection from "../components/Lindbergh/MapSection";
+import WelcomeSection from "../components/Lindbergh/WelcomeSection";
 
-export default function Terrace() {
-
+export default function Lindbergh() {
   return (
     <div>
       {/* Hero */}

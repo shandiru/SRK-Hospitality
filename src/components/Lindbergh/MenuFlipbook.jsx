@@ -228,7 +228,7 @@ export default function MenuFlipbook() {
     arr.push(
       <CoverPage
         key="cover"
-        restaurant="The Walnut Tree Inn"
+        restaurant="Lindbergh's Sports bar"
         tagline="Modern Comfort Food & Coastal Cocktails"
         mode={mode}
       />

@@ -60,7 +60,7 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold">Visit Us</h4>
                 <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  The Walnut Tree Inn <br />
+                  Lindbergh's Sports bar <br />
                   21 Station Road <br />
                   Blisworth NN7 3DS <br />
                   Northants

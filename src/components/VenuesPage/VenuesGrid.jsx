@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const venues = [
   { name: "The Terrace", desc: "Restaurant", img: "/terrace-home.jpg", slug: "terrace" },
   { name: "Lynn_Leics", desc: "Restaurant", img: "/lynn.jpg", slug: "Lynn" },
-  { name: "Lindbergh", desc: "Sports bar", img: "/lynn.jpg", slug: "Lynn" },
+  { name: "Lindbergh", desc: "Sports bar", img: "/Linberghs.webp", slug: "lindbergh" },
   { name: "The Walnut Tree Inn", desc: "Fine dining experience", img: "/walnut.png", slug: "walnut" },
   { name: "Barceloneta", desc: "Spanish Bar", img: "/barceloneta.png", slug: "barceloneta" },
   { name: "Bar Dos Hermanos", desc: "Cuban Bar", img: "/doshermanos.png", slug: "dos-hermanos" },

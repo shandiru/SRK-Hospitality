@@ -8,7 +8,7 @@ export default function WelcomeSection() {
     <section className="relative w-full h-[100vh] font-[Playfair_Display]">
       {/* Background Image */}
       <img
-        src="/walnut-hero.jpg"
+        src="/Linberghs.webp"
         alt="The Walnut Tree Inn"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -26,7 +26,7 @@ export default function WelcomeSection() {
             textShadow: "0 4px 15px rgba(0,0,0,0.6)",
           }}
         >
-          Welcome To The Walnut Tree Inn
+          Welcome To The Lindbergh's Sports bar
         </h1>
 
         {/* Subtitle */}

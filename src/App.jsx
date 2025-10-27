@@ -18,6 +18,7 @@ import RestaurantManagerPage from "./Page/RestaurantManagerPage.jsx"
 import Vacancies from "./Page/Vacancies.jsx"
 import Lynnleics from "./Page/lynn_leics.jsx";
 import Terrace from "./Page/Terrace.jsx";
+import Lindbergh from "./Page/Lindbergh.jsx";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/terrace" element={<Terrace />} />
+          <Route path="/lindbergh" element={<Lindbergh />} />
           <Route path="/Lynn" element={<Lynnleics />} />
           <Route path="/walnut" element={<Walnut />} />
           <Route path="/barceloneta" element={<BARCELONE />} />

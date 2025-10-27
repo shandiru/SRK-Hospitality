@@ -20,7 +20,7 @@ export default function AboutSection() {
                        bg-white dark:bg-[#0E1517] border-[#DDB64E]/40"
           >
             <img
-              src="/walnut-about.jpg"
+              src="/Linberghs.webp"
               alt="The Walnut Tree Inn"
               className="w-full h-auto object-cover"
             />
@@ -31,7 +31,7 @@ export default function AboutSection() {
                 color: "#111111",
               }}
             >
-              The Walnut Tree Inn
+              Lindbergh's Sports bar
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function AboutSection() {
                        text-[#333333] dark:text-[#E8E8E8] transition-all duration-300"
           >
             <p>
-              Nestled in the heart of Blisworth, The Walnut Tree Inn blends rustic
+              Nestled in the heart of Blisworth, The Lindbergh's Sports bar blends rustic
               charm with contemporary comfort — offering a perfect spot to dine,
               relax, and stay.
             </p>
