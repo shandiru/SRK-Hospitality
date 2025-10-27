@@ -10,10 +10,6 @@ import 'swiper/css/pagination';
 const BRAND_GOLD = '#E1B43B'; // Your logo gold
 
 const images = [
-  '/lynnn1.png',
-  '/lynnn2.png',
-  '/lynnn3.png',
-  '/lynnn4.png',
   '/lynn1.png',
   '/lynn3.png',
   '/lynn4.png',

@@ -173,6 +173,18 @@ const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
 ));
 SectionPage.displayName = "SectionPage";
 
+// ---------- Back Cover ----------
+const BackCoverPage = forwardRef(({ mode }, ref) => (
+  <Page ref={ref} mode={mode}>
+    <div className="flex h-full items-center justify-center">
+      <p className="font-medium" style={{ color: mode.text }}>
+        See you again soon 👋
+      </p>
+    </div>
+  </Page>
+));
+BackCoverPage.displayName = "BackCoverPage";
+
 // ---------- Main Component ----------
 export default function MenuFlipbook() {
   const flipRef = useRef(null);
@@ -237,6 +249,7 @@ export default function MenuFlipbook() {
       });
     });
 
+    arr.push(<BackCoverPage key="back" mode={mode} />);
     return { pages: arr, sectionPageMap: map };
   }, [mode]);
 

@@ -124,18 +124,6 @@ export default function ContactSection() {
               >
                 <FiFacebook size={20} />
               </a>
-              <a
-                href="https://x.com/walnut_tree_inn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
-                style={{
-                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
-                  color: BRAND_GOLD,
-                }}
-              >
-                <FiTwitter size={20} />
-              </a>
             </div>
           </div>
         </div>

@@ -93,28 +93,6 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Email */}
-            <div className="flex items-start gap-4">
-              <div
-                className="p-3 rounded-full"
-                style={{
-                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
-                  color: BRAND_GOLD,
-                }}
-              >
-                <FiSend size={20} />
-              </div>
-              <div>
-                <h4 className="font-bold">Mail Us</h4>
-                <p
-                  className="font-medium"
-                  style={{ color: BRAND_GOLD }}
-                >
-                  info@fifteenseventythree.com
-                </p>
-              </div>
-            </div>
-
             {/* Social Media */}
             <div className="flex gap-4 pt-4">
               <a
