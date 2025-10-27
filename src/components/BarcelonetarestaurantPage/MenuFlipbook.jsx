@@ -173,68 +173,6 @@ const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
 ));
 SectionPage.displayName = "SectionPage";
 
-// ---------- Info Page ----------
-const InfoPage = forwardRef(({ mode }, ref) => (
-  <Page ref={ref} mode={mode}>
-    <div className="flex h-full flex-col">
-      <h2
-        className="text-xl sm:text-2xl font-bold tracking-tight mb-2"
-        style={{ color: COLORS.gold }}
-      >
-        About Us
-      </h2>
-      <p className="text-sm mb-5" style={{ color: mode.text }}>
-        Welcome to <span className="font-semibold">Barceloneta</span>, where vibrant Mediterranean
-        flavours meet a warm and lively atmosphere. Join us for authentic Spanish tapas, seasonal
-        dishes, and a curated selection of wines and cocktails.
-      </p>
-
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <div
-          className="rounded-2xl border p-4 shadow-sm"
-          style={{ backgroundColor: mode.sectionBg, borderColor: COLORS.gold }}
-        >
-          <p className="text-sm font-semibold" style={{ color: COLORS.gold }}>
-            Location
-          </p>
-          <p className="text-sm" style={{ color: mode.text }}>
-            54 Queen’s Rd, Clarendon Park<br />
-            Leicester, LE2 1TU.
-          </p>
-        </div>
-        <div
-          className="rounded-2xl border p-4 shadow-sm"
-          style={{ backgroundColor: mode.sectionBg, borderColor: COLORS.gold }}
-        >
-          <p className="text-sm font-semibold" style={{ color: COLORS.gold }}>
-            Contact
-          </p>
-          <p className="text-sm" style={{ color: mode.text }}>0116 270 8408</p>
-          <p className="text-sm" style={{ color: mode.text }}>+44 7405 317594</p>
-          <p className="text-sm" style={{ color: mode.text }}>info@barcelonetarestaurant.co.uk</p>
-        </div>
-      </div>
-
-      <div className="mt-auto text-[11px]" style={{ color: mode.text }}>
-        © {new Date().getFullYear()} Barceloneta. All rights reserved.
-      </div>
-    </div>
-  </Page>
-));
-InfoPage.displayName = "InfoPage";
-
-// ---------- Back Cover ----------
-const BackCoverPage = forwardRef(({ mode }, ref) => (
-  <Page ref={ref} mode={mode}>
-    <div className="flex h-full items-center justify-center">
-      <p className="font-medium" style={{ color: mode.text }}>
-        See you again soon 👋
-      </p>
-    </div>
-  </Page>
-));
-BackCoverPage.displayName = "BackCoverPage";
-
 // ---------- Main Component ----------
 export default function MenuFlipbook() {
   const flipRef = useRef(null);
@@ -299,8 +237,6 @@ export default function MenuFlipbook() {
       });
     });
 
-    arr.push(<InfoPage key="info" mode={mode} />);
-    arr.push(<BackCoverPage key="back" mode={mode} />);
     return { pages: arr, sectionPageMap: map };
   }, [mode]);
 
