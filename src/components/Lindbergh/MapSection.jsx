@@ -46,7 +46,7 @@ export default function MapSection() {
         >
           <iframe
            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5947.376441063624!2d55.317717438825525!3d25.27438206248501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5cb6fde4ac03%3A0x714a2256a45f676e!2sAl%20Muteena%20-%20Dubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2slk!4v1761578963006!5m2!1sen!2slk"
-            title="Walnut Tree Inn, 21 Station Rd, Blisworth, Northampton NN7 3DS, UK"
+         
             aria-label="Walnut Tree Inn, 21 Station Rd, Blisworth, Northampton NN7 3DS, UK"
             loading="lazy"
             className="w-full h-full border-0 rounded-xl"
