@@ -45,7 +45,7 @@ export default function MapSection() {
           }`}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2446.267567419277!2d-0.9489956233391866!3d52.18400897197503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877055e27ab800d%3A0xd6b9e41a1a4ef766!2sWalnut%20Tree%20Inn%2C%2021%20Station%20Rd%2C%20Blisworth%2C%20Northampton%20NN7%203DS%2C%20UK!5e0!3m2!1sen!2slk!4v1758088049180!5m2!1sen!2slk"
+           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5947.376441063624!2d55.317717438825525!3d25.27438206248501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5cb6fde4ac03%3A0x714a2256a45f676e!2sAl%20Muteena%20-%20Dubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2slk!4v1761578963006!5m2!1sen!2slk"
             title="Walnut Tree Inn, 21 Station Rd, Blisworth, Northampton NN7 3DS, UK"
             aria-label="Walnut Tree Inn, 21 Station Rd, Blisworth, Northampton NN7 3DS, UK"
             loading="lazy"

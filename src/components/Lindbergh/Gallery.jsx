@@ -10,18 +10,12 @@ import 'swiper/css/pagination';
 const BRAND_GOLD = '#E1B43B'; // Your logo gold
 
 const images = [
-  '/walnut-1.jpg',
-  '/walnut-2.jpg',
-  '/walnut-3.jpg',
-  '/walnut-4.jpg',
-  '/walnut-5.jpg',
-  '/walnut-6.jpg',
-  '/walnut-7.jpg',
-  '/walnut-8.jpg',
-  '/walnut-9.jpg',
-  '/walnut-10.jpg',
-  '/walnut-11.jpg',
-  '/walnut-12.jpg',
+  '/lind1.png',
+  '/lind2.png',
+  '/lind3.png',
+  '/lind4.png',
+  '/lind7.png',
+  '/lind8.png',
 ];
 
 export default function Gallery() {
@@ -56,7 +50,7 @@ export default function Gallery() {
             textDecorationColor: BRAND_GOLD,
           }}
         >
-          The Walnut Tree Inn Gallery
+          The Lindbergh's Sports bar
         </h2>
 
         {/* Swiper Gallery */}

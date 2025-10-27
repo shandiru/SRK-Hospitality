@@ -61,9 +61,8 @@ export default function ContactSection() {
                 <h4 className="font-bold">Visit Us</h4>
                 <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                   Lindbergh's Sports bar <br />
-                  21 Station Road <br />
-                  Blisworth NN7 3DS <br />
-                  Northants
+                  Al Muteena - Deira - Dubai<br />
+                  United Arab Emirates
                 </p>
               </div>
             </div>
@@ -87,7 +86,7 @@ export default function ContactSection() {
                     className="hover:underline"
                     style={{ color: BRAND_GOLD }}
                   >
-                    01604 859551
+                    +971 42688888
                   </a>
                 </p>
               </div>
@@ -110,7 +109,7 @@ export default function ContactSection() {
                   className="font-medium"
                   style={{ color: BRAND_GOLD }}
                 >
-                  info@fifteenseventythree.com
+                  reservations@gehdeira.com
                 </p>
               </div>
             </div>
@@ -118,7 +117,7 @@ export default function ContactSection() {
             {/* Social Media */}
             <div className="flex gap-4 pt-4">
               <a
-                href="https://www.instagram.com/walnuttreeinnnorthampton/"
+                href="https://www.instagram.com/grandexcelsiorhoteldeira/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
@@ -130,7 +129,7 @@ export default function ContactSection() {
                 <FiInstagram size={20} />
               </a>
               <a
-                href="https://web.facebook.com/walnuttreeinnnorthampton?_rdc=1&_rdr#"
+                href="https://web.facebook.com/gehdeira/?_rdc=1&_rdr#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
@@ -141,18 +140,7 @@ export default function ContactSection() {
               >
                 <FiFacebook size={20} />
               </a>
-              <a
-                href="https://x.com/walnut_tree_inn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
-                style={{
-                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
-                  color: BRAND_GOLD,
-                }}
-              >
-                <FiTwitter size={20} />
-              </a>
+             
             </div>
           </div>
         </div>

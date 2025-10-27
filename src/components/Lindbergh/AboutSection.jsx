@@ -20,9 +20,9 @@ export default function AboutSection() {
                        bg-white dark:bg-[#0E1517] border-[#DDB64E]/40"
           >
             <img
-              src="/Linberghs.webp"
+              src="/lind4.png"
               alt="The Walnut Tree Inn"
-              className="w-full h-auto object-cover"
+              className="w-full h-110 object-cover"
             />
             <div
               className="text-center text-lg md:text-xl font-semibold py-3 rounded-b-xl"
@@ -49,38 +49,15 @@ export default function AboutSection() {
           </h2>
 
           <div
-            className="text-[17px] md:text-[18px] leading-relaxed space-y-5 
+            className="text-[17px] md:text-[18px] leading-relaxed space-y-3 
                        text-[#333333] dark:text-[#E8E8E8] transition-all duration-300"
           >
             <p>
-              Nestled in the heart of Blisworth, The Lindbergh's Sports bar blends rustic
-              charm with contemporary comfort — offering a perfect spot to dine,
-              relax, and stay.
+              Lindbergh's Sports Bar is a popular hangout spot for sports enthusiasts staying at the Grand Excelsior Hotel in Dubai's Deira district. The bar features multiple high-definition TVs showing a variety of sports events from around the world, including football, rugby, tennis, and more. Visitors can enjoy a wide selection of bar food and beverages while they cheer on their favorite teams. 
             </p>
 
             <p>
-              Our recently refurbished inn features 11 beautifully appointed rooms,
-              a modern British restaurant, and a warm bar atmosphere where every
-              guest feels at home.
-            </p>
-
-            <p>
-              Whether you're joining us for a family celebration, a business event,
-              or a quiet weekend escape, we promise a welcoming environment and
-              exceptional hospitality.
-            </p>
-
-            <h3
-              className="text-2xl font-bold mt-10 mb-3 text-center lg:text-left"
-              style={{ color: brandGold }}
-            >
-              Award-Winning Hospitality
-            </h3>
-
-            <p>
-              We’re proud recipients of TripAdvisor’s Certificate of Excellence for
-              seven consecutive years — a reflection of our dedication to quality,
-              comfort, and genuine care for our guests.
+              The atmosphere is lively and casual, making it a great place to gather with friends or meet new people. Additionally, the bar hosts weekly live music performances and quiz nights, adding to its appeal. Overall, Lindbergh's Sports Bar is an excellent choice for anyone looking for a place to watch sports, enjoy food and drinks, and have a good time in Dubai.
             </p>
           </div>
         </div>
