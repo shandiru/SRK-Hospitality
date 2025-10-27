@@ -15,7 +15,6 @@ const COLORS = {
     text: "#3B3B3B",
     shadow: "rgba(0,0,0,0.15)",
     buttonBg: "#FFFFFF",
-    dark: false,
   },
   dark: {
     background: "#0E1517",
@@ -24,21 +23,20 @@ const COLORS = {
     text: "#E9ECEC",
     shadow: "rgba(0,0,0,0.5)",
     buttonBg: "#222",
-    dark: true,
   },
 };
 
 // ---------- Utility ----------
-const paginateByHeight = (items, maxHeight = 550) => {
+const paginateByHeight = (items, maxHeight = 100) => {
+  if (!Array.isArray(items)) return [];
   const pages = [];
   let currentPage = [];
   let currentHeight = 0;
 
   items.forEach((item) => {
     const isSmallScreen = typeof window !== "undefined" && window.innerWidth < 640;
-    const baseHeight = isSmallScreen ? 220 : 120;
-    const estimatedHeight =
-      baseHeight + (item.description ? Math.min(item.description.length / 4, 100) : 0);
+    const baseHeight = isSmallScreen ? 250 : 150;
+    const estimatedHeight = baseHeight + (item.description1 ? Math.min(item.description1.length / 4, 140) : 0);
 
     if (currentHeight + estimatedHeight > maxHeight && currentPage.length > 0) {
       pages.push(currentPage);
@@ -61,23 +59,38 @@ const Page = forwardRef(({ children, mode }, ref) => (
     className="relative h-full w-full rounded-3xl overflow-hidden transition-all duration-500"
     style={{
       backgroundColor: mode.pageBg,
-      boxShadow: `0 10px 30px ${mode.shadow}`,
-        border: `4px solid ${COLORS.gold}`, 
+      boxShadow: `0 8px 30px ${mode.shadow}`,
+      border: `4px solid ${!mode.dark ? COLORS.gold : "transparent"}`, // Gold border in light mode
     }}
   >
     <div className="h-full w-full p-4 sm:p-8">{children}</div>
   </div>
 ));
+
 Page.displayName = "Page";
 
-// ---------- Cover Page ----------
+// ---------- Cover Page (Book-like) ----------
 const CoverPage = forwardRef(({ restaurant, tagline, mode }, ref) => (
   <Page ref={ref} mode={mode}>
+    {/* Book Spine */}
     <div
-      className="flex h-full flex-col items-center justify-center text-center rounded-xl relative overflow-hidden"
+      className="absolute left-0 top-0 h-full"
+      style={{
+        width: "16px",
+        background: `linear-gradient(${mode.background}, ${mode.pageBg})`,
+        boxShadow: `2px 0 6px ${mode.shadow}`,
+        borderTopLeftRadius: "12px",
+        borderBottomLeftRadius: "12px",
+      }}
+    />
+
+    {/* Front Cover */}
+    <div
+      className="flex h-full w-full flex-col items-center justify-center text-center rounded-xl relative overflow-hidden"
       style={{
         background: `linear-gradient(to bottom right, ${mode.pageBg}, ${mode.background})`,
         boxShadow: `inset 0 0 30px ${mode.shadow}`,
+        borderRadius: "12px",
       }}
     >
       <motion.h1
@@ -102,6 +115,7 @@ const CoverPage = forwardRef(({ restaurant, tagline, mode }, ref) => (
         {tagline}
       </motion.p>
 
+      {/* Page Edge Shadow */}
       <div
         className="absolute top-0 right-0 h-full"
         style={{
@@ -109,13 +123,14 @@ const CoverPage = forwardRef(({ restaurant, tagline, mode }, ref) => (
           background: `linear-gradient(to left, ${mode.shadow}, transparent)`,
         }}
       />
+    </div>
 
-      <div
-        className="absolute bottom-4 right-4 text-xs"
-        style={{ color: mode.text }}
-      >
-        Swipe / drag to flip ➔
-      </div>
+    {/* Bottom instruction */}
+    <div
+      className="absolute bottom-4 right-4 text-xs"
+      style={{ color: mode.text }}
+    >
+      Swipe / drag to flip ➔
     </div>
   </Page>
 ));
@@ -145,26 +160,12 @@ const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
             className="flex gap-3 rounded-2xl p-4 shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
             style={{ backgroundColor: mode.sectionBg }}
           >
-            {item.image && (
-              <img
-                src={item.image}
-                alt={item.name}
-                className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg object-cover flex-shrink-0"
-              />
-            )}
             <div className="flex-1">
-              <p className="text-base font-semibold" style={{ color: mode.text }}>
-                {item.name}
-              </p>
-              {item.description && (
-                <p className="text-sm" style={{ color: mode.text }}>
-                  {item.description}
-                </p>
-              )}
+              <p className="text-base font-semibold" style={{ color: mode.text }}>{item.name}</p>
+              {item.description && <p className="text-sm" style={{ color: mode.text }}>{item.description}</p>}
+              {item.description1 && <p className="text-sm" style={{ color: mode.text }}>{item.description1}</p>}
               <div className="mt-2 flex justify-between items-center">
-                <p className="text-sm sm:text-base font-semibold" style={{ color: mode.text }}>
-                  {item.price}
-                </p>
+                <p className="text-sm sm:text-base font-semibold" style={{ color: mode.text }}>{item.price}</p>
                 {item.badge && (
                   <span
                     className="inline-block rounded-full px-2 py-0.5 text-[10px] font-medium"
@@ -183,32 +184,14 @@ const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
 ));
 SectionPage.displayName = "SectionPage";
 
-// ---------- Info Page ----------
-const InfoPage = forwardRef(({ mode }, ref) => (
-  <Page ref={ref} mode={mode}>
-    {/* Optional content */}
-  </Page>
-));
-InfoPage.displayName = "InfoPage";
-
-// ---------- Back Cover Page ----------
-const BackCoverPage = forwardRef(({ mode }, ref) => (
-  <Page ref={ref} mode={mode}>
-    <div className="flex h-full items-center justify-center">
-      <p style={{ color: mode.text }}>See you again soon 👋</p>
-    </div>
-  </Page>
-));
-BackCoverPage.displayName = "BackCoverPage";
-
 // ---------- Main Component ----------
 export default function MenuFlipbook() {
   const flipRef = useRef(null);
   const [page, setPage] = useState(0);
-  const [bookSize, setBookSize] = useState({ width: 700, height: 900 });
+  const [bookSize, setBookSize] = useState({ width: 700, height: 700 });
   const [isDark, setIsDark] = useState(false);
 
-  // Dark mode observer
+  // Observe html.dark class for reactive dark mode
   useEffect(() => {
     const root = document.documentElement;
     setIsDark(root.classList.contains("dark"));
@@ -229,8 +212,8 @@ export default function MenuFlipbook() {
       const screenWidth = window.innerWidth;
       const isMobile = screenWidth < 640;
       setBookSize({
-        width: isMobile ? screenWidth * 0.9 : 700,
-        height: isMobile ? window.innerHeight * 0.7 : 900,
+        width: isMobile ? screenWidth * 0.8 : 600,
+        height: isMobile ? window.innerHeight * 0.6 : 1000,
       });
     };
     handleResize();
@@ -245,7 +228,7 @@ export default function MenuFlipbook() {
     arr.push(
       <CoverPage
         key="cover"
-        restaurant="Fifteenseventythree"
+        restaurant="The Terrace"
         tagline="Modern Comfort Food & Coastal Cocktails"
         mode={mode}
       />
@@ -269,8 +252,6 @@ export default function MenuFlipbook() {
       });
     });
 
-    arr.push(<InfoPage key="info" mode={mode} />);
-    arr.push(<BackCoverPage key="back" mode={mode} />);
     return { pages: arr, sectionPageMap: map };
   }, [mode]);
 
@@ -280,7 +261,7 @@ export default function MenuFlipbook() {
 
   return (
     <div
-      className=" px-3 py-6 sm:py-10  transition-all duration-500"
+      className="px-3 py-6 sm:py-15 transition-all duration-500"
       style={{ background: mode.background }}
     >
       {/* Header / Controls */}
@@ -309,47 +290,44 @@ export default function MenuFlipbook() {
         </div>
       </div>
 
-      {/* Book */}
-      <div className="mx-auto flex w-full justify-center">
-        <HTMLFlipBook
-          width={bookSize.width}
-          height={bookSize.height}
-          minWidth={320}
-          maxWidth={900}
-          maxHeight={1200}
-          size="stretch"
-          flippingTime={800}
-          usePortrait={true}
-          showCover={true}
-          drawShadow={true}
-          autoSize={true}
-          mobileScrollSupport={true}
-          onFlip={(e) => setPage(e.data)}
-          ref={flipRef}
-          className="w-full"
-        >
-          {pages.map((node, idx) => (
-            <div key={idx} className="h-full w-full">
-              {node}
-            </div>
-          ))}
-        </HTMLFlipBook>
-      </div>
+      {/* Flipbook */}
+      <HTMLFlipBook
+        width={bookSize.width}
+        height={bookSize.height}
+        minWidth={320}
+        maxWidth={900}
+        maxHeight={800}
+        size="stretch"
+        flippingTime={800}
+        usePortrait={true}
+        showCover={true}
+        drawShadow={true}
+        autoSize={true}
+        mobileScrollSupport={true}
+        onFlip={(e) => setPage(e.data)}
+        ref={flipRef}
+        className="w-full"
+      >
+        {pages.map((node, idx) => (
+          <div key={idx} className="h-full w-full">
+            {node}
+          </div>
+        ))}
+      </HTMLFlipBook>
 
       {/* Quick Navigator */}
       <div className="mx-auto mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2">
         {sectionsSeed.map((s) => {
           const target = sectionPageMap[s.id];
-          const isActive =
-            page === target || page === target - 1 || page === target + 1;
-
+          const isActive = page === target || page === target - 1 || page === target + 1;
           return (
             <button
               key={s.id}
               onClick={() => goTo(target)}
-              className={`rounded-2xl border px-3 py-2 dark:hover:text-black text-sm shadow-sm hover:bg-neutral-50 ${
-                isActive ? "border-amber-400 ring-2 ring-amber-200" : "border-neutral-300"
+              className={`rounded-2xl border px-3 py-2 text-sm shadow-md hover:scale-105 transition-transform duration-300 font-semibold ${
+                isActive ? "ring-2" : ""
               }`}
+              style={{ color: mode.text, borderColor: COLORS.gold, backgroundColor: mode.buttonBg }}
             >
               {s.title}
             </button>
