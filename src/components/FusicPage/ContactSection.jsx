@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FiMapPin, FiPhone, FiSend, FiClock } from 'react-icons/fi';
+import { FiMapPin, FiPhone, FiSend, FiClock, FiInstagram, FiFacebook } from 'react-icons/fi';
 
 const BRAND_GOLD = '#E1B43B';
 
@@ -24,9 +24,8 @@ export default function ContactSection() {
 
   return (
     <section
-      className={`transition-colors duration-700 py-20 px-4 ${
-        isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'
-      }`}
+      className={`transition-colors duration-700 py-20 px-4 ${isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'
+        }`}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Left Column */}
@@ -166,6 +165,34 @@ export default function ContactSection() {
                 </p>
               </div>
             </div>
+            {/* Social Media */}
+            <div className="flex gap-4 pt-4">
+              <a
+                href="https://www.instagram.com/fusic.harini/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
+                <FiInstagram size={20} />
+              </a>
+              <a
+                href="https://web.facebook.com/harinisfusic/?_rdc=1&_rdr#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
+                <FiFacebook size={20} />
+              </a>
+
+            </div>
           </div>
         </div>
 
@@ -185,11 +212,10 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="John Doe"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
@@ -199,11 +225,10 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="+44 123 456 7890"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
@@ -213,11 +238,10 @@ export default function ContactSection() {
               <input
                 type="email"
                 placeholder="email@example.com"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
@@ -229,11 +253,10 @@ export default function ContactSection() {
               <textarea
                 rows={4}
                 placeholder="Write something..."
-                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 

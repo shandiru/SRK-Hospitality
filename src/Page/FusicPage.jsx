@@ -16,26 +16,21 @@ export default function Fusic() {
         <WelcomeSection />
       </section>
       <section >
-        <AboutSection/>
+        <AboutSection />
       </section>
-
       <section>
         <MenuFlipbook />
       </section>
       <section>
         <Gallery />
       </section>
-   
-
-
-      
-         <section>
+      <section>
         <ContactSection />
       </section>
       <section>
         <MapSection />
       </section>
-   
+
     </div>
   );
 }
