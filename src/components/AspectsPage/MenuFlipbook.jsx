@@ -170,75 +170,6 @@ const SectionPage = forwardRef(({ title, subtitle, items, mode }, ref) => (
 ));
 SectionPage.displayName = "SectionPage";
 
-// ---------- INFO PAGE ----------
-const InfoPage = forwardRef(({ mode }, ref) => (
-  <Page ref={ref} mode={mode}>
-    <div className="flex h-full flex-col">
-      <h2 className="text-2xl font-bold mb-3" style={{ color: COLORS.gold }}>
-        About Us
-      </h2>
-      <p className="text-sm mb-6" style={{ color: mode.text }}>
-        Welcome to <span className="font-semibold">ASPECTS</span>, a refined dining experience
-        where modern European cuisine meets sophisticated cocktails in a
-        contemporary bar setting.
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <div
-          className="rounded-2xl border p-4"
-          style={{
-            borderColor: COLORS.gold,
-            backgroundColor: mode.sectionBg,
-          }}
-        >
-          <p className="text-sm font-semibold" style={{ color: COLORS.gold }}>
-            Location
-          </p>
-          <p className="text-sm" style={{ color: mode.text }}>
-            45 Granby Street,
-            <br />
-            Leicester LE1 6EH, England
-          </p>
-        </div>
-        <div
-          className="rounded-2xl border p-4"
-          style={{
-            borderColor: COLORS.gold,
-            backgroundColor: mode.sectionBg,
-          }}
-        >
-          <p className="text-sm font-semibold" style={{ color: COLORS.gold }}>
-            Contact
-          </p>
-          <p className="text-sm" style={{ color: mode.text }}>
-            0116 123 4567
-          </p>
-          <p className="text-sm" style={{ color: mode.text }}>
-            info@aspectsbar.co.uk
-          </p>
-        </div>
-      </div>
-
-      <div className="mt-auto text-[11px]" style={{ color: mode.text }}>
-        © {new Date().getFullYear()} ASPECTS Bar & Grill. All rights reserved.
-      </div>
-    </div>
-  </Page>
-));
-InfoPage.displayName = "InfoPage";
-
-// ---------- BACK COVER ----------
-const BackCoverPage = forwardRef(({ mode }, ref) => (
-  <Page ref={ref} mode={mode}>
-    <div className="flex h-full items-center justify-center">
-      <p className="text-sm font-medium" style={{ color: mode.text }}>
-        See you again soon 🍸
-      </p>
-    </div>
-  </Page>
-));
-BackCoverPage.displayName = "BackCoverPage";
-
 // ---------- MAIN ----------
 export default function MenuFlipbook() {
   const flipRef = useRef(null);
@@ -301,9 +232,6 @@ export default function MenuFlipbook() {
         currentIndex++;
       });
     });
-
-    arr.push(<InfoPage key="info" mode={mode} />);
-    arr.push(<BackCoverPage key="back" mode={mode} />);
     return { pages: arr, sectionPageMap: map };
   }, [mode]);
 
