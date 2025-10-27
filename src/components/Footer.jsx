@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const brandGold = "#DDB64E";
@@ -22,27 +23,24 @@ export default function Footer() {
 
   return (
     <footer
-      className={`border-t transition-colors duration-700 font-[Inter] ${
-        isDark
+      className={`border-t transition-colors duration-700 font-[Inter] ${isDark
           ? "bg-[#0E1517] border-[#DDB64E]/20 text-[#E9ECEC]"
           : "bg-white border-[#DDB64E]/30 text-[#333333]"
-      }`}
+        }`}
     >
       {/* === Main Footer === */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Left Section */}
         <div className="flex flex-col items-center md:items-start">
           <h3
-            className={`text-xl font-[Playfair_Display] font-semibold mb-3 transition-colors duration-500 ${
-              isDark ? "text-white" : "text-[#111111]"
-            }`}
+            className={`text-xl font-[Playfair_Display] font-semibold mb-3 transition-colors duration-500 ${isDark ? "text-white" : "text-[#111111]"
+              }`}
           >
             SRK Hospitality Limited
           </h3>
           <p
-            className={`text-sm md:text-base leading-relaxed max-w-xs transition-colors duration-500 ${
-              isDark ? "text-[#C9D1D5]" : "text-[#333333]"
-            }`}
+            className={`text-sm md:text-base leading-relaxed max-w-xs transition-colors duration-500 ${isDark ? "text-[#C9D1D5]" : "text-[#333333]"
+              }`}
           >
             Celebrating the passion of independent culinary businesses across the UK.
           </p>
@@ -57,9 +55,8 @@ export default function Footer() {
             Quick Links
           </h4>
           <ul
-            className={`space-y-2 text-sm md:text-base font-[Inter] transition-colors duration-500 ${
-              isDark ? "text-[#E9ECEC]" : "text-[#111111]"
-            }`}
+            className={`space-y-2 text-sm md:text-base font-[Inter] transition-colors duration-500 ${isDark ? "text-[#E9ECEC]" : "text-[#111111]"
+              }`}
           >
             {[
               { label: "Home", href: "/" },
@@ -70,9 +67,8 @@ export default function Footer() {
               <li key={i}>
                 <a
                   href={link.href}
-                  className={`hover:text-[#DDB64E] transition-colors duration-300 ${
-                    isDark ? "text-[#E9ECEC]" : "text-[#111111]"
-                  }`}
+                  className={`hover:text-[#DDB64E] transition-colors duration-300 ${isDark ? "text-[#E9ECEC]" : "text-[#111111]"
+                    }`}
                 >
                   {link.label}
                 </a>
@@ -100,11 +96,10 @@ export default function Footer() {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-3 rounded-full transition-all duration-500 ease-out shadow-sm active:scale-[0.95] ${
-                  isDark
+                className={`p-3 rounded-full transition-all duration-500 ease-out shadow-sm active:scale-[0.95] ${isDark
                     ? "bg-[#DDB64E]/10 text-[#DDB64E] hover:bg-[#DDB64E] hover:text-black hover:shadow-[0_0_20px_rgba(221,182,78,0.5)]"
                     : "bg-[#DDB64E]/10 text-[#DDB64E] hover:bg-[#DDB64E] hover:text-white hover:shadow-[0_0_20px_rgba(221,182,78,0.5)]"
-                }`}
+                  }`}
               >
                 <Icon size={16} />
               </a>
@@ -114,23 +109,41 @@ export default function Footer() {
       </div>
 
       {/* === Bottom Bar === */}
-      <div
-        className={`border-t py-6 text-center transition-colors duration-700 ${
-          isDark
-            ? "bg-[#111A1D] border-[#DDB64E]/20 text-[#C9D1D5]"
-            : "bg-white border-[#DDB64E]/20 text-[#333333]"
-        }`}
-      >
-        <p className="text-sm md:text-base font-[Inter]">
-          © {new Date().getFullYear()}{" "}
-          <span
-            className={`font-medium transition-colors duration-500 ${
-              isDark ? "text-white" : "text-[#111111]"
-            }`}
+      {/* Bottom Divider */}
+      <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 SRK Hospitality Limited. All rights reserved.</p>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="flex flex-col py-3 sm:flex-row justify-center items-center gap-3 text-center font-semibold text-gray-400">
+        {/* Left: Terms & Privacy */}
+        <div className="flex gap-4 text-sm">
+          <Link
+            to="/terms"
+            className="text-gray-400 hover:text-[#DDB64E] transition duration-300"
           >
-            SRK Hospitality Limited
-          </span>
-          . All rights reserved.
+            Terms & Conditions
+          </Link>
+          <span className="text-gray-500">|</span>
+          <Link
+            to="/privacy"
+            className="text-gray-400 hover:text-[#DDB64E] transition duration-300"
+          >
+            Privacy Policy
+          </Link>
+        </div>
+
+        {/* Center: Powered by Ansely (unchanged) */}
+        <p className="text-center font-semibold text-gray-400">
+          Powered by{" "}
+          <a
+            href="https://www.ansely.co.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#DDB64E] hover:underline"
+          >
+            Ansely
+          </a>
         </p>
       </div>
     </footer>
