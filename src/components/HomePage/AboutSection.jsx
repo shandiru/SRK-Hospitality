@@ -138,10 +138,7 @@ export default function AboutSection() {
             isDark ? "text-[#E9ECEC]" : "text-[#333333]"
           }`}
         >
-          From our first venue in the East Midlands to our growing family across
-          the region, SRK has remained committed to creating spaces where
-          flavour meets friendship, and where the art of hospitality continues
-          to evolve — refined, yet always sincere.
+     From our first venue in the East Midlands to our growing family across the region and now in Dubai, SRK remains committed to creating spaces where flavour meets friendship and the art of hospitality evolves, refined yet always sincere.
         </p>
         <div
           className="w-20 sm:w-24 h-[2px] mx-auto mt-8"

@@ -34,8 +34,7 @@ export default function WelcomeSection() {
             textShadow: "0 2px 10px rgba(0,0,0,0.4)",
           }}
         >
-          Experience timeless dining and unforgettable moments at one of the
-          Midlands’ most iconic restaurants.
+          Experience timeless dining and unforgettable moments in the heart of Dubai’s vibrant luxury scene.
         </p>
 
         {/* Optional Accent Line */}

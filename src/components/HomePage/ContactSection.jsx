@@ -107,7 +107,7 @@ export default function ContactSection() {
               isDark ? "text-[#E9ECEC]" : "text-[#333333]"
             }`}
           >
-            East Midlands
+            East Midlands & Dubai
           </p>
         </div>
 

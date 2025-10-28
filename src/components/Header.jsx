@@ -36,6 +36,7 @@ export default function Header() {
     { name: "Home", href: "/" },
     { name: "Our Venues", href: "/venues" },
     { name: "Vacancies", href: "/vacancies" },
+    { name: "Event Hire", href: "/event-hire" },
   ];
 
   return (
