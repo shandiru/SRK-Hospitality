@@ -28,13 +28,13 @@ export default function WelcomeSection() {
         </h1>
 
         <p
-          className="text-lg sm:text-xl font-[Inter] max-w-2xl leading-relaxed mt-2"
+          className="text-lg sm:text-xl font-[Inter] max-w-4xl leading-relaxed mt-2"
           style={{
             color: "#F3F3F3",
             textShadow: "0 2px 10px rgba(0,0,0,0.4)",
           }}
         >
-          Experience timeless dining and unforgettable moments in the heart of Dubai’s vibrant luxury scene.
+          An international restaurant serving breakfast, lunch, and dinner, set within a 4-star hotel in Dubai. Enjoy global flavours, inviting service, and a dining experience made for every moment of the day.
         </p>
 
         {/* Optional Accent Line */}

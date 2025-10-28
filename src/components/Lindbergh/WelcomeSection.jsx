@@ -31,14 +31,13 @@ export default function WelcomeSection() {
 
         {/* Subtitle */}
         <p
-          className="text-lg sm:text-xl font-[Inter] max-w-2xl leading-relaxed mt-2"
+          className="text-lg sm:text-xl font-[Inter] max-w-4xl leading-relaxed mt-2"
           style={{
             color: "#F3F3F3",
             textShadow: "0 2px 10px rgba(0,0,0,0.5)",
           }}
         >
-          A fine dining experience blending modern elegance with classic warmth — 
-          discover the perfect harmony of flavor and hospitality.
+        An elevated sports bar experience pairing lively atmosphere with classic pub favourites. Enjoy great flavour, modern comfort, and warm hospitality in every visit.
         </p>
 
         {/* Accent Line */}

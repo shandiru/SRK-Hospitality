@@ -8,9 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const venues = [
-  { name: "The Terrace", desc: "Restaurant", img: "/terrace-home.jpg", slug: "terrace" },
   { name: "Lynn_Leics", desc: "Restaurant", img: "/lynn.jpg", slug: "Lynn" },
-  { name: "Lindbergh", desc: "Sports bar", img: "/Linberghs.webp", slug: "lindbergh" },
   { name: "The Walnut Tree Inn", desc: "Fine dining experience", img: "/walnut.png", slug: "walnut" },
   { name: "Barceloneta", desc: "Spanish Bar", img: "/barceloneta.png", slug: "barceloneta" },
   { name: "Bar Dos Hermanos", desc: "Cuban Bar", img: "/doshermanos.png", slug: "dos-hermanos" },
@@ -21,6 +19,8 @@ const venues = [
   { name: "Subway Wigston", desc: "Fast Food", img: "/subway.png", slug: "subway-wigston" },
   { name: "Toluca", desc: "Mexican Bar & Grill", img: "/Toluca.png", slug: "toluca" },
   { name: "FUSIC", desc: "BBQ Special", img: "/FUSIC.png", slug: "fusic" },
+  { name: "Lindbergh", desc: "Sports bar", img: "/Linberghs.webp", slug: "lindbergh" },
+  { name: "The Terrace", desc: "Restaurant", img: "/terrace-home.jpg", slug: "terrace" },
 ];
 
 export default function VenuesGrid() {
