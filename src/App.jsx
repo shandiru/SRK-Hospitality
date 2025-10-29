@@ -22,6 +22,7 @@ import Lindbergh from "./Page/Lindbergh.jsx";
 import GDPRConsent from "./components/GDPRButton.jsx";
 import TermsConditions from "./components/Term.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
+import Subway from "./Page/Subway.jsx";
 
 export default function App() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/freddies" element={<Freddie />} />
           <Route path="/aspects" element={<Aspects />} />
           <Route path="/toluca" element={<Toluca />} />
+           <Route path="/subway" element={<Subway />} />
           <Route path="/fusic" element={<Fusic />} />
           <Route path="/venues" element={<Venu />} />
           <Route path="/RestaurantManagerPage" element={<RestaurantManagerPage />} />

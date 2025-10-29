@@ -16,7 +16,7 @@ const venues = [
   { name: "Freddie’s", desc: "Dessert Lounge", img: "/freddies.png", slug: "freddies" },
   { name: "Aspects", desc: "Indian Restaurant", img: "/aspects.png", slug: "aspects" },
   { name: "Basement", desc: "Nightclub", img: "/basement.png", slug: "basement" },
-  { name: "Subway Wigston", desc: "Fast Food", img: "/subway.png", slug: "subway-wigston" },
+  { name: "Subway Wigston", desc: "Fast Food", img: "/subway.webp", slug: "subway" },
   { name: "Toluca", desc: "Mexican Bar & Grill", img: "/Toluca.png", slug: "toluca" },
   { name: "FUSIC", desc: "BBQ Special", img: "/FUSIC.png", slug: "fusic" },
   { name: "Lindbergh", desc: "Sports bar", img: "/Linberghs.webp", slug: "lindbergh" },
