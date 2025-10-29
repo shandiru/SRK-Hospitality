@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import {
   User,
   Mail,
@@ -9,8 +9,56 @@ import {
   MapPin,
   MessageSquare,
 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const VenueBookingForm = () => {
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = formRef.current;
+
+    // Basic validation
+    if (
+      !form.firstName.value ||
+      !form.lastName.value ||
+      !form.email.value ||
+      !form.phone.value ||
+      !form.eventType.value ||
+      !form.eventDate.value ||
+      !form.guestCount.value ||
+      !form.location.value
+    ) {
+      alert("Please fill all required fields!");
+      return;
+    }
+
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_404lxe7", // replace with your EmailJS service ID
+        "template_ab4b57p", // replace with your EmailJS template ID
+        form,
+        "tmUgtXKf_TwGrV1iE" // replace with your EmailJS public key
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccess("Booking inquiry sent successfully!");
+          form.reset();
+        },
+        (error) => {
+          console.error(error.text);
+          alert("Failed to send inquiry. Please try again later.");
+        }
+      )
+      .finally(() => setLoading(false));
+  };
+
   return (
     <section className="py-20 px-6 bg-[#FFF8E6] font-['Poppins']">
       <div className="max-w-4xl mx-auto">
@@ -36,7 +84,7 @@ const VenueBookingForm = () => {
             you.
           </p>
 
-          <form className="space-y-8">
+          <form className="space-y-8" ref={formRef} onSubmit={handleSubmit}>
             {/* Your Information */}
             <div className="space-y-6">
               <h4 className="text-lg font-semibold flex items-center gap-2 text-[#1A1A1A]">
@@ -54,6 +102,7 @@ const VenueBookingForm = () => {
                   </label>
                   <input
                     id="firstName"
+                    name="firstName"
                     type="text"
                     placeholder="John"
                     required
@@ -70,6 +119,7 @@ const VenueBookingForm = () => {
                   </label>
                   <input
                     id="lastName"
+                    name="lastName"
                     type="text"
                     placeholder="Doe"
                     required
@@ -82,13 +132,14 @@ const VenueBookingForm = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1 flex items-center gap-2"
+                    className="text-sm font-medium text-gray-700 mb-1 flex items-center gap-2"
                   >
                     <Mail className="w-4 h-4 text-[#D8B04C]" />
                     Email *
                   </label>
                   <input
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="john@example.com"
                     required
@@ -99,13 +150,14 @@ const VenueBookingForm = () => {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-1 flex items-center gap-2"
+                    className=" text-sm font-medium text-gray-700 mb-1 flex items-center gap-2"
                   >
                     <Phone className="w-4 h-4 text-[#D8B04C]" />
                     Phone Number *
                   </label>
                   <input
                     id="phone"
+                    name="phone"
                     type="tel"
                     placeholder="+44 7700 900000"
                     required
@@ -132,6 +184,7 @@ const VenueBookingForm = () => {
                   </label>
                   <select
                     id="eventType"
+                    name="eventType"
                     required
                     className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-[#D8B04C] outline-none bg-white"
                   >
@@ -153,6 +206,7 @@ const VenueBookingForm = () => {
                   </label>
                   <input
                     id="eventDate"
+                    name="eventDate"
                     type="date"
                     required
                     className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-[#D8B04C] outline-none"
@@ -164,13 +218,14 @@ const VenueBookingForm = () => {
                 <div>
                   <label
                     htmlFor="guestCount"
-                    className="block text-sm font-medium text-gray-700 mb-1 flex items-center gap-2"
+                    className="text-sm font-medium text-gray-700 mb-1 flex items-center gap-2"
                   >
                     <Users className="w-4 h-4 text-[#D8B04C]" />
                     Number of Guests *
                   </label>
                   <select
                     id="guestCount"
+                    name="guestCount"
                     required
                     className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-[#D8B04C] outline-none bg-white"
                   >
@@ -186,13 +241,14 @@ const VenueBookingForm = () => {
                 <div>
                   <label
                     htmlFor="location"
-                    className="block text-sm font-medium text-gray-700 mb-1 flex items-center gap-2"
+                    className=" text-sm font-medium text-gray-700 mb-1 flex items-center gap-2"
                   >
                     <MapPin className="w-4 h-4 text-[#D8B04C]" />
                     Preferred Location *
                   </label>
                   <select
                     id="location"
+                    name="location"
                     required
                     className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-[#D8B04C] outline-none bg-white"
                   >
@@ -216,6 +272,7 @@ const VenueBookingForm = () => {
                 </label>
                 <select
                   id="budget"
+                  name="budget"
                   className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-[#D8B04C] outline-none bg-white"
                 >
                   <option value="">Select budget range</option>
@@ -243,6 +300,7 @@ const VenueBookingForm = () => {
                 </label>
                 <textarea
                   id="requirements"
+                  name="requirements"
                   placeholder="Tell us about any specific requirements, preferences, or questions you have..."
                   className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm min-h-[120px] resize-none focus:ring-2 focus:ring-[#D8B04C] outline-none"
                 ></textarea>
@@ -252,10 +310,15 @@ const VenueBookingForm = () => {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-[#D8B04C] hover:bg-[#C29C3F] text-white text-lg font-semibold py-3 rounded-md transition-colors"
+              disabled={loading}
+              className="w-full bg-[#D8B04C] hover:bg-[#C29C3F] text-white text-lg font-semibold py-3 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit Booking Inquiry
+              {loading ? "Sending..." : "Submit Booking Inquiry"}
             </button>
+
+            {success && (
+              <p className="text-green-600 text-center mt-2">{success}</p>
+            )}
 
             <p className="text-sm text-gray-500 text-center mt-2">
               By submitting this form, you agree to be contacted by our team
