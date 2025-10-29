@@ -23,24 +23,27 @@ export default function Footer() {
 
   return (
     <footer
-      className={`border-t transition-colors duration-700 font-[Inter] ${isDark
-          ? "bg-[#0E1517] border-[#DDB64E]/20 text-[#E9ECEC]"
-          : "bg-white border-[#DDB64E]/30 text-[#333333]"
-        }`}
+      className={`transition-colors duration-700 font-[Inter] ${
+        isDark
+          ? "bg-[#0B0E0F] text-[#E9ECEC]"
+          : "bg-white text-[#333333]"
+      }`}
     >
       {/* === Main Footer === */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         {/* Left Section */}
         <div className="flex flex-col items-center md:items-start">
           <h3
-            className={`text-xl font-[Playfair_Display] font-semibold mb-3 transition-colors duration-500 ${isDark ? "text-white" : "text-[#111111]"
-              }`}
+            className={`text-xl font-[Playfair_Display] font-semibold mb-3 ${
+              isDark ? "text-white" : "text-[#111111]"
+            }`}
           >
             SRK Hospitality Limited
           </h3>
           <p
-            className={`text-sm md:text-base leading-relaxed max-w-xs transition-colors duration-500 ${isDark ? "text-[#C9D1D5]" : "text-[#333333]"
-              }`}
+            className={`text-sm md:text-base leading-relaxed max-w-xs ${
+              isDark ? "text-[#C9D1D5]" : "text-[#333333]"
+            }`}
           >
             Celebrating the passion of independent culinary businesses across the
             UK.
@@ -48,7 +51,7 @@ export default function Footer() {
         </div>
 
         {/* Middle Section */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center md:items-start">
           <h4
             className="font-[Playfair_Display] font-semibold text-lg mb-3"
             style={{ color: brandGold }}
@@ -56,8 +59,9 @@ export default function Footer() {
             Quick Links
           </h4>
           <ul
-            className={`space-y-2 text-sm md:text-base font-[Inter] transition-colors duration-500 ${isDark ? "text-[#E9ECEC]" : "text-[#111111]"
-              }`}
+            className={`space-y-2 text-sm md:text-base font-[Inter] ${
+              isDark ? "text-[#E9ECEC]" : "text-[#111111]"
+            }`}
           >
             {[
               { label: "Home", href: "/" },
@@ -68,8 +72,12 @@ export default function Footer() {
               <li key={i}>
                 <a
                   href={link.href}
-                  className={`hover:text-[#DDB64E] transition-colors duration-300 ${isDark ? "text-[#E9ECEC]" : "text-[#111111]"
-                    }`}
+                  className={`transition-colors duration-300 ${
+                    isDark
+                      ? "text-[#E9ECEC] hover:text-[#DDB64E]"
+                      : "text-[#111111] hover:text-[#DDB64E]"
+                  }`}
+                  style={{ textDecoration: "none" }}
                 >
                   {link.label}
                 </a>
@@ -78,37 +86,45 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Right Section (Replaced Social Links with Contact Info) */}
-        <div className="flex flex-col items-center">
+        {/* Right Section (Contact Info) */}
+        <div className="flex flex-col items-center md:items-start">
           <h4
-            className="font-[Playfair_Display] font-semibold text-lg mb-3"
+            className="font-[Playfair_Display] font-semibold text-lg mb-4"
             style={{ color: brandGold }}
           >
             Get in Touch
           </h4>
-          <div className="flex flex-col gap-3 text-sm md:text-base">
-            <div className="flex items-center gap-2">
-              <BsWhatsapp 
-                className={`${isDark ? "text-[#DDB64E]" : "text-[#DDB64E]"}`}
-              />
+
+          <div className="flex flex-col gap-4 text-sm md:text-base">
+            {/* WhatsApp */}
+            <div className="flex items-center gap-3">
+              <BsWhatsapp size={18} className="text-[#DDB64E]" />
               <a
                 href="https://wa.me/447466093996"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`hover:text-[#DDB64E] transition-colors duration-300 ${isDark ? "text-[#E9ECEC]" : "text-[#111111]"
-                  }`}
+                className={`transition-colors duration-300 ${
+                  isDark
+                    ? "text-[#E9ECEC] hover:text-[#DDB64E]"
+                    : "text-[#111111] hover:text-[#DDB64E]"
+                }`}
+                style={{ textDecoration: "none" }}
               >
-                07466093996 
+                07466093996
               </a>
             </div>
-            <div className="flex items-center gap-2">
-              <FaEnvelope
-                className={`${isDark ? "text-[#DDB64E]" : "text-[#DDB64E]"}`}
-              />
+
+            {/* Email */}
+            <div className="flex items-center gap-3">
+              <FaEnvelope size={18} className="text-[#DDB64E]" />
               <a
                 href="mailto:info@srkhospitality.co.uk"
-                className={`hover:text-[#DDB64E] transition-colors duration-300 ${isDark ? "text-[#E9ECEC]" : "text-[#111111]"
-                  }`}
+                className={`transition-colors duration-300 ${
+                  isDark
+                    ? "text-[#E9ECEC] hover:text-[#DDB64E]"
+                    : "text-[#111111] hover:text-[#DDB64E]"
+                }`}
+                style={{ textDecoration: "none" }}
               >
                 info@srkhospitality.co.uk
               </a>
@@ -118,7 +134,11 @@ export default function Footer() {
       </div>
 
       {/* === Bottom Divider === */}
-      <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+      <div
+        className={`mt-8 pt-8 text-center text-sm ${
+          isDark ? "border-t border-[#1A1A1A] text-gray-400" : "border-t border-gray-300 text-gray-600"
+        }`}
+      >
         <p>&copy; 2025 SRK Hospitality Limited. All rights reserved.</p>
       </div>
 
@@ -139,7 +159,7 @@ export default function Footer() {
             Privacy Policy
           </Link>
         </div>
-        <p className="text-center font-semibold text-gray-400">
+        <p className="text-center font-semibold text-gray-400 mt-2 sm:mt-0">
           Powered by{" "}
           <a
             href="https://www.ansely.co.uk/"
