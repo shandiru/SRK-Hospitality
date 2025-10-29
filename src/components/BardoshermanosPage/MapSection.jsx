@@ -45,7 +45,7 @@ export default function MapSection() {
           }`}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198.06815689439973!2d-1.1172814142778573!3d52.61863587153105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487761314d8842f7%3A0x2d7b112eec4d6b22!2s52%20Queens%20Rd%2C%20Clarendon%20Park%2C%20Leicester%20LE2%201TU%2C%20UK!5e0!3m2!1sen!2suk!4v1694950000000!5m2!1sen!2suk"
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124.78105906742842!2d-1.117410865207633!3d52.61860092397085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877613149c74739%3A0xeb4ea6032cc8239d!2sBar%20Dos%20Hermanos!5e1!3m2!1sen!2slk!4v1761752614750!5m2!1sen!2slk"
             title="52 Queens Rd, Clarendon Park, Leicester LE2 1TU, UK"
             aria-label="52 Queens Rd, Clarendon Park, Leicester LE2 1TU, UK"
             loading="lazy"

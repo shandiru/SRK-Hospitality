@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { AiOutlineGlobal } from 'react-icons/ai';
 import {
   FiMapPin,
   FiPhone,
@@ -18,8 +19,7 @@ export default function ContactSection() {
   // ✅ Detect dark/light mode
   useEffect(() => {
     const root = document.documentElement;
-    const dark = root.classList.contains('dark');
-    setIsDark(dark);
+    setIsDark(root.classList.contains('dark'));
 
     const observer = new MutationObserver(() => {
       setIsDark(root.classList.contains('dark'));
@@ -31,17 +31,13 @@ export default function ContactSection() {
 
   return (
     <section
-      className={`transition-colors duration-700 py-20 px-4 ${
-        isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'
-      }`}
+      className={`transition-colors duration-700 py-20 px-4 ${isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'}`
+      }
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Left Column */}
         <div>
-          <h2
-            className="text-3xl font-extrabold mb-6"
-            style={{ color: BRAND_GOLD }}
-          >
+          <h2 className="text-3xl font-extrabold mb-6" style={{ color: BRAND_GOLD }}>
             Contact Us
           </h2>
 
@@ -59,37 +55,32 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold">Opening Hours</h4>
-
                 <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  <span style={{ color: BRAND_GOLD, fontWeight: 600 }}>
-                    Latin Tapas
-                  </span>
+                  <span style={{ color: BRAND_GOLD, fontWeight: 600 }}>Latin Tapas</span>
                   <br />
-                  Monday to Thursday: 5:00 PM – 9:00 PM
+                  Mon-Thu: 5:00 PM – 9:00 PM
                   <br />
-                  Friday and Saturday: 5:00 PM – 6:30 PM
+                  Fri-Sat: 5:00 PM – 6:30 PM
                   <br />
-                  Sunday: 5:00 PM – 9:00 PM
+                  Sun: 5:00 PM – 9:00 PM
                 </p>
-
-                <p
-                  className={`mt-3 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}
-                >
-                  <span style={{ color: BRAND_GOLD, fontWeight: 600 }}>
-                    Breakfast & Brunch
-                  </span>
+                <p className={`mt-3 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <span style={{ color: BRAND_GOLD, fontWeight: 600 }}>Breakfast & Brunch</span>
                   <br />
-                  Saturday: 9:00 AM – 3:00 PM
-                  <br />
-                  Sunday: 9:00 AM – 3:00 PM
+                  Sat-Sun: 9:00 AM – 3:00 PM
                 </p>
               </div>
             </div>
 
-            {/* Address */}
-            <div className="flex items-start gap-4">
+            {/* Address (Google Maps) */}
+            <a
+              href="https://maps.app.goo.gl/YWMNGsmVDer2oAVQ8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4"
+            >
               <div
-                className="p-3 rounded-full"
+                className="p-3 rounded-full flex items-center justify-center"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
@@ -99,13 +90,13 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold">Visit Us</h4>
-                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} hover:text-[#E1B43B]`}>
                   52 Queens Road, Clarendon Park,
                   <br />
                   Leicester, LE2 1TU
                 </p>
               </div>
-            </div>
+            </a>
 
             {/* Phone */}
             <div className="flex items-start gap-4">
@@ -121,20 +112,12 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold">Call Us</h4>
                 <p>
-                  <a
-                    href="tel:01162708404"
-                    className="hover:underline"
-                    style={{ color: BRAND_GOLD }}
-                  >
+                  <a href="tel:01162708404" className="hover:text-[#E1B43B]" >
                     0116 270 8404
                   </a>
                 </p>
                 <p>
-                  <a
-                    href="tel:+447405317594"
-                    className="hover:underline"
-                    style={{ color: BRAND_GOLD }}
-                  >
+                  <a href="tel:+447405317594" className="hover:text-[#E1B43B]" >
                     +44 7405 317594
                   </a>
                 </p>
@@ -154,11 +137,38 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold">Mail Us</h4>
-                <p className="font-medium" style={{ color: BRAND_GOLD }}>
+                <a
+                  href="mailto:info@bardoshermanos.co.uk"
+                  className="font-medium hover:text-[#E1B43B]"
+                >
                   info@bardoshermanos.co.uk
-                </p>
+                </a>
               </div>
             </div>
+
+            {/* Website */}
+            <a
+              href="https://bardoshermanos.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
+              <div
+                className="p-3 rounded-full transition-all duration-300 group-hover:scale-110"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
+                <AiOutlineGlobal size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold">Website</h4>
+                <p className="font-medium group-hover:text-[#E1B43B] transition-colors">
+                  bardoshermanos.co.uk
+                </p>
+              </div>
+            </a>
 
             {/* Social Media */}
             <div className="flex gap-4 pt-4">
@@ -192,73 +202,59 @@ export default function ContactSection() {
 
         {/* Right Column - Form */}
         <div>
-          <h2
-            className="text-3xl font-extrabold mb-6"
-            style={{ color: BRAND_GOLD }}
-          >
+          <h2 className="text-3xl font-extrabold mb-6" style={{ color: BRAND_GOLD }}>
             Send Your Message Here
           </h2>
 
           <form className="space-y-6">
-            {/* Name */}
             <div>
               <label className="block mb-1 text-sm font-medium">Your Name</label>
               <input
                 type="text"
                 placeholder="John Doe"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
-            {/* Phone */}
             <div>
               <label className="block mb-1 text-sm font-medium">Phone</label>
               <input
                 type="text"
                 placeholder="+44 123 456 7890"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
-            {/* Email */}
             <div>
               <label className="block mb-1 text-sm font-medium">Your Email</label>
               <input
                 type="email"
                 placeholder="email@example.com"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
-            {/* Message */}
             <div>
-              <label className="block mb-1 text-sm font-medium">
-                Your Message (optional)
-              </label>
+              <label className="block mb-1 text-sm font-medium">Your Message (optional)</label>
               <textarea
                 rows="4"
                 placeholder="Write something..."
-                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
-            {/* Submit Button */}
             <div>
               <button
                 type="submit"

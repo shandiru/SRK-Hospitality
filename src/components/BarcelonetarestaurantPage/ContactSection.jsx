@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { AiOutlineGlobal } from 'react-icons/ai';
 import { FiMapPin, FiPhone, FiSend, FiClock, FiFacebook, FiInstagram } from 'react-icons/fi';
 
 const BRAND_GOLD = '#E1B43B';
@@ -24,9 +25,8 @@ export default function ContactSection() {
 
   return (
     <section
-      className={`transition-colors duration-700 py-20 px-4 ${
-        isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'
-      }`}
+      className={`transition-colors duration-700 py-20 px-4 ${isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'
+        }`}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Left Column */}
@@ -62,26 +62,33 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Address */}
-            <div className="flex items-start gap-4">
-              <div
-                className="p-3 rounded-full"
-                style={{
-                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
-                  color: BRAND_GOLD,
-                }}
+            <div className="flex items-center gap-4">
+              <a
+                href="https://maps.app.goo.gl/g1AhAR1kVA4NfP118"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4"
               >
-                <FiMapPin size={20} />
-              </div>
-              <div>
-                <h4 className="font-bold">Visit Us</h4>
-                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  54 Queen’s Rd, Clarendon Park,
-                  <br />
-                  Leicester, LE2 1TU.
-                </p>
-              </div>
+                <div
+                  className="p-3 rounded-full flex items-center justify-center hover:text-[#E1B43B]"
+                  style={{
+                    backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  }}
+                >
+                  <FiMapPin size={20} />
+                </div>
+                <div>
+                  <h4 className="font-bold">Visit Us</h4>
+                  <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} hover:text-[#E1B43B]`}>
+                    54 Queen’s Rd, Clarendon Park,
+                    <br />
+                    Leicester, LE2 1TU.
+                  </p>
+                </div>
+              </a>
             </div>
+
+
 
             {/* Phone */}
             <div className="flex items-start gap-4">
@@ -99,8 +106,8 @@ export default function ContactSection() {
                 <p>
                   <a
                     href="tel:01162708408"
-                    className="hover:underline"
-                    style={{ color: BRAND_GOLD }}
+                    className="hover:text-[#E1B43B]"
+                    target="_self"
                   >
                     0116 270 8408
                   </a>
@@ -108,8 +115,8 @@ export default function ContactSection() {
                 <p>
                   <a
                     href="tel:+447405317594"
-                    className="hover:underline"
-                    style={{ color: BRAND_GOLD }}
+                    className="hover:text-[#E1B43B]"
+                    target="_self"
                   >
                     +44 7405 317594
                   </a>
@@ -130,20 +137,45 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold">Mail Us</h4>
-                <p
-                  className="font-medium"
-                  style={{ color: BRAND_GOLD }}
+                <a
+                  href="mailto:info@barcelonetarestaurant.co.uk"
+                  className="font-medium hover:text-[#E1B43B]"
+                  target="_self"
                 >
                   info@barcelonetarestaurant.co.uk
-                </p>
+                </a>
               </div>
             </div>
+
+            {/* Website */}
+            <a
+              href="https://barcelonetarestaurant.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
+              <div
+                className="p-3 rounded-full transition-all duration-300 group-hover:scale-110"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
+                <AiOutlineGlobal size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold">Website</h4>
+                <p className="font-medium group-hover:text-[#E1B43B] transition-colors">
+                  barcelonetarestaurant.co.uk
+                </p>
+              </div>
+            </a>
 
             {/* Social Media */}
             <div className="flex gap-4 pt-4">
               <a
                 href="https://www.instagram.com/barceloneta_restaurant/?igsh=Y29saG95cW9wOGE3&utm_source=qr#"
-                target="_blank"
+                target="_self"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
                 style={{
@@ -155,7 +187,7 @@ export default function ContactSection() {
               </a>
               <a
                 href="https://web.facebook.com/BarcelonetaOueensRd?_rdc=1&_rdr#"
-                target="_blank"
+                target="_self"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
                 style={{
@@ -185,11 +217,10 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="John Doe"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
@@ -199,11 +230,10 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="+44 123 456 7890"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
@@ -213,11 +243,10 @@ export default function ContactSection() {
               <input
                 type="email"
                 placeholder="email@example.com"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
@@ -229,11 +258,10 @@ export default function ContactSection() {
               <textarea
                 rows="4"
                 placeholder="Write something..."
-                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${
-                  isDark
-                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${isDark
+                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                  }`}
               />
             </div>
 
