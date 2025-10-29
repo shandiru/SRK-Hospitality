@@ -7,7 +7,6 @@ import {
   FiSend,
   FiFacebook,
   FiInstagram,
-  FiTwitter,
   FiYoutube,
 } from 'react-icons/fi';
 
@@ -39,10 +38,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Left Column */}
         <div>
-          <h2
-            className="text-3xl font-extrabold mb-6"
-            style={{ color: BRAND_GOLD }}
-          >
+          <h2 className="text-3xl font-extrabold mb-6" style={{ color: BRAND_GOLD }}>
             Contact Us
           </h2>
 
@@ -60,12 +56,23 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold">Visit Us</h4>
-                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  Subway Braunstone Gate <br />
-                  Unit 5, Braunstone Gate<br />
-                  Unit 3 <br />
+                <a
+                  href="https://www.google.com/maps?ll=52.630985,-1.145593&z=17&t=m&hl=en&gl=LK&mapclient=embed&cid=16295182224724855003"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`transition-colors duration-300 ${
+                    isDark
+                      ? 'text-gray-300 hover:text-[#E1B43B]'
+                      : 'text-gray-600 hover:text-[#E1B43B]'
+                  }`}
+                  style={{ textDecoration: 'none' }}
+                >
+                  Subway Braunstone Gate
+                  <br />
+                  Unit 5, Braunstone Gate
+                  <br />
                   Leicester LE3 5LG
-                </p>
+                </a>
               </div>
             </div>
 
@@ -82,15 +89,61 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold">Call Us</h4>
-                <p>
-                  <a
-                    href="tel:0116 319 7159"
-                    className="hover:underline"
-                    style={{ color: BRAND_GOLD }}
-                  >
-                    0116 319 7159
-                  </a>
-                </p>
+                <a
+                  href="tel:01163197159"
+                  className="font-medium transition-colors duration-300 hover:text-[#E1B43B]"
+                  style={{ textDecoration: 'none', color: BRAND_GOLD }}
+                >
+                  0116 319 7159
+                </a>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-start gap-4">
+              <div
+                className="p-3 rounded-full"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
+                <FiSend size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold">Mail Us</h4>
+                <a
+                  href="mailto:info@subway.co.uk"
+                  className="font-medium transition-colors duration-300 hover:text-[#E1B43B]"
+                  style={{ textDecoration: 'none', color: BRAND_GOLD }}
+                >
+                  info@subway.co.uk
+                </a>
+              </div>
+            </div>
+
+            {/* Website */}
+            <div className="flex items-start gap-4">
+              <div
+                className="p-3 rounded-full"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
+                <FiSend size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold">Visit Our Website</h4>
+                <a
+                  href="https://restaurants.subway.com/united-kingdom/en/leicester/unit-5-braunstone-gate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium transition-colors duration-300 hover:text-[#E1B43B]"
+                  style={{ textDecoration: 'none', color: BRAND_GOLD }}
+                >
+                  restaurants.subway.com
+                </a>
               </div>
             </div>
 
@@ -100,10 +153,11 @@ export default function ContactSection() {
                 href="https://www.instagram.com/subway_ukireland/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300 hover:text-[#E1B43B]"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
+                  textDecoration: 'none',
                 }}
               >
                 <FiInstagram size={20} />
@@ -112,10 +166,11 @@ export default function ContactSection() {
                 href="https://www.facebook.com/SubwayUK/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300 hover:text-[#E1B43B]"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
+                  textDecoration: 'none',
                 }}
               >
                 <FiFacebook size={20} />
@@ -124,10 +179,11 @@ export default function ContactSection() {
                 href="https://www.youtube.com/user/subwayukireland"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300 hover:text-[#E1B43B]"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
+                  textDecoration: 'none',
                 }}
               >
                 <FiYoutube size={20} />
@@ -138,10 +194,7 @@ export default function ContactSection() {
 
         {/* Right Column - Form */}
         <div>
-          <h2
-            className="text-3xl font-extrabold mb-6"
-            style={{ color: BRAND_GOLD }}
-          >
+          <h2 className="text-3xl font-extrabold mb-6" style={{ color: BRAND_GOLD }}>
             Send Your Message Here
           </h2>
 
@@ -204,11 +257,11 @@ export default function ContactSection() {
               />
             </div>
 
-            {/* Submit */}
+            {/* Submit Button */}
             <div>
               <button
                 type="submit"
-                className="font-semibold px-6 py-2 rounded-full transition duration-300 hover:scale-105"
+                className="font-semibold px-8 py-3 rounded-full transition duration-300 hover:text-[#E1B43B]"
                 style={{
                   backgroundColor: BRAND_GOLD,
                   color: isDark ? '#000' : '#fff',
