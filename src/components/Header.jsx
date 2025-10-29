@@ -54,7 +54,7 @@ export default function Header() {
             className="h-10 w-10 object-contain"
           />
           <span
-            className={`hidden sm:block text-base md:text-lg tracking-wide font-serif ${
+            className={`hidden sm:block text-base tracking-wide font-serif ${
               isDark ? "text-white" : "text-black"
             }`}
           >
@@ -63,7 +63,7 @@ export default function Header() {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -97,7 +97,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className={`md:hidden text-3xl transition-colors duration-300 ${
+          className={`lg:hidden text-3xl transition-colors duration-300 ${
             isDark ? "text-white" : "text-black"
           }`}
         >
@@ -107,7 +107,7 @@ export default function Header() {
 
       {/* Mobile Dropdown Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ${
+        className={`lg:hidden overflow-hidden transition-all duration-500 ${
           menuOpen ? "max-h-80" : "max-h-0"
         }`}
         style={{

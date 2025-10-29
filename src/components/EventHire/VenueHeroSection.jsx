@@ -8,7 +8,7 @@ const VenueHeroSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="max-w-4xl">
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-snug sm:leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 mt-15 text-center md:text-left leading-snug sm:leading-tight">
             Find Your Perfect Venue
           </h1>
 
