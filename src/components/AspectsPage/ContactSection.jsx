@@ -1,18 +1,18 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FiMapPin, FiPhone, FiSend, FiClock } from 'react-icons/fi';
+import { AiOutlineGlobal } from 'react-icons/ai';
+import { FiMapPin, FiPhone, FiSend, FiClock, FiInstagram, FiFacebook } from 'react-icons/fi';
 
 const BRAND_GOLD = '#E1B43B'; // Your logo gold
 
 export default function ContactSection() {
   const [isDark, setIsDark] = useState(false);
 
-  // ✅ Detect dark/light mode dynamically
+  // Detect dark/light mode dynamically
   useEffect(() => {
     const root = document.documentElement;
-    const dark = root.classList.contains('dark');
-    setIsDark(dark);
+    setIsDark(root.classList.contains('dark'));
 
     const observer = new MutationObserver(() => {
       setIsDark(root.classList.contains('dark'));
@@ -29,23 +29,22 @@ export default function ContactSection() {
       }`}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
         {/* Left Column */}
         <div>
-          <h2
-            className="text-3xl font-extrabold mb-6"
-            style={{ color: BRAND_GOLD }}
-          >
+          <h2 className="text-3xl font-extrabold mb-6" style={{ color: BRAND_GOLD }}>
             Contact Us
           </h2>
 
           <div className="space-y-6">
+
             {/* Opening Hours */}
             <div className="flex items-start gap-4">
               <div
                 className="p-3 rounded-full"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
-                  color: BRAND_GOLD,
+                  color: BRAND_GOLD
                 }}
               >
                 <FiClock size={20} />
@@ -53,25 +52,17 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold">Opening Hours</h4>
                 <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  <span className="font-semibold" style={{ color: BRAND_GOLD }}>
-                    Lunch
-                  </span>
+                  <span className="font-semibold" style={{ color: BRAND_GOLD }}>Lunch</span>
                   <br />
                   Monday to Friday: 11:30am – 2:30pm
-                  <br />
-                  <br />
-                  <span className="font-semibold" style={{ color: BRAND_GOLD }}>
-                    Dinner
-                  </span>
+                  <br /><br />
+                  <span className="font-semibold" style={{ color: BRAND_GOLD }}>Dinner</span>
                   <br />
                   Sunday to Thursday: 5:00pm – 10:00pm
                   <br />
                   Friday to Saturday: 5:00pm – 11:00pm
-                  <br />
-                  <br />
-                  <span className="font-semibold" style={{ color: BRAND_GOLD }}>
-                    Bar
-                  </span>
+                  <br /><br />
+                  <span className="font-semibold" style={{ color: BRAND_GOLD }}>Bar</span>
                   <br />
                   Open 7 Days A Week — Everyone Welcome
                 </p>
@@ -84,7 +75,7 @@ export default function ContactSection() {
                 className="p-3 rounded-full"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
-                  color: BRAND_GOLD,
+                  color: BRAND_GOLD
                 }}
               >
                 <FiMapPin size={20} />
@@ -93,11 +84,10 @@ export default function ContactSection() {
                 <h4 className="font-bold">Visit Us</h4>
                 <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                   <a
-                    href="https://www.google.com/maps/place/Aspects,+7+Mill+Hill,+Enderby,+Leicester,+LE19+4AL"
+                    href="https://maps.app.goo.gl/MHun5pWpNhT9xQZs9"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:underline"
-                    style={{ color: BRAND_GOLD }}
+                    className="hover:text-[#E1B43B]"
                   >
                     Aspects, 7 Mill Hill, Enderby,
                     <br />
@@ -113,19 +103,15 @@ export default function ContactSection() {
                 className="p-3 rounded-full"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
-                  color: BRAND_GOLD,
+                  color: BRAND_GOLD
                 }}
               >
                 <FiPhone size={20} />
               </div>
               <div>
                 <h4 className="font-bold">Call Us</h4>
-                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  <a
-                    href="tel:01162863307"
-                    className="hover:underline"
-                    style={{ color: BRAND_GOLD }}
-                  >
+                <p>
+                  <a href="tel:01162863307" className="hover:text-[#E1B43B]" >
                     0116 286 3307
                   </a>
                 </p>
@@ -138,30 +124,76 @@ export default function ContactSection() {
                 className="p-3 rounded-full"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
-                  color: BRAND_GOLD,
+                  color: BRAND_GOLD
                 }}
               >
                 <FiSend size={20} />
               </div>
               <div>
                 <h4 className="font-bold">Mail Us</h4>
-                <p
-                  className="font-medium"
-                  style={{ color: BRAND_GOLD }}
-                >
+                <p className="font-medium hover:text-[#E1B43B]" >
                   info@aspectsenderby.co.uk
                 </p>
               </div>
+            </div>
+
+            {/* Website */}
+            <a
+              href="https://aspectsenderby.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
+              <div
+                className="p-3 rounded-full transition-all duration-300 group-hover:scale-110"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD
+                }}
+              >
+                <AiOutlineGlobal size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold">Website</h4>
+                <p className="font-medium group-hover:text-[#E1B43B] transition-colors">
+                  aspectsenderby.co.uk
+                </p>
+              </div>
+            </a>
+
+            {/* Social Media */}
+            <div className="flex gap-4 pt-4">
+              <a
+                href="https://www.instagram.com/aspectsenderby/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD
+                }}
+              >
+                <FiInstagram size={20} />
+              </a>
+              <a
+                href="https://www.facebook.com/aspectsenderby/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD
+                }}
+              >
+                <FiFacebook size={20} />
+              </a>
             </div>
           </div>
         </div>
 
         {/* Right Column - Form */}
         <div>
-          <h2
-            className="text-3xl font-extrabold mb-6"
-            style={{ color: BRAND_GOLD }}
-          >
+          <h2 className="text-3xl font-extrabold mb-6" style={{ color: BRAND_GOLD }}>
             Send Your Message Here
           </h2>
 
@@ -210,11 +242,9 @@ export default function ContactSection() {
 
             {/* Message */}
             <div>
-              <label className="block mb-1 text-sm font-medium">
-                Your Message (optional)
-              </label>
+              <label className="block mb-1 text-sm font-medium">Your Message (optional)</label>
               <textarea
-                rows="4"
+                rows={4}
                 placeholder="Write something..."
                 className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${
                   isDark
@@ -224,14 +254,14 @@ export default function ContactSection() {
               />
             </div>
 
-            {/* Submit Button */}
+            {/* Submit */}
             <div>
               <button
                 type="submit"
                 className="font-semibold px-6 py-2 rounded-full transition duration-300 hover:scale-105"
                 style={{
                   backgroundColor: BRAND_GOLD,
-                  color: isDark ? '#000' : '#fff',
+                  color: isDark ? '#000' : '#fff'
                 }}
               >
                 SUBMIT
@@ -239,6 +269,7 @@ export default function ContactSection() {
             </div>
           </form>
         </div>
+
       </div>
     </section>
   );
