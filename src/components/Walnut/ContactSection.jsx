@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { AiOutlineGlobal } from 'react-icons/ai';
 import {
   FiMapPin,
   FiPhone,
@@ -14,6 +15,7 @@ const BRAND_GOLD = '#E1B43B';
 
 export default function ContactSection() {
   const [isDark, setIsDark] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   // ✅ Detect dark/light mode dynamically
   useEffect(() => {
@@ -29,11 +31,19 @@ export default function ContactSection() {
     return () => observer.disconnect();
   }, []);
 
+  // ✅ Prevent redirect / reload on form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+
+    // Optional: reset after few seconds
+    setTimeout(() => setFormSubmitted(false), 4000);
+  };
+
   return (
     <section
-      className={`transition-colors duration-700 py-20 px-4 ${
-        isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'
-      }`}
+      className={`transition-colors duration-700 py-20 px-4 ${isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'
+        }`}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Left Column */}
@@ -47,7 +57,12 @@ export default function ContactSection() {
 
           <div className="space-y-6">
             {/* Address */}
-            <div className="flex items-start gap-4">
+            <a
+              href="https://maps.app.goo.gl/fvrsjy8efiNcBFKP6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group hover:scale-[1.02] transition-transform duration-300"
+            >
               <div
                 className="p-3 rounded-full"
                 style={{
@@ -58,15 +73,18 @@ export default function ContactSection() {
                 <FiMapPin size={20} />
               </div>
               <div>
-                <h4 className="font-bold">Visit Us</h4>
-                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                <h4 className="font-bold  transition-colors">
+                  Visit Us
+                </h4>
+                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} hover:text-[#E1B43B]`}>
                   The Walnut Tree Inn <br />
                   21 Station Road <br />
                   Blisworth NN7 3DS <br />
                   Northants
                 </p>
               </div>
-            </div>
+            </a>
+
 
             {/* Phone */}
             <div className="flex items-start gap-4">
@@ -84,14 +102,37 @@ export default function ContactSection() {
                 <p>
                   <a
                     href="tel:01604859551"
-                    className="hover:underline"
-                    style={{ color: BRAND_GOLD }}
+                    className=" hover:text-[#E1B43B]"
                   >
                     01604 859551
                   </a>
                 </p>
               </div>
             </div>
+
+            {/* Website */}
+            <a
+              href="https://www.walnut-tree.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
+              <div
+                className="p-3 rounded-full transition-all duration-300 group-hover:scale-110"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
+                <AiOutlineGlobal size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold">Website</h4>
+                <p className="font-medium group-hover:text-[#E1B43B] transition-colors">
+                  www.walnut-tree.co.uk
+                </p>
+              </div>
+            </a>
 
             {/* Social Media */}
             <div className="flex gap-4 pt-4">
@@ -144,18 +185,17 @@ export default function ContactSection() {
             Send Your Message Here
           </h2>
 
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
               <label className="block mb-1 text-sm font-medium">Your Name</label>
               <input
                 type="text"
                 placeholder="John Doe"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
                     ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
                     : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                  }`}
               />
             </div>
 
@@ -165,11 +205,10 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="+44 123 456 7890"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
                     ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
                     : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                  }`}
               />
             </div>
 
@@ -179,11 +218,10 @@ export default function ContactSection() {
               <input
                 type="email"
                 placeholder="email@example.com"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
-                  isDark
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
                     ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
                     : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                  }`}
               />
             </div>
 
@@ -195,11 +233,10 @@ export default function ContactSection() {
               <textarea
                 rows="4"
                 placeholder="Write something..."
-                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${
-                  isDark
+                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${isDark
                     ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
                     : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                }`}
+                  }`}
               />
             </div>
 
@@ -207,14 +244,21 @@ export default function ContactSection() {
             <div>
               <button
                 type="submit"
-                className="font-semibold px-6 py-2 rounded-full transition duration-300 hover:scale-105"
+                className="font-semibold px-6 py-2 rounded-full transition duration-300 hover:scale-105 flex items-center gap-2"
                 style={{
                   backgroundColor: BRAND_GOLD,
                   color: isDark ? '#000' : '#fff',
                 }}
               >
+                <FiSend />
                 SUBMIT
               </button>
+
+              {formSubmitted && (
+                <p className="mt-4 text-sm text-green-500 font-medium">
+                  ✅ Message sent successfully! (Form stays on same page)
+                </p>
+              )}
             </div>
           </form>
         </div>

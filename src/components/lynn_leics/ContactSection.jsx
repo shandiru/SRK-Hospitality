@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { AiOutlineGlobal } from 'react-icons/ai';
 import {
   FiMapPin,
   FiPhone,
@@ -47,9 +48,14 @@ export default function ContactSection() {
 
           <div className="space-y-6">
             {/* Address */}
-            <div className="flex items-start gap-4">
+            <a
+              href="https://www.google.com/maps/place/14+St+Martin’s+Square,+Leicester+LE1+5DF"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
               <div
-                className="p-3 rounded-full"
+                className="p-3 rounded-full group-hover:scale-110 transition"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
@@ -59,17 +65,26 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold">Visit Us</h4>
-                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                <p
+                  className={`${
+                    isDark ? 'text-gray-300' : 'text-gray-600'
+                  } group-hover:text-[#E1B43B] transition`}
+                >
                   14 St Martin’s Square,<br />
                   Leicester LE1 5DF
                 </p>
               </div>
-            </div>
+            </a>
 
-            {/* Phone */}
-            <div className="flex items-start gap-4">
+            {/* Phone / WhatsApp */}
+            <a
+              href="https://wa.me/447342375899"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
               <div
-                className="p-3 rounded-full"
+                className="p-3 rounded-full group-hover:scale-110 transition"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
@@ -78,40 +93,42 @@ export default function ContactSection() {
                 <FiPhone size={20} />
               </div>
               <div>
-                <h4 className="font-bold">Call Us</h4>
-                <p>
-                  <a
-                    href="tel:01604859551"
-                    className="hover:underline"
-                    style={{ color: BRAND_GOLD }}
-                  >
-                     07342375899
-                  </a>
+                <h4 className="font-bold">WhatsApp Us</h4>
+                <p
+                  className="hover:underline group-hover:text-[#E1B43B] transition"
+                  style={{ color: BRAND_GOLD }}
+                >
+                  07342375899
                 </p>
               </div>
-            </div>
+            </a>
 
-            {/* Email */}
-            {/* <div className="flex items-start gap-4">
+            {/* Google My Business / Website */}
+            <a
+              href="https://share.google/NDytSLdUL6TvpTGq1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
               <div
-                className="p-3 rounded-full"
+                className="p-3 rounded-full group-hover:scale-110 transition"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
                 }}
               >
-                <FiSend size={20} />
+                <AiOutlineGlobal size={20} />
               </div>
               <div>
-                <h4 className="font-bold">Mail Us</h4>
+                <h4 className="font-bold">Google Business</h4>
                 <p
-                  className="font-medium"
+                  className="font-medium group-hover:text-[#E1B43B] transition"
                   style={{ color: BRAND_GOLD }}
                 >
-                  info@fifteenseventythree.com
+                  Visit Our Profile
                 </p>
               </div>
-            </div> */}
+            </a>
 
             {/* Social Media */}
             <div className="flex gap-4 pt-4">
@@ -127,30 +144,6 @@ export default function ContactSection() {
               >
                 <FiInstagram size={20} />
               </a>
-              {/* <a
-                href="https://web.facebook.com/walnuttreeinnnorthampton?_rdc=1&_rdr#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
-                style={{
-                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
-                  color: BRAND_GOLD,
-                }}
-              >
-                <FiFacebook size={20} />
-              </a>
-              <a
-                href="https://x.com/walnut_tree_inn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full transition hover:scale-105"
-                style={{
-                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
-                  color: BRAND_GOLD,
-                }}
-              >
-                <FiTwitter size={20} />
-              </a> */}
             </div>
           </div>
         </div>

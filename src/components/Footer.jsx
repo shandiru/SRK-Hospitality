@@ -1,7 +1,7 @@
 "use client";
-
 import { useEffect, useState } from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { BsWhatsapp } from "react-icons/bs";
+import { FaEnvelope } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -42,7 +42,8 @@ export default function Footer() {
             className={`text-sm md:text-base leading-relaxed max-w-xs transition-colors duration-500 ${isDark ? "text-[#C9D1D5]" : "text-[#333333]"
               }`}
           >
-            Celebrating the passion of independent culinary businesses across the UK.
+            Celebrating the passion of independent culinary businesses across the
+            UK.
           </p>
         </div>
 
@@ -77,46 +78,52 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Right Section */}
-        <div className="flex flex-col items-center md:items-end">
+        {/* Right Section (Replaced Social Links with Contact Info) */}
+        <div className="flex flex-col items-center">
           <h4
             className="font-[Playfair_Display] font-semibold text-lg mb-3"
             style={{ color: brandGold }}
           >
-            Follow Us
+            Get in Touch
           </h4>
-          <div className="flex gap-4">
-            {[
-              { Icon: FaFacebookF, link: "#" },
-              { Icon: FaInstagram, link: "#" },
-              { Icon: FaLinkedinIn, link: "#" },
-            ].map(({ Icon, link }, i) => (
+          <div className="flex flex-col gap-3 text-sm md:text-base">
+            <div className="flex items-center gap-2">
+              <BsWhatsapp 
+                className={`${isDark ? "text-[#DDB64E]" : "text-[#DDB64E]"}`}
+              />
               <a
-                key={i}
-                href={link}
+                href="https://wa.me/447466093996"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-3 rounded-full transition-all duration-500 ease-out shadow-sm active:scale-[0.95] ${isDark
-                    ? "bg-[#DDB64E]/10 text-[#DDB64E] hover:bg-[#DDB64E] hover:text-black hover:shadow-[0_0_20px_rgba(221,182,78,0.5)]"
-                    : "bg-[#DDB64E]/10 text-[#DDB64E] hover:bg-[#DDB64E] hover:text-white hover:shadow-[0_0_20px_rgba(221,182,78,0.5)]"
+                className={`hover:text-[#DDB64E] transition-colors duration-300 ${isDark ? "text-[#E9ECEC]" : "text-[#111111]"
                   }`}
               >
-                <Icon size={16} />
+                07466093996 
               </a>
-            ))}
+            </div>
+            <div className="flex items-center gap-2">
+              <FaEnvelope
+                className={`${isDark ? "text-[#DDB64E]" : "text-[#DDB64E]"}`}
+              />
+              <a
+                href="mailto:info@srkhospitality.co.uk"
+                className={`hover:text-[#DDB64E] transition-colors duration-300 ${isDark ? "text-[#E9ECEC]" : "text-[#111111]"
+                  }`}
+              >
+                info@srkhospitality.co.uk
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* === Bottom Bar === */}
-      {/* Bottom Divider */}
+      {/* === Bottom Divider === */}
       <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
         <p>&copy; 2025 SRK Hospitality Limited. All rights reserved.</p>
       </div>
 
-      {/* Bottom Bar */}
+      {/* === Bottom Bar === */}
       <div className="flex flex-col py-3 sm:flex-row justify-center items-center gap-3 text-center font-semibold text-gray-400">
-        {/* Left: Terms & Privacy */}
         <div className="flex gap-4 text-sm">
           <Link
             to="/terms"
@@ -132,8 +139,6 @@ export default function Footer() {
             Privacy Policy
           </Link>
         </div>
-
-        {/* Center: Powered by Ansely (unchanged) */}
         <p className="text-center font-semibold text-gray-400">
           Powered by{" "}
           <a

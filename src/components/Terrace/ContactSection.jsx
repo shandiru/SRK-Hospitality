@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FiMapPin, FiPhone, FiSend, FiFacebook, FiInstagram, FiTwitter } from 'react-icons/fi';
+import { AiOutlineGlobal } from 'react-icons/ai';
+import { FiMapPin, FiPhone, FiSend, FiFacebook, FiInstagram } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const BRAND_GOLD = '#E1B43B';
 
@@ -23,8 +25,9 @@ export default function ContactSection() {
 
   return (
     <section
-      className={`transition-colors duration-700 py-20 px-4 ${isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'
-        }`}
+      className={`transition-colors duration-700 py-20 px-4 ${
+        isDark ? 'bg-black text-[#E9ECEC]' : 'bg-white text-[#1C1C1C]'
+      }`}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Left Column */}
@@ -38,9 +41,14 @@ export default function ContactSection() {
 
           <div className="space-y-6">
             {/* Address */}
-            <div className="flex items-start gap-4">
+            <a
+              href="https://maps.app.goo.gl/NrFPVdUxh94PKgUh9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
               <div
-                className="p-3 rounded-full"
+                className="p-3 rounded-full transition-all duration-300 group-hover:scale-110"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
@@ -50,37 +58,53 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold">Visit us</h4>
-                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                <p
+                  className={`${
+                    isDark ? 'text-gray-300' : 'text-gray-600'
+                  } group-hover:text-[#E1B43B] transition-colors`}
+                >
                   Thumbay Ltd, <br />
                   P.O. Box: 415555 <br />
                   DIFC - Dubai, United Arab Emirates
                 </p>
               </div>
-            </div>
+            </a>
 
-            {/* Phone */}
-            <div className="flex items-start gap-4">
+            {/* Phone (WhatsApp Link) */}
+            <a
+              href="https://wa.me/97167705555"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
               <div
-                className="p-3 rounded-full"
+                className="p-3 rounded-full transition-all duration-300 group-hover:scale-110"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
                 }}
               >
-                <FiPhone size={20} />
+                <FaWhatsapp size={20} />
               </div>
               <div>
-                <h4 className="font-bold">Call us</h4>
-                <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                <h4 className="font-bold">Chat with us</h4>
+                <p
+                  className={`${
+                    isDark ? 'text-gray-300' : 'text-gray-600'
+                  } group-hover:text-[#E1B43B] transition-colors`}
+                >
                   +971 6 770 5555
                 </p>
               </div>
-            </div>
+            </a>
 
             {/* Email */}
-            <div className="flex items-start gap-4">
+            <a
+              href="mailto:info@terracerestaurant.com"
+              className="flex items-start gap-4 group"
+            >
               <div
-                className="p-3 rounded-full"
+                className="p-3 rounded-full transition-all duration-300 group-hover:scale-110"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
@@ -91,12 +115,39 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-bold">Mail us</h4>
                 <p
-                  className="font-medium"
-                  style={{ color: BRAND_GOLD }}
-                > info@terracerestaurant.com
+                  className="font-medium text-white group-hover:text-[#E1B43B] transition-colors"
+       
+                >
+                  info@terracerestaurant.com
                 </p>
               </div>
-            </div>
+            </a>
+
+            {/* Website */}
+            <a
+              href="https://terracerestaurant.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
+              <div
+                className="p-3 rounded-full transition-all duration-300 group-hover:scale-110"
+                style={{
+                  backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
+                  color: BRAND_GOLD,
+                }}
+              >
+                <AiOutlineGlobal size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold">Website</h4>
+                <p
+                  className="font-medium group-hover:text-[#E1B43B] transition-colors"
+                >
+                  terracerestaurant.com
+                </p>
+              </div>
+            </a>
 
             {/* Social Media */}
             <div className="flex gap-4 pt-4">
@@ -104,7 +155,7 @@ export default function ContactSection() {
                 href="https://www.instagram.com/terracerestaurantuae"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full transition"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 hover:scale-110"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
@@ -116,7 +167,7 @@ export default function ContactSection() {
                 href="https://www.facebook.com/TerraceRestaurant"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full transition"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 hover:scale-110"
                 style={{
                   backgroundColor: isDark ? '#1E1E1E' : '#FFF5E0',
                   color: BRAND_GOLD,
@@ -139,40 +190,44 @@ export default function ContactSection() {
 
           <form className="space-y-6">
             <div>
-              <label className="block mb-1 text-sm font-medium">
-                Your name
-              </label>
+              <label className="block mb-1 text-sm font-medium">Your name</label>
               <input
                 type="text"
                 placeholder="John Doe"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
-                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                  }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
+                  isDark
+                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                }`}
               />
             </div>
+
             <div>
               <label className="block mb-1 text-sm font-medium">Phone</label>
               <input
                 type="text"
-                placeholder="+44 123 456 7890"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
-                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                  }`}
+                placeholder="+971 6 770 5555"
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
+                  isDark
+                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                }`}
               />
             </div>
+
             <div>
               <label className="block mb-1 text-sm font-medium">Your email</label>
               <input
                 type="email"
                 placeholder="email@example.com"
-                className={`w-full rounded-full border px-4 py-3 outline-none transition ${isDark
-                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                  }`}
+                className={`w-full rounded-full border px-4 py-3 outline-none transition ${
+                  isDark
+                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                }`}
               />
             </div>
+
             <div>
               <label className="block mb-1 text-sm font-medium">
                 Your message (optional)
@@ -180,12 +235,14 @@ export default function ContactSection() {
               <textarea
                 rows="4"
                 placeholder="Write something..."
-                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${isDark
-                  ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
-                  : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
-                  }`}
+                className={`w-full rounded-2xl border px-4 py-3 outline-none resize-none transition ${
+                  isDark
+                    ? 'bg-[#111] border-[#E1B43B]/40 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-100'
+                    : 'border-gray-300 focus:ring-2 focus:ring-[#E1B43B]/60 text-gray-800'
+                }`}
               />
             </div>
+
             <div>
               <button
                 type="submit"

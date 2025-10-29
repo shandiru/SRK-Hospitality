@@ -198,9 +198,6 @@ const VenueBookingForm = () => {
                   >
                     <option value="">Select location</option>
                     <option value="uk-london">UK – London</option>
-                    <option value="uk-manchester">UK – Manchester</option>
-                    <option value="uk-birmingham">UK – Birmingham</option>
-                    <option value="uk-other">UK – Other</option>
                     <option value="dubai">Dubai</option>
                   </select>
                 </div>
