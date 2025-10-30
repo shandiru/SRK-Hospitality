@@ -21,28 +21,6 @@ export default function Vacancies() {
       description:
         "Join us in creating timeless elegance and vibrant hospitality. We're searching for a confident leader to join one of the UK’s most-loved restaurant brands.",
     },
-    {
-      id: 2,
-      title: "Head Chef",
-      category: "Kitchen",
-      company: "SRK Hospitality",
-      type: "Full-time",
-      salary: "Attractive Salary + Benefits",
-      route: "/HeadChefPage",
-      description:
-        "Lead a passionate kitchen team in crafting premium dishes that define our culinary excellence. Experience in fine dining is a plus.",
-    },
-    {
-      id: 3,
-      title: "Bar Supervisor",
-      category: "Bar",
-      company: "SRK Hospitality",
-      type: "Full-time",
-      salary: "Competitive Salary",
-      route: "/BarSupervisorPage",
-      description:
-        "We’re looking for a charismatic bar leader to bring energy and sophistication to our cocktail experience.",
-    },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
