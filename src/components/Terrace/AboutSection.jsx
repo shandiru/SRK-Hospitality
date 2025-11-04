@@ -8,7 +8,7 @@ export default function AboutSection() {
   return (
     <section
       className="relative pt-24 pb-24 px-6 md:px-12 lg:px-20 transition-colors duration-700 
-                 bg-gradient-to-br from-[#FFFFFF] to-[#F8F8F8] dark:from-[#0D0D0D] dark:to-[#1B1B1B]"
+                 bg-linear-to-br from-[#FFFFFF] to-[#F8F8F8] dark:from-[#0D0D0D] dark:to-[#1B1B1B]"
     >
       {/* Soft gold glow behind content */}
       <div

@@ -158,11 +158,11 @@ export default function VenuesGrid() {
               {/* Shine Layer */}
               <div className="shine absolute inset-0 rounded-2xl z-10 pointer-events-none"></div>
 
-              {/* Gradient Overlay */}
+              {/* linear Overlay */}
               <div
                 className={`absolute inset-0 z-20 rounded-2xl ${isDark
-                    ? "bg-gradient-to-t from-black/80 via-black/60 to-transparent"
-                    : "bg-gradient-to-t from-black/75 via-black/50 to-transparent"
+                    ? "bg-linear-to-t from-black/80 via-black/60 to-transparent"
+                    : "bg-linear-to-t from-black/75 via-black/50 to-transparent"
                   }`}
               ></div>
 

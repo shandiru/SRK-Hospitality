@@ -43,8 +43,8 @@ const VenueHeroSection = () => {
         </div>
       </div>
 
-      {/* Optional subtle gradient overlay for premium depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#D8B04C]/0 to-[#B8922D]/20 pointer-events-none"></div>
+      {/* Optional subtle linear overlay for premium depth */}
+      <div className="absolute inset-0 bg-linear-to-b from-[#D8B04C]/0 to-[#B8922D]/20 pointer-events-none"></div>
     </section>
   );
 };

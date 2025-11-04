@@ -6,7 +6,7 @@ export default function AboutSection() {
   const brandGold = "#DDB64E";
 
   return (
-    <section className="bg-gradient-to-br from-[#F5F7F8] to-[#E9ECEC] dark:from-[#0C0C0C] dark:to-[#111A1D] pt-24 pb-20 px-4 md:px-12 lg:px-20 transition-colors duration-700">
+    <section className="bg-linear-to-br from-[#F5F7F8] to-[#E9ECEC] dark:from-[#0C0C0C] dark:to-[#111A1D] pt-24 pb-20 px-4 md:px-12 lg:px-20 transition-colors duration-700">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
         
         {/* Left: Image */}

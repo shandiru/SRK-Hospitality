@@ -6,7 +6,7 @@ export default function AboutSection() {
 
   return (
     <section
-      className="bg-gradient-to-br from-[#F5F7F8] to-[#E9ECEC] 
+      className="bg-linear-to-br from-[#F5F7F8] to-[#E9ECEC] 
                  dark:from-[#0C0C0C] dark:to-[#111A1D] 
                  pt-24 pb-20 px-4 md:px-12 lg:px-20 
                  transition-colors duration-700"

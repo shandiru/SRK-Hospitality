@@ -29,8 +29,8 @@ export default function Hero() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+      {/* Overlay linear */}
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent"></div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6">

@@ -19,7 +19,7 @@ export default function WelcomeSection() {
       </video>
 
       {/* Elegant Gold-Toned Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/70" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
